@@ -26,5 +26,5 @@ end
 
 
 # testing / validation support
-#gem "html-proofer"
+gem "html-proofer"
 
