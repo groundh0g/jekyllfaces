@@ -45,6 +45,8 @@ jekyllfaces:
   ## unused, maybe something for the future?
   framework: bootstrap # jekyll | bootstrap | skeleton | foundation
 
+  homepage: project # blog | project | soon | webapps
+
   features:
     - blog     # what 99% of folks will use
     - book     # one or more online books
