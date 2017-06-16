@@ -1,0 +1,9 @@
+{% if site.jekyllfaces.framework != "bootstrap" %}
+
+{% comment %}
+    There's no separate css for Glyphicons, so make sure we're not including bootstrap.css twice.
+{% endcomment %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.css" integrity="sha256-yUJoYBDihWM9d6JDQcQ4UMzWFi/MfoKBropwwpIamvU=" crossorigin="anonymous" />
+
+{% endif %}

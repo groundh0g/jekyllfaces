@@ -1,0 +1,66 @@
+.docs-table-of-contents {
+    background-color:#f2f2f2;
+    padding-bottom:10px;
+}
+
+.docs-content {
+    border-left: 1px #f2f2f2 solid;
+}
+
+
+
+/* jumbo-header, taken from bootstrap website's bs-docs-header class */
+
+.jumbo-header {
+    margin-bottom: 40px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #6f5499;
+}
+
+.jumbo-header h1 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.jumbo-header p {
+    margin-bottom: 0;
+    font-weight: 300;
+    line-height: 1.4;
+}
+.jumbo-header .container {
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .jumbo-header {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        font-size: 24px;
+        text-align: left;
+    }
+    .jumbo-header h1 {
+        font-size: 60px;
+        line-height: 1;
+    }
+}
+
+@media (min-width: 992px) {
+    .jumbo-header h1,
+    .jumbo-header p {
+        margin-right: 380px;
+    }
+}
+
+.project-feature-item {
+    text-align:justify;
+    margin: 10px 0;
+}
+.project-feature-header {
+    font-size: 2.0em;
+    text-align: center;
+    background-color: #338;
+    color: #fff;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}

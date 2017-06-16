@@ -21,8 +21,8 @@ description: > # this means to ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: groundh0g
+github_username:  groundh0g
 
 # Build settings
 markdown: kramdown
@@ -32,3 +32,44 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+
+# Suppress warning https://github.com/github/pages-gem/issues/399
+github: [metadata]
+
+# jekyllfaces settings
+jekyllfaces:
+
+  brand: Jekyll Faces
+  brief: Use Jekyll for your next site.<br/>We'll hyde the scary parts.
+
+  ## unused, maybe something for the future?
+  ## framework: bootstrap # jekyll | bootstrap | skeleton | foundation
+
+  features:
+    - blog     # what 99% of folks will use
+    - book     # one or more online books
+    - docs     # project documentation
+    ## - daily    # a post-a-day site
+    - project  # a project or product site
+    - soon     # a "coming soon" site
+    - webapp   # one or more web applications
+    - contributors # one or more authors
+    - about    # link to about page
+
+  font_icons: # uncomment the icons sets you would like to use
+    - font-awesome # <i class="fa fa-address-book"></i>
+    #- foundation # <i class="fi-address-book"></i>
+    #- glyphicons # <i class="glyphicon glyphicon-adjust"></i>
+    #- icomoon # <i class="icomoon icon-accessibility"></i>
+    #- ionicons # <i class="ionicons ion-alert"></i>
+    #- material-design # <i class="material-icons">3d_rotation</i>
+    #- octicons # <i class="mega-octicon octicon-alert"></i>
+
+  404_page: sticky # badge | dog | droids | glass | link | milk | monster | potty | shrug | sticky | tweet | zork
+
+  search: # valid values are: true | false | {number}
+    title:     true # always search
+    tags:      true # always search
+    keywords:  true # always search
+    excerpt:   2000 # only search when fewer than 2001 posts
+    inclPages: true # valid values are: true | false

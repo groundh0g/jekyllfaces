@@ -1,0 +1,16 @@
+{% assign pages = site.pages | sort: "path" %}
+
+<div style="font-size:1.2em;">
+{% for file in pages %}
+    {% if file.path contains "docs/"%}
+        {% if file.path contains "index.md" %}
+        {% else %}
+
+&nbsp;{% if page.path contains file.path %}<i class="fa fa-file-text-o"></i>{% else %}<i class="fa fa-file-o"></i>{% endif %}
+<a href='{{ site.baseurl }}/{{ file.path | replace: ".md", ".html" }}'>{{ file.title | default: "Untitled" }}</a><br/>
+
+
+        {% endif %}
+    {% endif %}
+{% endfor %}
+</div>

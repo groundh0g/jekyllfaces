@@ -1,0 +1,16 @@
+{% assign pages = site.pages | sort: "path" %}
+
+{% for file in pages %}
+    {% if file.path contains "contributors/"%}
+        {% if file.path contains "index.md" %}
+        {% else %}
+
+----
+
+{{ file.content | markdownify }}
+
+<div style="clear:both;">&nbsp;</div>
+
+        {% endif %}
+    {% endif %}
+{% endfor %}
