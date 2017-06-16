@@ -43,7 +43,7 @@ jekyllfaces:
   brief: Use Jekyll for your next site.<br/>We'll hyde the scary parts.
 
   ## unused, maybe something for the future?
-  ## framework: bootstrap # jekyll | bootstrap | skeleton | foundation
+  framework: bootstrap # jekyll | bootstrap | skeleton | foundation
 
   features:
     - blog     # what 99% of folks will use
