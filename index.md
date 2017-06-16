@@ -1,20 +1,15 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home
+layout: page
 ---
 
-{% if true %}
-
-# Blog Entries
-
-Here are the 5 most recent blog posts. Click [here for the archive]({{ site.baseurl }}/blog/archive.html) of all posts.
-
-{% include blog-list-posts.liquid post_limit=5 word_limit=75 %}
-
+{% if site.jekyllfaces.homepage == "blog" %}
+  {% include_relative blog/index.md %}
+{% elsif site.jekyllfaces.homepage == "project" %}
+  {% include_relative project/index.md %}
+{% elsif site.jekyllfaces.homepage == "soon" %}
+  {% include_relative soon/index.md %}
+{% elsif site.jekyllfaces.homepage == "webapps" %}
+  {% include_relative webapps/index.md %}
 {% else %}
-
-abcdef ... 
-
+    ERROR: Unknown value for site.jekyllfaces.homepage in `_config.yml`.
 {% endif %}

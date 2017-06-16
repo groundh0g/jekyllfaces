@@ -1,7 +1,3 @@
----
-layout: page
----
-
 <div class="jumbo-header" id="content" tabindex="-1">
     <div class="container">
         <div class="row">
