@@ -6,16 +6,16 @@ Check us out at [JekyllFaces.com](http://jekyllfaces.com/)!
 
 ## Project Landing Page
 
-![Project Page Example](docs/images/project.png)
+![Project Page Example](images/project.png)
 
 ## Contributors Page
 
-![Contributors Page Example](docs/images/contributors.png)
+![Contributors Page Example](images/contributors.png)
 
 ## Book Progress Page
 
-![Book Progress Page Example](docs/images/books-summary.png)
+![Book Progress Page Example](images/books-summary.png)
 
 ## 12 Built-In 404 Pages
 
-![Project Page Example](docs/images/old-404/404-sticky.png)
+![Project Page Example](images/404-sticky.png)
