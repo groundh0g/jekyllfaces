@@ -4,6 +4,8 @@ Jekyll is a great blogging platform, but to make it really shine, you need to ma
 
 Check us out at [JekyllFaces.com](http://jekyllfaces.com/)!
 
+[![Build Status](https://travis-ci.org/groundh0g/jekyllfaces.svg?branch=gh-pages)](https://travis-ci.org/groundh0g/jekyllfaces)
+
 ## Project Landing Page
 
 ![Project Page Example](docs/images/project.png)
