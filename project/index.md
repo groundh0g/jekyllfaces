@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-2" style="text-align:center;">
-                <img src="{{ site.baseurl }}/assets/logo.png" style="width:150px;" />
+                <img src="{{ site.baseurl }}/assets/logo.png" alt="logo" style="width:150px;" />
             </div>
             <div class="col-md-10">
                 <h1>{{ site.jekyllfaces.brand }}</h1>

@@ -1,4 +1,4 @@
-<img src="images/andrew.png" style="float:right; margin:10px;" />
+<img src="images/andrew.png" alt="andrew avatar" style="float:right; margin:10px;" />
 
 ## Andrew Rollings
 

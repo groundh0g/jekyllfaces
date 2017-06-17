@@ -1,4 +1,4 @@
-<img src="images/steven.png" style="float:right; margin:10px;" />
+<img src="images/steven.png" alt="steven avatar" style="float:right; margin:10px;" />
 
 ## Steven Lowe
 

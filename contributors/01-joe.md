@@ -1,4 +1,4 @@
-<img src="images/joe.png" style="float:right; margin:10px;" />
+<img src="images/joe.png" alt="joe avatar" style="float:right; margin:10px;" />
 
 ## Joseph Hall
 

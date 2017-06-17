@@ -1,4 +1,4 @@
-<img src="images/scott.png" style="float:right; margin:10px;" />
+<img src="images/scott.png" alt="scott avatar" style="float:right; margin:10px;" />
 
 ## Scott Escue
 
