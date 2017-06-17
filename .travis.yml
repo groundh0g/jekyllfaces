@@ -1,6 +1,10 @@
 language: ruby
 rvm:
   - 2.4
+branches:
+  only:
+  - gh-pages
+  - /v\d+\.\d+(\.\d+){0,1}/
 script:
   - bundle exec jekyll build
   - bundle exec htmlproofer ./_site --only-4xx --check-favicon --check-html --file-ignore /\/project\/00\-.*/
