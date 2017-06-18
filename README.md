@@ -1,6 +1,6 @@
 # Jekyll Faces
 
-Jekyll is a great blogging platform, but to make it really shine, you need to make some tweaks. We've made those tweaks, and we've done so in such a way as to avoid using plugins, so your site can easily be hosted on [GitHub Pages]({{ site.baseurl }}/docs/10-hosting-on-github-pages.html).
+Jekyll is a great blogging platform, but to make it really shine, you need to make some tweaks. We've made those tweaks, and we've done so in such a way as to avoid using plugins, so your site can easily be hosted for free on [GitHub Pages](https://pages.github.com/).
 
 Check us out at [JekyllFaces.com](http://jekyllfaces.com/)!
 
