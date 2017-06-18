@@ -1,6 +1,6 @@
 ---
 title: Regarding Puns
-icon: fa fa-wink
+icon: fa fa-smile-o
 author: Doug Larson
 layout: null
 ---

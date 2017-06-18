@@ -1,3 +1,8 @@
+html { height: 100%; }
+body { min-height: 100%; }
+
+/* --- docs/*.md --- */
+
 .docs-table-of-contents {
     background-color:#f2f2f2;
     padding-bottom:10px;
@@ -7,9 +12,37 @@
     border-left: 1px #f2f2f2 solid;
 }
 
+/* --- _content_footer/*.md --- */
 
+footer {
+    color: #aaa;
+    background-color: #222;
+    /* https://stackoverflow.com/a/18935218/75696 */
+    box-shadow: 0 500px 0 500px #222;
+    padding: 10px 0;
+    margin-top: 20px;
+}
 
-/* jumbo-header, taken from bootstrap website's bs-docs-header class */
+.footer-item {
+    text-align: center;
+    vertical-align: top;
+}
+
+.footer-item h1,
+.footer-item h2,
+.footer-item h3,
+.footer-item h4
+{
+    color: #fff;
+}
+
+.footer-item a
+{
+    color: #fff;
+}
+
+/* --- project/index.md --- */
+/* --( modified from bootstrap website's bs-docs-header class )--- */
 
 .jumbo-header {
     margin-bottom: 40px;
@@ -51,6 +84,8 @@
         margin-right: 380px;
     }
 }
+
+/* --- _content_features/*.md --- */
 
 .project-feature-item {
     text-align:justify;

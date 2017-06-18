@@ -1,0 +1,31 @@
+{% assign pages = site.content_footer | sort: "path" %}
+
+{% assign count = site.content_footer | size %}
+
+{% assign colWidth = 0 %}
+{% case count %}
+{% when 1 %}{% assign colWidth = 12 %}
+{% when 2 %}{% assign colWidth = 6 %}
+{% when 3 %}{% assign colWidth = 4 %}
+{% when 4 %}{% assign colWidth = 3 %}
+{% when 6 %}{% assign colWidth = 2 %}
+{% when 12 %}{% assign colWidth = 1 %}
+{% endcase %}
+
+{% if colWidth == 0 %}
+  <!-- WARNING: Unsupported column count for footer. -->
+{% else %}
+  <footer>
+    <div class="container">
+      <div class="row">
+        {% for file in pages %}
+          {% if file %}
+            <div class="col-md-{{ colWidth }} footer-item">
+              {{ file.content }}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </footer>
+{% endif %}

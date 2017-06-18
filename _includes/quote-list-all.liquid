@@ -1,0 +1,13 @@
+{% assign pages = site.content_quotes | sort: "path" %}
+
+<div class="row">
+{% for file in pages %}
+
+<div class="col-md-12 project-feature-item">
+  <div class="project-feature-header"><i class="{{ file.icon }}"></i> {{ file.title }}</div>
+  {{ file.content | markdownify }}
+  <p>&mdash; {{ file.author }}</p>
+</div>
+
+{% endfor %}
+</div>

@@ -1,6 +1,6 @@
 ---
 title: Great Men
-icon: fa fa-wink
+icon: fa fa-male
 author: Jim Carrey
 layout: null
 ---
