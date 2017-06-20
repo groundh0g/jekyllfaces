@@ -1,0 +1,28 @@
+/* --- coming soon --- */
+
+html,
+body,
+main.page-content,
+div.wrapper,
+div.wrapper div.content,
+div.soon-container,
+div.soon-content,
+div.soon {
+    height: 100%;
+    min-height: 100%;
+}
+
+div.soon {
+    background-image: url("../soon/images/make-a-splash.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /*background-position: 0 -500px;*/
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+body {
+    background-image: url("../soon/images/make-a-splash.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}

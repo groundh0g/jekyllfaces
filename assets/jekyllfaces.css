@@ -1,30 +1,9 @@
 html { height: 100%; }
-body { min-height: 100%; }
-
-/* --- docs/*.md --- */
-
-.docs-table-of-contents {
-    background-color:#f2f2f2;
-    border: 1px #ddd solid;
-    padding:0;
-    padding-bottom:10px;
-}
-
-.docs-table-of-contents-header {
-    background-color: #ddd;
-    padding: 10px 0;
-    font-size: 2em;
-    font-weight: bolder;
-    text-align: center;
-}
-
-.docs-table-of-contents-list {
-    padding:10px;
-    font-size: 1.1em;
-}
-
-.docs-content {
-    border-left: 1px #f2f2f2 solid;
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 100%;
 }
 
 /* --- _content_footer/*.md --- */
@@ -114,3 +93,4 @@ footer {
     padding: 10px 0;
     margin-bottom: 10px;
 }
+

@@ -13,4 +13,14 @@
 
 {% include font-icons/_head.liquid %}
 
+{% case include.layout %}
+  {% when "book" %}
+  {% when "document" %}
+  {% when "home" %}
+  {% when "page" %}
+  {% when "post" %}
+  {% when "soon" %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/{{ include.layout }}.css" />
+{% endcase %}
+
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/jekyllfaces.css" />
