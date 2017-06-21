@@ -81,6 +81,17 @@ jekyllfaces:
     excerpt:   2000 # only search when fewer than 2001 posts
     inclPages: true # valid values are: true | false
 
+  comments:
+    provider: facebook # disqus | facebook | intensedebate | false
+    disqus:
+      short_name: example
+    facebook :
+      num_posts: 5
+      width: 580
+      colorscheme: light # light | dark
+    intensedebate :
+      account : example
+
   analytics:
     provider: google # gauges | google | false
     gauges:
