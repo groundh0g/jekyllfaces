@@ -1,0 +1,14 @@
+{% include util-is-production.liquid %}
+
+{% if isProduction and site.jekyllfaces.comments.provider and page.comments != false %}
+
+{% case site.jekyllfaces.comments.provider %}
+{% when "disqus" %}
+  {% include comments/disqus.liquid %}
+{% when "facebook" %}
+  {% include comments/facebook.liquid %}
+{% when "intensedebate" %}
+  {% include comments/intensedebate.liquid %}
+{% endcase %}
+
+{% endif %}
