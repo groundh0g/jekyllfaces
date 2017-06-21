@@ -91,3 +91,10 @@ jekyllfaces:
       colorscheme: light # light | dark
     intensedebate :
       account : example
+
+  analytics:
+    provider: google # gauges | google | false
+    gauges:
+      site_id: 'SITE ID'
+    google:
+      tracking_id: 'UA-123-12'

@@ -5,7 +5,22 @@ body { min-height: 100%; }
 
 .docs-table-of-contents {
     background-color:#f2f2f2;
+    border: 1px #ddd solid;
+    padding:0;
     padding-bottom:10px;
+}
+
+.docs-table-of-contents-header {
+    background-color: #ddd;
+    padding: 10px 0;
+    font-size: 2em;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.docs-table-of-contents-list {
+    padding:10px;
+    font-size: 1.1em;
 }
 
 .docs-content {

@@ -1,0 +1,12 @@
+{% include util-is-production.liquid %}
+
+{% if isProduction and site.jekyllfaces.analytics.provider %}
+
+{% case site.jekyllfaces.analytics.provider %}
+{% when "gauges" %}
+  {% include analytics/gauges.liquid %}
+{% when "google" %}
+  {% include analytics/google.liquid %}
+{% endcase %}
+
+{% endif %}

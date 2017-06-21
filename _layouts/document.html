@@ -6,8 +6,10 @@ layout: default
 
     <div class="row">
         <div class="col-md-3 docs-table-of-contents">
-            <h2>Table of Contents</h2>
-            {% include docs-list.liquid %}
+            <div class="docs-table-of-contents-header">Table of Contents</div>
+            <div class="docs-table-of-contents-list">
+              {% include docs-list.liquid %}
+            </div>
         </div>
         <div class="col-md-9 docs-content">
             <h1>{{ page.title | escape }}</h1>
