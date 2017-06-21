@@ -23,3 +23,7 @@ Check us out at [JekyllFaces.com](http://jekyllfaces.com/)!
 ## 12 Built-In 404 Pages
 
 ![Project Page Example](docs/images/old-404/404-sticky.png)
+
+## Search
+
+Coming soon...

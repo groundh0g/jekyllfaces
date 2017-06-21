@@ -80,3 +80,10 @@ jekyllfaces:
     keywords:  true # always search
     excerpt:   2000 # only search when fewer than 2001 posts
     inclPages: true # valid values are: true | false
+
+  analytics:
+    provider: google # gauges | google | false
+    gauges:
+      site_id: 'SITE ID'
+    google:
+      tracking_id: 'UA-123-12'
