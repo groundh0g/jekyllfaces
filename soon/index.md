@@ -5,7 +5,7 @@ layout: soon
 {% include countdown.liquid size="large" date="07/15/2017 10:00 AM" demo="true" %}
 
 <div class="container soon">
-  <img src="images/make-a-splash-text.png" />
+  <img alt="we're about to make a splash!" src="images/make-a-splash-text.png" />
 </div>
 
 {% capture whatIsIt %}
