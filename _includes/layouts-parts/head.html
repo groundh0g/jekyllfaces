@@ -15,12 +15,17 @@
 
 {% case include.layout %}
   {% when "book" %}
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/{{ include.layout }}.css" />
   {% when "document" %}
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/{{ include.layout }}.css" />
   {% when "home" %}
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/{{ include.layout }}.css" />
   {% when "page" %}
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/{{ include.layout }}.css" />
   {% when "post" %}
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/{{ include.layout }}.css" />
   {% when "soon" %}
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/{{ include.layout }}.css" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/{{ include.layout }}.css" />
 {% endcase %}
 
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/jekyllfaces.css" />
