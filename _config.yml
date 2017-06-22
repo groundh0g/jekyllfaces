@@ -82,7 +82,7 @@ jekyllfaces:
     inclPages: true # valid values are: true | false
 
   comments:
-    provider: facebook # disqus | facebook | intensedebate | false
+    provider: false # disqus | facebook | intensedebate | false
     disqus:
       short_name: example
     facebook :
@@ -93,7 +93,7 @@ jekyllfaces:
       account : example
 
   analytics:
-    provider: google # gauges | google | false
+    provider: false # gauges | google | false
     gauges:
       site_id: 'SITE ID'
     google:
