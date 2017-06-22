@@ -7,11 +7,20 @@ div.wrapper,
 div.wrapper div.content,
 div.soon-container,
 div.soon-content {
-    height: 100%;
     min-height: 100%;
+    min-height: 100%;
+    color: #aaa;
+}
+
+div.soon-content h2,
+div.soon-content strong,
+div.soon-content i
+{
+    color: #fff;
 }
 
 body {
+    color: #fff;
     background-color: #222;
 }
 
@@ -23,6 +32,7 @@ div.soon {
     overflow-x: hidden;
     overflow-y: scroll;
     height: 250px;
+    margin-bottom: 50px;
 }
 
 div.soon img {
@@ -50,3 +60,12 @@ div.countdown div small {
     font-size: 0.50em;
     color: #bbb;
 }
+
+/*div.inverted {*/
+    /*color: #888;*/
+    /*background-color: #ccd;*/
+/*}*/
+
+/*div.inverted h2 {*/
+    /*color: #000;*/
+/*}*/

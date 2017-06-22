@@ -16,7 +16,12 @@
 
 
 <script type="text/javascript">
+{% if include.demo == "true" %}
+    var end = new Date();
+    end.setDate(end.getDate() + 3);
+{% else %}
 	var end = end || new Date('{{ include.date }}');
+{% endif %}
 
 	var _second = 1000;
 	var _minute = _second * 60;
@@ -38,4 +43,5 @@
 	}
 	
 	var timer = timer || setInterval(showRemaining, 1000);
+	showRemaining();
 </script>
