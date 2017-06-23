@@ -1,6 +1,6 @@
 ---
 layout: document
-title: "Coming Soon Page"
+title: "Where Does It Go?"
 ---
 
 Coming Soon...

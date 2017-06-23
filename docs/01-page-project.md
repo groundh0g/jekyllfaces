@@ -7,6 +7,13 @@ The project page is a template to describe the features that your site supports.
 
 You can name the feature files any way you want, and they will be listed in filename order. The text that gets displayed in the header of each feature is determined by the `title` and `icon` in the feature's front matter YAML.
 
-The resulting content should look similar to the following image.
+To set the project page as the homepage, edit the `_config.yml` file.
+
+```
+  # one of [blog | project | soon | webapps]
+  homepage: project
+```
+
+The resulting page look similar to the following image.
 
 > ![image](images/project.png)

@@ -20,5 +20,9 @@ jekyllfaces:
 ```
 
 > **NOTE:** Since the layouts in Jekyll Faces are currently implemented using [Bootstrap v3.3.7](http://getbootstrap.com/), the Glyphicons web font is automatically included. The examples pages that come with Jekyll Faces also rely on the Font Awesome web font, so you'll need to remove references to that font if you want to disable the `font-awesome` glyph set.
-> 
-> While it is possible to include all of the supported web fonts at the same time, that could affect the time it takes your pages to load. Try to limit yourself to one or two fonts, keeping in mind that the Bootstrap framework includes the Glyphicons set.
+
+While it is possible to include all of the supported web fonts at the same time, that could affect the time it takes your pages to load. Try to limit yourself to one or two fonts, keeping in mind that the Bootstrap framework includes the Glyphicons set.
+
+A really handy tool for browsing the available fonts is [GlyphSearch.com](http://glyphsearch.com/).
+
+> ![image](images/font-icons.png)
