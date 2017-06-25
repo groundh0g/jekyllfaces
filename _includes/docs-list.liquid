@@ -28,11 +28,15 @@
 {% assign groupAnyShownYet = false %}
 {% assign delimGroupToken = "[66ccdac6fa47b2d4]" %}
 {% assign groupHeaderValues = "" %}
-{% assign pages = site.pages | sort: "dir" %}
+{% assign groupedPages = site.pages | sort: "dir" | group_by: "dir" %}
 {% capture html %}
 <ul>
+{% for gp in groupedPages %}
+{% if gp.name contains "/docs/" %}
+{% assign pages = gp.items | sort: "path" %}
 {% for pg in pages %}
-  {% if pg.dir contains "/docs/" %}
+  {% assign foo = pg.dir | slice: 0, 6 %}
+  {% if foo == "/docs/" %}
     {% if pg.path == page.path %}{% assign activeClass = "active" %}{% else %}{% assign activeClass = "" %}{% endif %}
     {% assign grp = pg.path | replace: pg.name, "" | append: "" %}
     {% unless grp == group %}
@@ -66,6 +70,8 @@
       {% endif %}
     {% endif %}
   {% endif %}
+{% endfor %}
+{% endif %}
 {% endfor %}
 </ul>
 {% endcapture %}
