@@ -1,6 +1,6 @@
 ---
 layout: document
-title: "Showcasing Books"
+title: "Books Page"
 ---
 
 If you want to write a book and let the world watch as the text evolves, Jekyll Faces has you covered. Hosting your book in git means that your readers can submit corrections as pull requests, or file bug reports.

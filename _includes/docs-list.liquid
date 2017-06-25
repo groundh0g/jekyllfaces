@@ -1,5 +1,7 @@
 {% assign pages = site.pages | sort: "path" %}
 
+
+{% comment %}
 <div style="font-size:1.2em;">
 {% for file in pages %}
     {% if file.path contains "docs/"%}
@@ -13,4 +15,71 @@
         {% endif %}
     {% endif %}
 {% endfor %}
+</div>
+{% endcomment %}
+
+<div class="docs-toc">
+<!-- "the dimelter" as SHA256: [2aedbfad81b491c2][f4fdca7a68e65238][66ccdac6fa47b2d4][5f529196b56a5fe7] -->
+{% assign delimText = "[2aedbfad81b491c2]" %}
+{% assign delimPath = "[f4fdca7a68e65238]" %}
+{% assign group = null %}
+{% assign groupTitle = null %}
+{% assign groupShown = false %}
+{% assign groupAnyShownYet = false %}
+{% assign delimGroupToken = "[66ccdac6fa47b2d4]" %}
+{% assign groupHeaderValues = "" %}
+{% assign pages = site.pages | sort: "dir" %}
+{% capture html %}
+<ul>
+{% for pg in pages %}
+  {% if pg.dir contains "/docs/" %}
+    {% if pg.path == page.path %}{% assign activeClass = "active" %}{% else %}{% assign activeClass = "" %}{% endif %}
+    {% assign grp = pg.path | replace: pg.name, "" | append: "" %}
+    {% unless grp == group %}
+      {% if group and groupAnyShownYet == true%}</ul>{% endif %}
+      {% assign group = grp %}
+      {% assign groupTitle = pg.title %}
+      {% assign groupShown = false %}
+      {% if group == "docs/" %}{% assign groupShown = true %}{% endif %}
+    {% endunless %}
+    {% assign pgPath = pg.path | replace: pg.name, "" | append: "" %}
+    {% if pgPath == group %}
+      {% if pg.path contains "index.md" and group and group != "docs/" %}
+        {% assign groupTitle = pg.title | default: "Untitled" %}
+        {% if activeClass == "active" and page.path contains "index.md" %}
+          {% assign groupStyle = "font-weight:bold;" %}
+        {% else %}
+          {% assign groupStyle = "" %}
+        {% endif %}
+        {% capture groupHtml %}<a href="{{ site.baseurl }}{{ pg.url }}" style="{{ groupStyle }}">{{ groupTitle }}</a>{% endcapture %}
+        {% assign groupHeaderValues = groupHeaderValues | append: delimGroupToken | append: group | append: delimGroupToken | append: groupHtml %}
+      {% else %}
+        {% unless groupShown %}
+          {% assign groupClass = activeClass %}
+          {% unless page.path contains "index.md" %}{% assign groupClass = "" %}{% endunless %}
+          {% if group != "docs/" %}<li class="{{ groupClass }}"><i class="fa fa-files-o"></i> {{ delimGroupToken }}{{ group }}</li><ul>{% assign groupAnyShownYet = true %}{% else %}<ul>{% endif %}
+          {% assign groupShown = true %}
+        {% endunless%}
+        {% unless pg.path contains "index.md" and group and group == "docs/" %}
+        <li class="{{ activeClass }}"><i class='fa fa-file{% if activeClass == "active" %}-text{% endif %}-o'></i> <a href="{{ site.baseurl }}{{ pg.url }}">{{ pg.title }}</a></li>
+        {% endunless %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+</ul>
+{% endcapture %}
+
+{% assign tokens = groupHeaderValues | split: delimGroupToken %}
+{% assign tokensLen = tokens | size %}
+{% for i in (1..tokensLen) %}
+  {% assign even = i | modulo: 2 %}
+  {% if even == 0 %}
+    {% assign index = i | minus: 1 %}
+    {% assign searchText = delimGroupToken | append: tokens[index] %}
+    {% assign html = html | replace: searchText, tokens[i] %}
+  {% endif %}
+{% endfor %}
+
+{{ html }}
 </div>

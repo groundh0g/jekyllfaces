@@ -1,3 +1,18 @@
+.docs-table-of-contents ul {
+    list-style-position: outside;
+    list-style-type: none;
+    margin-left: 10px;
+    padding-left: 0;
+}
+
+.docs-table-of-contents ul ul {
+    padding-left: 10px;
+}
+
+.docs-table-of-contents li.active {
+    font-weight: bold;
+}
+
 .docs-table-of-contents {
     background-color:#f2f2f2;
     border: 1px #ddd solid;
