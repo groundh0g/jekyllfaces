@@ -25,7 +25,6 @@ Many of these features are described in more detail in [the documentation]({{ si
 Jekyll Faces provides several specific folders to house content for certain features.
 
 * `books/` - If you want to write a book, consider using markdown. Jekyll Faces will keep track of your progress and book stats.
-* `contributors/` - Whether it's just you (or a team of content creators) churning out text for the site, you can list the bio(s) here. 
 * `docs/` - Does your project need to provide documentation to the users? Put your markdown in this folder to present the content to the reader with a table of contents sidebar. 
 * `webapps/` - If you're building a static web application, you can host it here to wrap the app with blog, news, and documentation.
 * `soon/index.md` - This is the page that renders the "Coming Soon" landing page. No voodoo here. Just make tweaks to this page directly.
@@ -44,6 +43,7 @@ When processing content in normal folders (like `books/` or `docs/`), Jekyll Fac
 
 The following collections are defined for use in Jekyll Faces:
 
+* `_content_contributors/` - the folks listed on the `contributors/index.md` page
 * `_content_features/` - the features listed on the `project/index.md` page
 * `_content_footer/` - the column(s) displayed at the bottom of every page
 * `_content_quotes/` - coming soon ...

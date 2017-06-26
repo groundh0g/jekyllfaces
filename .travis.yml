@@ -7,7 +7,7 @@ branches:
   - /v\d+\.\d+(\.\d+){0,1}/
 script:
   - bundle exec jekyll build
-  - bundle exec htmlproofer ./_site --only-4xx --check-favicon --check-html
+  - bundle exec htmlproofer ./_site --only-4xx --check-favicon --check-html --file-ignore /\/content_/
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer

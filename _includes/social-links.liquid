@@ -1,0 +1,57 @@
+{% assign html = "" %}
+
+{% assign snip = null %}
+{% if include.twitter %}
+  {% capture snip %}<a href="https://twitter.com/{{ include.twitter }}" target="_blank"><i class="fa fa-twitter"></i> @{{ include.twitter }}</a>{% endcapture %}
+{% endif %}
+{% if snip != null %}
+  {% if html != "" %}{% assign html = html | append: " &#124; " %}{% endif %}
+  {% assign html = html | append: snip %}
+{% endif %}
+
+{% assign snip = null %}
+{% if include.github %}
+  {% capture snip %}<a href="https://github.com/{{ include.github }}" target="_blank"><i class="fa fa-github"></i> {{ include.github }}</a>{% endcapture %}
+{% endif %}
+{% if snip != null %}
+  {% if html != "" %}{% assign html = html | append: " &#124; " %}{% endif %}
+  {% assign html = html | append: snip %}
+{% endif %}
+
+{% assign snip = null %}
+{% if include.facebook %}
+  {% capture snip %}<a href="https://www.facebook.com/{{ include.facebook }}" target="_blank"><i class="fa fa-facebook-square"></i> {{ include.facebook }}</a>{% endcapture %}
+{% endif %}
+{% if snip != null %}
+  {% if html != "" %}{% assign html = html | append: " &#124; " %}{% endif %}
+  {% assign html = html | append: snip %}
+{% endif %}
+
+{% assign snip = null %}
+{% if include.instagram %}
+  {% capture snip %}<a href="https://www.instagram.com/{{ include.instagram }}/" target="_blank"><i class="fa fa-instagram"></i> {{ include.instagram }}</a>{% endcapture %}
+{% endif %}
+{% if snip != null %}
+  {% if html != "" %}{% assign html = html | append: " &#124; " %}{% endif %}
+  {% assign html = html | append: snip %}
+{% endif %}
+
+{% assign snip = null %}
+{% if include.website %}
+  {% capture snip %}<a href="{{ include.website }}" target="_blank"><i class="fa fa-globe"></i> website</a>{% endcapture %}
+{% endif %}
+{% if snip != null %}
+  {% if html != "" %}{% assign html = html | append: " &#124; " %}{% endif %}
+  {% assign html = html | append: snip %}
+{% endif %}
+
+{% assign snip = null %}
+{% if include.amazon %}
+  {% capture snip %}<a href="{{ include.amazon }}" target="_blank"><i class="fa fa-amazon"></i> books</a>{% endcapture %}
+{% endif %}
+{% if snip != null %}
+  {% if html != "" %}{% assign html = html | append: " &#124; " %}{% endif %}
+  {% assign html = html | append: snip %}
+{% endif %}
+
+{{ html }}

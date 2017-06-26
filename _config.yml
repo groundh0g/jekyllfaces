@@ -37,9 +37,16 @@ exclude:
 github: [metadata]
 
 collections:
-  - content_footer
-  - content_features
-  - content_quotes
+  content_contributors:
+    output: true
+  content_docs:
+    output: true
+  content_features:
+    output: false
+  content_footer:
+    output: false
+  content_quotes:
+    output: true
 
 # jekyllfaces settings
 jekyllfaces:

@@ -1,24 +1,3 @@
-{% assign pages = site.pages | sort: "path" %}
-
-
-{% comment %}
-<div style="font-size:1.2em;">
-{% for file in pages %}
-    {% if file.path contains "docs/"%}
-        {% if file.path contains "index.md" %}
-        {% else %}
-
-&nbsp;{% if page.path contains file.path %}<i class="fa fa-file-text-o"></i>{% else %}<i class="fa fa-file-o"></i>{% endif %}
-<a href='{{ site.baseurl }}/{{ file.path | replace: ".md", ".html" }}'>{{ file.title | default: "Untitled" }}</a><br/>
-
-
-        {% endif %}
-    {% endif %}
-{% endfor %}
-</div>
-{% endcomment %}
-
-<div class="docs-toc">
 <!-- "the dimelter" as SHA256: [2aedbfad81b491c2][f4fdca7a68e65238][66ccdac6fa47b2d4][5f529196b56a5fe7] -->
 {% assign delimText = "[2aedbfad81b491c2]" %}
 {% assign delimPath = "[f4fdca7a68e65238]" %}
@@ -28,12 +7,12 @@
 {% assign groupAnyShownYet = false %}
 {% assign delimGroupToken = "[66ccdac6fa47b2d4]" %}
 {% assign groupHeaderValues = "" %}
-{% assign groupedPages = site.pages | sort: "dir" | group_by: "dir" %}
+{% assign groupedPages = site.pages | group_by: "dir" | sort: "name" %}
 {% capture html %}
 <ul>
-{% for gp in groupedPages %}
+{% for gp in groupedPages  %}
 {% if gp.name contains "/docs/" %}
-{% assign pages = gp.items | sort: "path" %}
+{% assign pages = gp.items %}
 {% for pg in pages %}
   {% assign foo = pg.dir | slice: 0, 6 %}
   {% if foo == "/docs/" %}
@@ -87,5 +66,6 @@
   {% endif %}
 {% endfor %}
 
+<div class="docs-toc">
 {{ html }}
 </div>
