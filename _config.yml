@@ -57,7 +57,30 @@ jekyllfaces:
   ## unused, maybe something for the future?
   framework: bootstrap # jekyll | bootstrap | skeleton | foundation
 
+  navbar:
+    #Home: /
+    #Blog: /blog/
+    #Books: /books/
+    #Project: /project/
+    Coming_Soon: /soon/
+    #Web_Apps: /webapps/
+    Contributors: /contributors/
+    Quotes: /quotes/
+  navbar_right:
+    Project_Docs: /docs/
+    Blog: /blog/
+    About: /about.html
+
   homepage: project # blog | project | soon | webapps
+
+  search: # valid values for following are: true | false | {number}
+    title:     true # always search
+    tags:      true # always search
+    keywords:  true # always search
+    excerpt:   2000 # only search when fewer than 2001 posts
+    inclPages: true # valid values are: true | false
+
+  404_page: sticky # badge | dog | droids | glass | link | milk | monster | potty | shrug | sticky | tweet | zork
 
   features:
     - blog     # what 99% of folks will use
@@ -78,15 +101,6 @@ jekyllfaces:
     #- ionicons # <i class="ionicons ion-alert"></i>
     #- material-design # <i class="material-icons">3d_rotation</i>
     #- octicons # <i class="mega-octicon octicon-alert"></i>
-
-  404_page: sticky # badge | dog | droids | glass | link | milk | monster | potty | shrug | sticky | tweet | zork
-
-  search: # valid values are: true | false | {number}
-    title:     true # always search
-    tags:      true # always search
-    keywords:  true # always search
-    excerpt:   2000 # only search when fewer than 2001 posts
-    inclPages: true # valid values are: true | false
 
   comments:
     provider: false # disqus | facebook | intensedebate | false
