@@ -21,7 +21,7 @@
         {% for file in pages %}
           {% if file %}
             <div class="col-md-{{ colWidth }} footer-item">
-              {{ file.content }}
+              {{ file.content | markdownify }}
             </div>
           {% endif %}
         {% endfor %}
