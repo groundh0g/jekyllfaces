@@ -2,8 +2,17 @@
 layout: page
 ---
 
+{% assign numPosts = 5 %}
+
 # Blog Entries
 
-Here are the 5 most recent blog posts. Click [here for the archive]({{ site.baseurl }}/blog/archive.html) of all posts.
+Here are the {{ numPosts }} most recent blog posts. Click [here for the archive]({{ site.baseurl }}/blog/archive.html) of all posts.
 
-{% include blog-list-posts.liquid post_limit=5 word_limit=75 %}
+{% for post in site.posts limit: numPosts %}
+## [{{ post.title | escape }}]({{ post.url}}) <small>{{ post.date | date: "%b %-d, %Y" }}</small>
+
+{{ post.excerpt | strip_html }}
+
+[<a href="{{ post.url }}">View&nbsp;Post</a>]
+
+{% endfor %}
