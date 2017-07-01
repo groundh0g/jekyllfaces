@@ -58,17 +58,18 @@ jekyllfaces:
   framework: bootstrap # jekyll | bootstrap | skeleton | foundation
 
   navbar:
-    #Home: /
+    Home: /
     #Blog: /blog/
-    #Books: /books/
-    #Project: /project/
+    Books: /books/
+    Project: /project/
     Coming_Soon: /soon/
-    #Web_Apps: /webapps/
+    Web_Apps: /webapps/
     Contributors: /contributors/
     Quotes: /quotes/
   navbar_right:
     Project_Docs: /docs/
     Blog: /blog/
+    Archive: /blog/archive/
     About: /about.html
 
   homepage: project # blog | project | soon | webapps

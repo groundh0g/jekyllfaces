@@ -32,34 +32,13 @@
                     {% if page.path == temp %}{% assign active = "active" %}{% endif %}
                     {% assign temp = temp | replace: ".html", ".md" %}
                     {% if page.path == temp %}{% assign active = "active" %}{% endif %}
+                  {% else %}
+                    {% assign temp = itemPath | replace: ".html", ".md" %}
+                    {% if page.path == temp %}{% assign active = "active" %}{% endif %}
                   {% endif %}
                   <li class='{{ active }}'>
                     <a href="{{ site.baseurl }}{{ item[1] }}">{{ item[0] | replace: "_", " " }}</a></li>
                 {% endfor %}
-
-
-                <!--
-                <li class='{% if page.path == "index.md" %}active{% endif %}'>
-                    <a href="{{ site.baseurl }}/index.html">Home</a></li>
-
-                <li class='{% if page.path contains "blog/index.md" %}active{% endif %}'>
-                    <a href="{{ site.baseurl }}/blog/index.html">Blog</a></li>
-
-                <li class='{% if page.path contains "books/index.md" %}active{% endif %}'>
-                    <a href="{{ site.baseurl }}/books/index.html">Books</a></li>
-
-                <li class='{% if page.path contains "project/index.md" %}active{% endif %}'>
-                    <a href="{{ site.baseurl }}/project/index.html">Project</a></li>
-
-                <li class='{% if page.path contains "soon/index.md" %}active{% endif %}'>
-                    <a href="{{ site.baseurl }}/soon/index.html">Coming Soon</a></li>
-
-                <li class='{% if page.path contains "webapps/index.md" %}active{% endif %}'>
-                    <a href="{{ site.baseurl }}/webapps/index.html">Web Apps</a></li>
-
-                <li class='{% if page.path contains "contributors/index.md" %}active{% endif %}'>
-                    <a href="{{ site.baseurl }}/contributors/index.html">Contributors</a></li>
-                -->
 
                 <!--
                 <li><a href="#">Link</a></li>
@@ -79,7 +58,6 @@
 
             </ul>
 
-
             {% if site.jekyllfaces.search %}
             <form class="navbar-form navbar-right">
                 <div class="form-group">
@@ -88,7 +66,6 @@
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
             {% endif %}
-
 
             <ul class="nav navbar-nav navbar-right">
 
@@ -99,28 +76,23 @@
                 {% assign firstChar = item[1] | slice: 0, 1 %}
                 {% assign itemPath = item[1] | slice: 1, i %}
                 {% if item[1] == "/" %}
-                {% if page.path == "index.md" %}{% assign active = "active" %}{% endif %}
+                  {% if page.path == "index.md" %}{% assign active = "active" %}{% endif %}
                 {% elsif page.path == item[1] %}
-                {% assign active = "active" %}
+                  {% assign active = "active" %}
                 {% elsif page.path == itemPath %}
-                {% assign active = "active" %}
+                  {% assign active = "active" %}
                 {% elsif lastChar == "/" %}
-                {% assign temp = itemPath | append: "index.md" %}
-                {% if page.path == temp %}{% assign active = "active" %}{% endif %}
-                {% assign temp = temp | replace: ".html", ".md" %}
-                {% if page.path == temp %}{% assign active = "active" %}{% endif %}
+                  {% assign temp = itemPath | append: "index.md" %}
+                  {% if page.path == temp %}{% assign active = "active" %}{% endif %}
+                  {% assign temp = temp | replace: ".html", ".md" %}
+                  {% if page.path == temp %}{% assign active = "active" %}{% endif %}
+                {% else %}
+                  {% assign temp = itemPath | replace: ".html", ".md" %}
+                  {% if page.path == temp %}{% assign active = "active" %}{% endif %}
                 {% endif %}
                 <li class='{{ active }}'>
                     <a href="{{ site.baseurl }}{{ item[1] }}">{{ item[0] | replace: "_", " " }}</a></li>
                 {% endfor %}
-
-<!--
-                <li class='{% if page.path contains "docs/" %}active{% endif %}'>
-                    <a href="{{ site.baseurl }}/docs/index.html">Project Docs</a></li>
-
-                <li class='{% if page.path contains "about.md" %}active{% endif %}'>
-                    <a href="{{ site.baseurl }}/about.html">About</a></li>
--->
 
                 <!--
                 <li class="dropdown">
@@ -140,10 +112,3 @@
 
     </div>
 </nav>
-
-<!--
-{{ page.path }}
-{% for feature in site.jekyllfaces.features %}
-{{ feature }} -
-{% endfor %}
--->
