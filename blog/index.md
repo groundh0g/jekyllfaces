@@ -6,7 +6,7 @@ layout: page
 
 # Blog Entries
 
-Here are the {{ numPosts }} most recent blog posts. Click [here for the archive]({{ site.baseurl }}/blog/archive.html) of all posts.
+Here are the {{ numPosts }} most recent blog posts. Click [here for the archive]({{ site.baseurl }}/blog/archive/) of all posts.
 
 {% for post in site.posts limit: numPosts %}
 ## [{{ post.title | escape }}]({{ post.url}}) <small>{{ post.date | date: "%b %-d, %Y" }}</small>
