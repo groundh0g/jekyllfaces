@@ -3,6 +3,5 @@
 
 ### Just Getting Started?
 
-<!-- {{ site.baseurl }}/docs/index.html -->
-Check out the [Project Docs](/docs/index.html).<br/>
+Check out the [Project Docs]({{ site.baseurl }}/docs/index.html).<br/>
 You should be up and running in no time.

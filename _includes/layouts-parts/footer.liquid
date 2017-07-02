@@ -20,7 +20,8 @@
       <div class="row">
         {% for file in pages %}
         <div class="col-md-{{ colWidth }} footer-item">
-          {{ file.content | markdownify }}
+          {% assign fileContent = file.content | replace: "{{ site.baseurl }}", site.baseurl %}
+          {{ fileContent | markdownify }}
         </div>
         {% endfor %}
       </div>

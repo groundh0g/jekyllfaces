@@ -3,9 +3,15 @@ layout: default
 ---
 
 <div class="container">
-  <h1>{{ page.title | escape }}</h1>
-  {{ page.date | date: "%b %-d, %Y" }}
+  <h1>{{ page.title | escape }} <small>{{ page.date | date: "%b %-d, %Y" }}</small></h1>
   <div class="post-content">
     {{ content }}
   </div>
+  <hr/>
+  {% capture blognav %}
+  {% if page.previous %}[&laquo; Previous Post]({{ page.previous.url }}){% endif %}
+  {% if page.previous and page.next %} | {% endif %}
+  {% if page.next %}[Next Post &raquo;]({{ page.next.url }}){% endif %}
+  {% endcapture %}
+  {{ blognav | markdownify }}
 </div>
