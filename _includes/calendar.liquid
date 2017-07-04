@@ -63,7 +63,7 @@
 {% assign THIS_MONTH = aDateInMonth | date: "%Y-%m" %}
 {% assign NEXT_MONTH = firstDateInNextMonth | date: "%Y-%m" %}
 {% assign postsForCalendar = "" %}
-{% if include.links or true %}
+{% if include.links or true %} <!-- TODO: isn't this always true? -->
   {% for post in site.posts %}
     {% assign month = post.date | date: "%Y-%m" %}
     {% if month == LAST_MONTH or month == THIS_MONTH or month == NEXT_MONTH %}
