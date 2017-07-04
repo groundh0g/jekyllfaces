@@ -94,3 +94,31 @@ footer {
     margin-bottom: 10px;
 }
 
+/* --- calendar.liquid CSS --- */
+.calendar-div {
+    background-color: #fff;
+    color: #000;
+    font-weight: normal;
+    border: none;
+    width:30%;
+    float:right;
+    margin: 5px;
+}
+
+.calendar-table,
+.calendar-day,
+.calendar-day-inactive,
+.calendar-day-post { border: #000 1px solid; }
+
+.calendar-row { }
+
+.calendar-header {
+    background-color: #000;
+    color: #fff;
+    font-size: 2.0em;
+}
+
+.calendar-day { }
+
+.calendar-day-inactive { background-color: #eee; color: #999; }
+.calendar-day-post     { background-color: #cfc; color: #000; }
