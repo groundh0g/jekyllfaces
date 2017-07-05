@@ -5,11 +5,11 @@ title: "Calendar Widget"
 
 The `calendar.liquid` widget renders a calendar for the month that contains the most recent post(s). Alternatively, you can specify a month to render.
 
-## Usage:
+## Usage
 
 `{{ "{" }}% include calendar.liquid [options] %}`
 
-## Options (style attribute):
+## Options (style attribute)
 
 The values of following parameters are injected into the `style` attribute of the generated HTML.
 
@@ -25,7 +25,7 @@ Per CSS rules, these values will override any styles you've applied via the `jek
 |`width`       | | the width of the calendar (% or px, most likely)  | | `width: [value]`
 |`float`       | | whether to float the calendar div (left or right) | | `float: [value]`
 
-## Options (class attribute):
+## Options (class attribute)
 
 The value of following parameter is injected into the `class` attribute of the generated HTML, as a prefix to the CSS class name. 
 
@@ -33,7 +33,7 @@ The value of following parameter is injected into the `class` attribute of the g
 |--------------|-|-------------
 `classPrefix`  | | a string to prepend to CSS class names in the calendar
 
-## Calendar CSS:
+## Calendar CSS
 
 The default CSS for the calendar widget, listed below, can be found in `jekyllfaces.css`.
 
