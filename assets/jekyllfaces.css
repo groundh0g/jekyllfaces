@@ -122,3 +122,8 @@ footer {
 
 .calendar-day-inactive { background-color: #eee; color: #999; }
 .calendar-day-post     { background-color: #cfc; color: #000; }
+
+/* --- countdown.liquid CSS --- */
+.countdown { color: #666; }
+.countdown-small { font-size:1.0em; text-align: center; }
+.countdown-large { font-size:1.5em; margin: 10px; }
