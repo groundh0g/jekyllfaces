@@ -1,5 +1,4 @@
 ---
-# yaml stub to suppress warnings in WebStorm
 ---
 
 var searchMatcher = function(posts) {

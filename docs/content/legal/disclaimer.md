@@ -1,10 +1,7 @@
 ---
 ---
 
-{% assign config = nil %}
-{% for setting in site.jekyllfaces %}
-  {% assign config = setting %}
-{% endfor %}
+{% include read-config.liquid %}
 
 {% assign defaultWebsite = config.metadata.title | default: "Example" | append: ".com" %}
 {% assign theCompany = config.legal.company | default: config.metadata.title | default: "The Company" %}

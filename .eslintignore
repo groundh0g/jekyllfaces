@@ -3,4 +3,4 @@ docs/_site/**/*.js
 Gruntfile.js
 .eslintrc.js
 **/*.min.js
-**/typeahead.bundle.js
+docs/assets/script/3rd-party/**/*.js
