@@ -1,0 +1,108 @@
+{% capture cfg_output %}
+
+{% assign cfg_version = site.jekyllfaces.version | default: "0.1.0" %}
+
+
+========[ Site Title, Tagline, and Description ]========
+
+{% assign cfg_title = "JekyllFaces" %}
+{% assign cfg_tagline = "The Jekyll helper. We hyde the scary parts." %}
+{% capture cfg_description %}
+    Inspired by JekyllBootstrap (plusjade/jekyll-bootstrap), JekyllFaces (groundh0g/jekyllfaces)
+    is built from the ground up to support Jekyll 3.x and Bootstrap 3.x,
+    while targeting the dependencies of GitHub Pages.
+{% endcapture %}
+
+========[ 404 Page ]========
+Specify a custom 404 page by setting cfg_http404 to one of the following values:
+[ badge | default | dog | droids | glass | link | milk | monster | potty | shrug | sticky | tweet | zork ]
+
+{% assign cfg_http404 = "sticky" %}
+
+####
+####
+####
+####    ========[ Search Options ]========
+Specify search options here:
+
+{% assign cfg_search_title = true %}
+{% assign cfg_search_tags = true %}
+{% assign cfg_search_keywords = true %}
+{% assign cfg_search_excerpt = 2000 %}
+{% assign cfg_search_pages = true %}
+{% assign cfg_search_posts = true %}
+
+####
+####
+####
+####    ========[ Layout Options ]========
+Specify layout options here:
+
+{% assign cfg_layout_homepage = nil %}      # specify a custom homepage, eg. "/custom.md"
+{% assign cfg_layout_css = "custom.css" %}  # loaded after theme's css files
+{% assign cfg_layout_js = "custom.js" %}    # loaded after theme's js files
+{% assign cfg_layout_use_cdn = false %}     # Use CDN (content delivery network), when supported.
+{% assign cfg_layout_minified = true %}     # Use *.min.css and *.min.js, when available.
+
+####
+####
+####
+####    ========[ Theme ]========
+Select a theme from the following values:
+[ default | cerulean | cosmo | cyborg | darkly | flatly | journal | lumen | paper | 
+  readable | sandstone | simplex | slate | spacelab | superhero | united | yeti ]
+
+{% assign cfg_layout_theme = "flatly" %}
+
+####
+####
+####
+####    ========[ Analytics ]========
+Select an analytics provider from the following values:
+[ google | facebook | ]
+
+{% assign cfg_analytics_provider = "google" %}
+{% assign cfg_analytics_token = "UA-0000000-00" %}
+
+####
+####
+####
+####    ========[ Comments ]========
+
+{% assign cfg_comments_provider = "facebook" %}
+{% assign cfg_comments_token = "UA-0000000-00" %}
+
+
+
+{% endcapture %}{% capture cfg_output %}
+
+===============================================
+===============================================
+========[ Do Not Edit Below This Line ]========
+===============================================
+===============================================
+
+{% assign cfg_title = cfg_title | default: site.jekyllfaces.title | default: "Missing Title" %}
+{% assign cfg_tagline = cfg_tagline | default: site.jekyllfaces.tagline | default: "Missing tagline." %}
+{% assign cfg_description = cfg_description | default: site.jekyllfaces.description | default: "No description." %}
+
+{% assign cfg_http404 = cfg_http404 | default: site.jekyllfaces.http404 | default: "default" %}
+
+{% assign cfg_search_title = cfg_search_title | default: site.jekyllfaces.search.title | default: true %}
+{% assign cfg_search_tags = cfg_search_tags | default: site.jekyllfaces.search.tags | default: true  %}
+{% assign cfg_search_keywords = cfg_search_keywords | default: site.jekyllfaces.search.keywords | default: true  %}
+{% assign cfg_search_excerpt = cfg_search_excerpt | default: site.jekyllfaces.search.excerpt | default: 2000  %}
+{% assign cfg_search_pages = cfg_search_pages | default: site.jekyllfaces.search.pages | default: true  %}
+{% assign cfg_search_posts = cfg_search_posts | default: site.jekyllfaces.search.posts | default: true  %}
+
+{% assign cfg_layout_homepage = cfg_layout_homepage | default: site.jekyllfaces.layout.homepage | default: nil %}
+{% assign cfg_layout_css = cfg_layout_css | default: site.jekyllfaces.layout.custom_css | default: "custom.css" %}
+{% assign cfg_layout_js = cfg_layout_js | default: site.jekyllfaces.layout.custom_js | default: "custom.js" %}
+{% assign cfg_layout_use_cdn = cfg_layout_use_cdn | default: site.jekyllfaces.layout.use_cdn | default: false %}
+{% assign cfg_layout_minified = cfg_layout_minified | default: site.jekyllfaces.layout.minified | default: false %}
+{% assign cfg_layout_theme = cfg_layout_theme | default: site.jekyllfaces.layout.theme | default: "default" %}
+
+===============================================
+===============================================
+
+{% endcapture %}{% assign cfg_output = "" %}

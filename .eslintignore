@@ -2,3 +2,5 @@ node_modules/**
 docs/_site/**/*.js
 Gruntfile.js
 .eslintrc.js
+**/*.min.js
+**/typeahead.bundle.js
