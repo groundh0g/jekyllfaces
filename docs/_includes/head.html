@@ -91,24 +91,36 @@
     {% assign cssPath = "/assets/themes/bootstrap." | append: cssTheme | append: ".min.css" %}
     <link rel="stylesheet" href='{{ cssPath | relative_url }}'>
 
-    <script src='{{ "/assets/script/jquery.min.js" | relative_url }}'></script>
-    <script src='{{ "/assets/script/bootstrap.bundle.min.js" | relative_url }}'></script>
+    <script src='{{ "/assets/script/3rd-party/jquery.min.js" | relative_url }}'></script>
+    <script src='{{ "/assets/script/3rd-party/bootstrap.bundle.min.js" | relative_url }}'></script>
 
   {% endif %}
 
-  <script src='{{ "/assets/script/typeahead.bundle.min.js" | relative_url }}'></script>
-  <script src='{{ "/assets/search.js" | relative_url }}'></script>
+  <script src='{{ "/assets/script/3rd-party/typeahead.bundle.min.js" | relative_url }}'></script>
+
+  <!-- JekyllFaces SCRIPT and STYLES -->
+
+  {% assign styles = site.pages | where_exp: "item", "item.path contains 'assets/style/jekyllfaces/'" %}
+  {% for css in styles %}
+  <link rel="stylesheet" href='{{ css.url | relative_url }}'>
+  {% endfor %}
+
+  {% assign scripts = site.pages | where_exp: "item", "item.path contains 'assets/script/jekyllfaces/'" %}
+  {% for js in scripts %}
+  <script src='{{ js.url | relative_url }}'></script>
+  {% endfor %}
 
   <!-- USER SCRIPT and STYLES -->
 
-  {% for css in config.customize.css %}
-    <link rel="stylesheet" href='{{ "/assets/" | append: css | relative_url }}'>
+  {% assign styles = site.pages | where_exp: "item", "item.path contains 'assets/style/custom/'" %}
+  {% for css in styles %}
+    <link rel="stylesheet" href='{{ css.url | relative_url }}'>
   {% endfor %}
 
-  {% for js in config.customize.js %}
-    <script src='{{ "/assets/" | append: js | relative_url }}'></script>
+  {% assign scripts = site.pages | where_exp: "item", "item.path contains 'assets/script/custom/'" %}
+  {% for js in scripts %}
+    <script src='{{ js.url | relative_url }}'></script>
   {% endfor %}
-
 
   <!-- FONT ICONS -->
 
