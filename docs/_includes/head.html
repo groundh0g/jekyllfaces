@@ -138,4 +138,16 @@
     {% endif%}
   </style>
 
+
+  <!-- Account for fixed navbar when navigating within page. -->
+  <!-- https://github.com/twbs/bootstrap/issues/1768#issuecomment-13306753 -->
+
+  {% if config.navbar.fixed %}
+    <script type="application/javascript">
+      var shiftAfterHashNavChange = function() { scrollBy(0,-90); };
+      window.addEventListener("hashchange", shiftAfterHashNavChange);
+      $(document).ready(function() { if(window.location.hash) shiftAfterHashNavChange(); });
+    </script>
+  {% endif %}
+
 </head>
