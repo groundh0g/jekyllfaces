@@ -1,0 +1,16 @@
+{
+    // https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md
+
+  "comment": "All rules",
+  "default": true,
+
+  "MD002": false, // allow top line to be non-H1
+  "MD009": false, // allow trailing spaces
+  "MD013": false, // allow lines > 80 characters
+  "MD026": false, // allow trailing punctuation in headers
+  "MD033": false, // allow inline HTML
+  "MD040": false, // allow un-hinted code blocks
+  "MD041": false, // allow top line to be non-H1
+
+  "IgnoreThis": "a bogus last line"
+}

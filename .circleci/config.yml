@@ -1,0 +1,51 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.4.1-node
+    environment:
+      - NOKOGIRI_USE_SYSTEM_LIBRARIES: true
+    branches:
+      only:
+        - clean-start
+    steps:
+      - checkout
+
+# --- Install Tools ---
+
+      - run:
+          name: install node goodies
+          command: |
+            # sudo npm install
+            npm install
+
+      - run:
+          name: install ruby/gem goodies
+          command: |
+            # sudo npm run init-gems
+            npm run init-gems
+
+# --- Run Build Steps ---
+
+      # css reset? sass/less? [https://github.com/necolas/normalize.css]
+      # prettifier? uglifier?
+
+# --- Run Linters ---
+
+      - run:
+          name: run all linters
+          command: |
+            npm run test
+
+      # TODO - Add to CI (?): accessibility checker [https://github.com/pa11y/pa11y-ci] or ...
+      # TODO - Add to CI (?): accessibility checker [https://github.com/evcohen/eslint-plugin-jsx-a11y]
+
+      # TODO -
+
+# --- Run Unit Tests ---
+# --- Run Coverage Tests ---
+# --- Run Other Tests ---
+
+      # TODO - ADD to BUILD (?): css reset (as npm run script) [https://github.com/necolas/normalize.css]
+      # TODO - ADD to BUILD (?): prettifier (as npm run script) [ ??? ]
+

@@ -4,7 +4,7 @@ Jekyll is a great blogging platform, but to make it really shine, you need to ma
 
 Check us out at [JekyllFaces.com](http://jekyllfaces.com/)!
 
-> **NOTE:** This project isn't quite ready for primetime. It's getting there, though. ETA is first part of July, 2017.
+> **NOTE:** This project isn't quite ready for primetime. It's getting there, though. ETA is first part of July, 2018.
 
 [![Build Status](https://travis-ci.org/groundh0g/jekyllfaces.svg?branch=gh-pages)](https://travis-ci.org/groundh0g/jekyllfaces)
 
