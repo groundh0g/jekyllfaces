@@ -1,0 +1,11 @@
+<!--
+  zondicons:   false # one of: false | local # https://www.zondicons.com/
+--!>
+
+{% case include.config.fonticons.zondicons.include %}
+{% when "local" %}
+    <link rel="stylesheet" href='{{ "/assets/fonticons/zondicons-0.0.5/zondicons.css" | relative_url }}'>
+{% when "cdn" %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/zondicons@0.0.5/zondicons.css" integrity="sha256-zUCae5Jv8bQuyoyjc6/4FXm7gjxS+dRVewKtcRDTDq4=" crossorigin="anonymous">
+{% endcase %}
+

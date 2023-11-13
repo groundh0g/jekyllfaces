@@ -1,0 +1,52 @@
+{% assign config = include.config %}
+{% unless config %}
+  {% include read-config.liquid %}
+{% endunless %}
+
+<div class="countdown-wrapper"> Next term in:
+    <span class="countdown">
+    <!--    <span id="countdown-days">0</span>d-->
+        <span id="countdown-hours">0</span>h
+        <span id="countdown-minutes">0</span>m
+        <span id="countdown-seconds">0</span>s
+    </span>
+</div>
+
+<script type="text/javascript">
+    var timer;
+
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+
+    var end = Math.floor(new Date().valueOf() / _day) * _day + _day;
+
+    function initCountdown() {
+        end = Math.floor(new Date().valueOf() / _day) * _day + _day;
+        showRemaining();
+        timer = setInterval(() => {
+            showRemaining();
+        }, _second);
+    }
+
+    function showRemaining() {
+        var now = new Date();
+        var distance = end - now;
+        if (distance < 0) {
+            distance = 0;
+            clearInterval(timer);
+            setTimeout(() => {
+                window.location.reload();
+            }, 500);
+            // initCountdown();
+        }
+
+        // $("#countdown-days").text(String(Math.floor(distance / _day)).padStart(2, '0'));
+        $("#countdown-hours").text(String(Math.floor((distance % _day) / _hour)).padStart(2, '0'));
+        $("#countdown-minutes").text(String(Math.floor((distance % _hour) / _minute)).padStart(2, '0'));
+        $("#countdown-seconds").text(String(Math.floor((distance % _minute) / _second)).padStart(2, '0'));
+    }
+
+    initCountdown();
+</script>

@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-{% include read-config.liquid %}
 <html lang='{{ page.lang | default: config.metadata.lang | default: site.lang | default: "en" }}'>
 
-  {% include head.html %}
+{% assign config = include.config %}
+{% unless config %}
+  {% include read-config.liquid %}
+{% endunless %}
 
-  <body>
+  {% include head.html config=config %}
 
-    {% include header.html %}
+  <body class='{{ page.class | default: "" }} {{ config.customize.background | default: "" }}'>
+    <div class="whole-page-div">
+
+    {% include header.html config=config %}
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper container">
@@ -14,8 +19,9 @@
       </div>
     </main>
 
-    {% include footer.html %}
+    {% include footer.html config=config %}
 
+    </div>
   </body>
 
 </html>

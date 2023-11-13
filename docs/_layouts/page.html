@@ -2,6 +2,11 @@
 layout: default
 ---
 
+{% assign config = include.config %}
+{% unless config %}
+  {% include read-config.liquid %}
+{% endunless %}
+
 <article class="post">
 
   <header class="post-header">
@@ -14,5 +19,5 @@ layout: default
     {{ content }}
   </div>
 
-  {% include comments.liquid %}
+  {% include comments.liquid config=config %}
 </article>

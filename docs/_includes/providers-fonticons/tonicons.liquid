@@ -1,0 +1,10 @@
+<!--
+  tonicons:    false # one of: false | local # https://www.tonicons.com/font-tonicons/
+--!>
+
+{% case include.config.fonticons.tonicons.include %}
+{% when "local" %}
+    <link rel="stylesheet" href='{{ "/assets/fonticons/tonicons/outline/style.css" | relative_url }}'>
+    <link rel="stylesheet" href='{{ "/assets/fonticons/tonicons/solid/style.css" | relative_url }}'>
+{% endcase %}
+

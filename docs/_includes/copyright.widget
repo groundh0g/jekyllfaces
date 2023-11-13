@@ -1,0 +1,20 @@
+{% assign config = include.config %}
+{% unless config %}
+    {% include read-config.liquid %}
+{% endunless %}
+
+{% assign company = include.company | default: config.metadata.legal.company | default: "" %}
+{% assign founded = include.founded | default: config.metadata.legal.founded %}
+
+{% if company %}
+  {% assign company = company | prepend: "by " %}
+  {% assign currentYear = "now" | date: "%Y"%}
+  {% assign foundedYear = founded | default: currentYear | strip %}
+  {% assign copyrightMessage = "Copyright &copy; " | append: foundedYear %}
+  {% if foundedYear != currentYear %}
+    {% assign copyrightMessage = copyrightMessage | append: " - " | append: currentYear %}
+  {% endif %}
+  <div class="copyright">
+    {{ copyrightMessage }} {{ company }}
+  </div>
+{% endif %}

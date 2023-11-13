@@ -1,48 +1,50 @@
-<!--
-<footer class="site-footer">
+{% assign config = include.config %}
+{% unless config %}
+  {% include read-config.liquid %}
+{% endunless %}
 
-  <div class="wrapper">
+<footer class="site-footer bg-dark navbar-dark">
 
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
+  <div class="container">
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>
-            {% if site.author %}
-              {{ site.author | escape }}
-            {% else %}
-              {{ site.title | escape }}
+    {% assign rowCount = 0 %}
+    {% for row in config.footer.rows %}
+      {% assign align = row.align | default: "left" %}
+      {% assign colCount = 0 %}
+      {% assign colWidth = 0 %}
+      {% assign rowCount = rowCount | plus: 1 %}
+      {% assign rowAlign = row.align | default: "left" | prepend: "text-align-" %}
+      <div class="row {{ rowAlign }}">
+        {% for col in row.columns %}
+          {% assign colCount = colCount | plus: 1 %}
+          {% assign colWidth = colWidth | plus: col.width %}
+          {% assign colAlign = col.align | default: "left" | prepend: "text-align-" %}
+          <div class="col-md-{{ col.width}} {{ colAlign }}">
+            {% if col.content == "copyright" %}
+              {% include copyright.widget config=config %}
+            {% elsif col.content %}
+              {% assign content = col.content | trim %}
+              {% assign firstChar = content | slice: 0 %}
+              {% if "/" == firstChar %}{% assign content = content | slice: 1, 9999 %}{% endif %}
+              {% assign pg = site.pages | where_exp: "page", "content == page.path" | first %}
+
+              {{ pg.content | markdownify }}
+
             {% endif %}
-            </li>
-            {% if site.email %}
-            <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {% endif %}
-        </ul>
+          </div>
+        {% endfor %}
       </div>
 
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
+      {% if colWidth != 12 %}
+        <div class="alert alert-danger" role="alert">
+          {% capture message %}**ERROR:** Total column width in footer row {{ rowCount }} must be exactly 12, but is actually {{ colWidth }}. Check your settings in '/_jekyllfaces/config.md'.{% endcapture %}
+          {{ message | markdownify }}
+        </div
+      {% endif %}
 
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description | escape }}</p>
-      </div>
-    </div>
+    {% endfor %}
 
   </div>
 
 </footer>
--->
+

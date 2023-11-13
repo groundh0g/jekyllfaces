@@ -1,0 +1,57 @@
+{% assign config = include.config %}
+{% unless config %}
+  {% include read-config.liquid %}
+{% endunless %}
+
+{% assign hr_config = page.hr | default: config.widgets.defaults.hr %}
+
+{% assign hr_size = include.size | default: page.hr.size | default: config.widgets.hr.size %}
+{% assign hr_color = include.color | default: page.hr.color | default: config.widgets.hr.color %}
+{% assign hr_opacity = include.opacity | default: page.hr.opacity | default: config.widgets.hr.opacity %}
+
+{% if hr_size or hr_color or hr_opacity %}
+  {% assign hr_class = "border" %}
+  {% if hr_size %}{% assign hr_class = hr_class | append: " border-" | append: hr_size %}{% endif %}
+  {% if hr_color %}{% assign hr_class = hr_class | append: " border-" | append: hr_color %}{% endif %}
+  {% if hr_opacity %}{% assign hr_class = hr_class | append: " opacity-" | append: hr_opacity %}{% endif %}
+  <hr class="{{ hr_class }}" />
+{% else %}
+
+{% capture capture_markdown %}
+
+## Missing Configuration
+
+This `hr` widget is not configured. You may configure it in one of the following ways:
+
+1. Add the configuration to your page header YAML, named "hr".
+
+```
+---
+hr:
+  color:   light # one of: light | dark | primary | secondary | success | info | warning | danger
+  size:    2     # one of: 1 | 2 | 3 | 4 | 5
+  opacity: 75    # one of: 0 | 25 | 50 | 75 | 100
+---
+```
+
+1. Add the configuration to your config.md YAML, named "hr", under "widgets".
+
+```
+---
+widgets:
+  hr:
+    color:   light # one of: light | dark | primary | secondary | success | info | warning | danger
+    size:    2     # one of: 1 | 2 | 3 | 4 | 5
+    opacity: 75    # one of: 0 | 25 | 50 | 75 | 100
+---
+```
+
+1. Pass in the size, color, and/or opacity to the control.
+
+```
+{% raw %}{% include hr.widget size=1 opacity=25 color="primary" %}{% endraw%}
+```
+
+{% endcapture %}{{ capture_markdown | markdownify }}
+
+{% endif %}

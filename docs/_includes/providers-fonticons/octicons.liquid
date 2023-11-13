@@ -1,4 +1,4 @@
-{% case include.config.fonticons.octicons %}
+{% case include.config.fonticons.octicons.include %}
 {% when "local" %}
     <link rel="stylesheet" href='{{ "/assets/fonticons/octicons.css" | relative_url }}'>
 {% when "cdn" %}

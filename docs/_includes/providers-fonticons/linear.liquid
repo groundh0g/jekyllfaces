@@ -1,0 +1,11 @@
+<!--
+  linear:      false # one of: false | local # https://linearicons.com/free
+--!>
+
+{% case include.config.fonticons.linear.include %}
+{% when "local" %}
+    <link rel="stylesheet" href='{{ "/assets/fonticons/liniaricons-1.0.0/style.css" | relative_url }}'>
+{% when "cdn" %}
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+{% endcase %}
+

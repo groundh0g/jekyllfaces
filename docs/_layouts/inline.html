@@ -1,0 +1,8 @@
+{% assign config = include.config %}
+{% unless config %}
+  {% include read-config.liquid %}
+{% endunless %}
+
+<div class="inline-content">
+    {{ content }}
+</div>

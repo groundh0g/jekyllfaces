@@ -27,3 +27,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # used for linting the generated HTML
 gem 'html-proofer'
+gem "webrick", "~> 1.8"

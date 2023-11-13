@@ -1,0 +1,11 @@
+<!--
+  themify:     falae # one of: false | local | cdn # https://themify.me/themify-icons
+--!>
+
+{% case include.config.fonticons.themify.include %}
+{% when "local" %}
+    <link rel="stylesheet" href='{{ "/assets/fonticons/themify-1.0.6/themify-icons.min.css" | relative_url }}'>
+{% when "cdn" %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/themify-icons@1.0.6/themify-icons.min.css">
+{% endcase %}
+

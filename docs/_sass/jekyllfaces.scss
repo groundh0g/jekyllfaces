@@ -1,0 +1,54 @@
+.text-align-left { text-align: left; }
+.text-align-right { text-align: right; }
+.text-align-center { text-align: center; }
+.text-align-ignore { text-align: inherit; }
+
+@media (max-width: 768px) {
+  .text-align-left { text-align: center; }
+  .text-align-right { text-align: center; }
+  .text-align-center { text-align: center; }
+  //.text-align-ignore { text-align: inherit; }
+
+  h2, h3 {
+    border-bottom: 1px solid #888;
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+.whole-page-div {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  min-height: 100%;
+}
+
+footer {
+  padding-top: 2vmin;
+  padding-bottom: 32000px;
+  margin-bottom: -32000px;
+}
+
+footer .row {
+  padding-top: 1vmin;
+  padding-bottom: 1vmin;
+}
+
+.newsletter-signup {
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: inherit;
+  width: 100%;
+}
+
+div.blog-entity img.center-cropped {
+  width:  20vmin;
+  height: 20vmin;
+  background-position: center center;
+  background-repeat: no-repeat;
+}

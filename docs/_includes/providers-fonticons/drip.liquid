@@ -1,0 +1,11 @@
+<!--
+  drip:        false # one of: false | local | cdn # http://demo.amitjakhu.com/dripicons/
+--!>
+
+{% case include.config.fonticons.drip.include %}
+{% when "local" %}
+    <link rel="stylesheet" href='{{ "/assets/fonticons/dripicons-2.0.0/webfont.css" | relative_url }}'>
+{% when "cdn" %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dripicons/2.0.0/webfont.css" integrity="sha512-uws2d1mzntk5UyAzfDcNN9wAN3OoSsztsVfUzRvq+DOMZYgUZH6HJ97g4y2Nk6TvDlIdd0GBuDjaZ74DoASdig==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endcase %}
+

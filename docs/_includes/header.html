@@ -1,43 +1,73 @@
-{% include read-config.liquid %}
+{% assign config = include.config %}
+{% unless config %}
+  {% include read-config.liquid %}
+{% endunless %}
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary navbar-nav {% if config.navbar.fixed %}fixed-top{% endif%}">
-  {% if config.navbar.container %}<div class="container">{% endif %}
-  <a class="navbar-brand" href='{{ "/" | absolute_path }}'>{{ config.metadata.title }}</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+{% if config.navbar and config.navbar.show == true %}
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+  {% assign navbar_text_color = config.navbar.color.tint | default: "dark" | prepend: "navbar-" %}
+  {% assign navbar_back_color = config.navbar.color.back | default: "dark" | prepend: "bg-" %}
+  {% if config.navbar.fixed == true %}{% assign navbar_fixed = "fixed-top" %}{% endif %}
+  {% assign navbar_logo = config.navbar.menu.homepage.icon | relative_url %}
+  {% assign navbar_fluid = "container" %}
+  {% if config.navbar.width == "fluid" %}{% assign navbar_fluid = "container-fluid" %}{% endif %}
+
+  <nav class="navbar navbar-expand-lg navbar-nav {{ navbar_back_color }} {{ navbar_text_color }} {{ navbar_fixed }}">
+    <div class="{{ navbar_fluid }}">
+      {% if config.navbar.menu.homepage %}
+      {% assign active_underline_class = "" %}
+      {% if "/" == page.url and config.navbar.menu.homepage.underlineActive and config.navbar.underlineActive %}{% assign active_underline_class = "active underlineActive" %}{% endif %}
+      <a class="navbar-brand {{ active_underline_class }}" href='{{ "/" | relative_url }}'>{% if navbar_logo %}<img src='{{ navbar_logo }}' alt="site logo" width="24" height="24" /> {% endif %}{{ config.navbar.menu.homepage.text | default: config.metadata.title }}</a>
+      {% endif %}
+<!--      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--        <span class="navbar-toggler-icon"></span>-->
+<!--      </button>-->
+      {% assign align_menu_items_right = "" %}
+      {% if config.navbar.menu.pullRight %}{% assign align_menu_items_right = "d-flex justify-content-end" %}{% endif %}
+      <div class="{{ align_menu_items_right }}">
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav me-auto">
+
+          {% assign active_underline_class = "" %}{% if config.navbar.underlineActive %}{% assign active_underline_class = " underlineActive" %}{% endif %}
+          {% for item in config.navbar.menu.items %}
+            {% assign active_class = "" %}
+            {% if item.link == page.url %}{% assign active_class = "active" %}{% endif %}
+            {% if page.url contains item.activeWhenContains %}{% assign active_class = "active" %}{% endif %}
+            {% if item.items %}
+              <li class="nav-item dropdown">
+                <a class='nav-link dropdown-toggle {{ active_class | append: active_underline_class }}' data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ item.item | default: "unlabeled" }}</a>
+                <div class="dropdown-menu">
+                  {% for child in item.items %}
+                    {% assign active_class = "" %}
+                    {% if child.link == page.permalink %}{% assign active_class = "active" %}{% endif %}
+                    <a class='dropdown-item {{ active_class | append: active_underline_class }}' href="{{ child.link | relative_url }}" {% if item.targ %}target="{{ item.targ }}"{% endif %}>{{ child.item | default: "unlabeled" }}</a>
+                  {% endfor %}
+                </div>
+              </li>
+            {% else %}
+              <li class="nav-item">
+                {% assign active_class = "" %}
+                {% if page.url contains item.activeWhenContains %}{% assign active_class = "active" %}{% endif %}
+                {% if item.link == page.permalink %}{% assign active_class = "active" %}{% endif %}
+                <a class='nav-link {{ active_class | append: active_underline_class }}' href='{{ item.link | relative_url }}' {% if item.targ %}target="{{ item.targ }}"{% endif %}>{{ item.item | default: "unlabeled" }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+
+          </ul>
+
+          {% if config.navbar.search %}
+          <form class="d-flex">
+            <input class="form-control me-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          {% endif %}
+
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0" method="get" action='{{ "/search.html" | relative_path | append: "?q=joe+hall" }}'>
-      <div>
-      <input class="form-control mr-sm-2 typeahead" type="text" id="txtSearch" placeholder="Search" aria-label="Search">
       </div>
-      <input id="hidSearch" type="hidden" name="q" value="joe hall" />
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-
-  {% if config.navbar.container %}</div>{% endif %}
-</nav>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+{% endif %}

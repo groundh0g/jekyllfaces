@@ -2,7 +2,11 @@
 
     {% capture newLine %}
     {% endcapture %}
-    {% include read-config.liquid %}
+
+    {% assign config = include.config %}
+    {% unless config %}
+      {% include read-config.liquid %}
+    {% endunless %}
 
 {% assign strip_chars = config.search.strip_chars %}
     {% if config.search.strip_quote %}{% assign strip_chars = strip_chars | append: '"' %}{% endif %}

@@ -1,0 +1,34 @@
+{% assign config = include.config %}
+{% unless config %}
+  {% include read-config.liquid %}
+{% endunless %}
+
+{% assign collapsible = include.collapsible | default: page.gist.collapsible | | default: config.widgets.gist.collapsible | default: true %}
+
+{% if collapsible %}
+
+<script type="application/javascript">
+    const showHideExample{{ include.id | replace: "-", "" }} = (e) => {
+        const showText = 'Show Example';
+        const hideText = 'Hide Example';
+        const isShow = e.innerText.indexOf(showText) !== -1;
+        e.innerText = isShow ? hideText : showText;
+        const div = document.querySelectorAll(`#{{ include.id }}`)[0];
+        if(isShow) {
+            div.classList.remove('hidden');
+        } else {
+            div.classList.add('hidden');
+        }
+    }
+</script>
+
+<p><a id="anchor-{{ include.id }}" class="btn btn-success btn-sm" href="#null" onclick="showHideExample{{ include.id | replace: "-", "" }}(this);">Show Example</a>
+<div class="gist-div hidden" id="{{ include.id }}">
+
+{% endif %}
+
+{% gist include.sha include.file %}
+
+{% if collapsible %}
+</div></p>
+{% endif %}

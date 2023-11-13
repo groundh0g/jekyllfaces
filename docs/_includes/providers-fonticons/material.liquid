@@ -1,4 +1,4 @@
-{% case include.config.fonticons.material %}
+{% case include.config.fonticons.material.include %}
 {% when "local" %}
     <link rel="stylesheet" href='{{ "/assets/fonticons/material.css" | relative_url }}'>
 {% when "cdn" %}

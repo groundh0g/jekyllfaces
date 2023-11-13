@@ -1,0 +1,11 @@
+<!--
+  lineicons:   false # one of: false | local | cdn # https://lineicons.com/download/
+--!>
+
+{% case include.config.fonticons.lineicons.include %}
+{% when "local" %}
+    <link rel="stylesheet" href='{{ "/assets/fonticons/lineicons-4.0.0/css/icons.css" | relative_url }}'>
+{% when "cdn" %}
+    <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
+{% endcase %}
+

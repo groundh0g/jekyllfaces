@@ -1,0 +1,99 @@
+{% assign config = include.config %}
+{% unless config %}
+  {% include read-config.liquid %}
+{% endunless %}
+
+{% assign strict = true %}
+{% if config.widgets.strict != nil %}{% assign strict = config.widgets.strict %}{% endif %}
+{% if page.widgets.strict != nil %}{% assign strict = page.widgets.strict %}{% endif %}
+
+{% assign MSG_MISSING_FILENAME = "missing filename" %}
+{% assign file_name = include.file | default: MSG_MISSING_FILENAME | split: "/" | last %}
+{% assign widget_id = include.id | default: file_name | slugify %}
+{% assign alt_label = include.alt %}{% if alt_label == nil %}{% assign alt_label = file_name | slugify | replace: "-", " " %}{% endif %}
+
+{% assign collapsible = true %}
+{% if page.gists.collapsible != nil  %}{% assign collapsible = page.gists.collapsible %}{% endif %}
+{% if include.collapsible != nil %}{% assign collapsible = include.collapsible %}{% endif %}
+
+{% assign errors = "" | split: "," %}
+{% if strict == true and (include.id == nil or widget_id == (MSG_MISSING_FILENAME | slugify)) %}{% assign errors = errors | push: "Missing parameter, 'id'." %}{% endif %}
+{% if strict == true and (include.file == nil or file_name == MSG_MISSING_FILENAME) %}{% assign errors = errors | push: "Missing parameter, 'file'." %}{% endif %}
+{% if strict == true and (include.alt == nil or alt_label == (file_name | slugify | replace: "-", " ")) %}{% assign errors = errors | push: "Missing parameter, 'alt'." %}{% endif %}
+
+{% if errors.size > 0 %}
+
+  {% capture capture_markdown %}
+
+## Missing Configuration
+
+This `image` widget is not fully configured. The following errors were detected:
+
+{% for item in errors %}
+- {{ item }}
+{% endfor %}
+
+You may configure it in one of the following ways:
+
+1. Disable strict mode in the `_jekyllfaces/config.md` file.
+
+    ```
+    ---
+    widgets:
+      strict: false
+    ---
+    ```
+
+2. Disable strict mode in the page header YAML.
+
+    ```
+    ---
+    widgets:
+      strict: false
+    ---
+    ```
+
+3. Pass in the id, alt, and file parameters to the control.
+
+  - id - a unique identifier for the anchor tag that shows and hides the image
+  - file - you must specify a path to the image
+  - alt - the alt text to be used by accessibility tools
+
+    ```
+    {% raw %}{% include image.widget id="example-screen-1" file="/assets/images/screen-1.png" alt="the desktop contents" %}{% endraw%}
+    ```
+
+  {% endcapture %}{{ capture_markdown | markdownify }}
+
+{% else %}
+
+  {% if collapsible %}
+
+  <script type="application/javascript">
+    const showHideImage{{ include.id | replace: "-", "" }} = (e) => {
+      const showText = 'Show Image';
+      const hideText = 'Hide Image';
+      const isShow = e.innerText.indexOf(showText) !== -1;
+      e.innerText = isShow ? hideText : showText;
+      const div = document.querySelectorAll(`#{{ widget_id }}`)[0];
+      if(isShow) {
+        div.classList.remove('hidden');
+      } else {
+        div.classList.add('hidden');
+      }
+    }
+  </script>
+
+  <p><a id="anchor-{{ widget_id }}" class="btn btn-success btn-sm" href="#null" onclick='showHideImage{{ widget_id | replace: "-", "" }}(this);'>Show Image</a>
+  <div class="image-div hidden" id="{{ widget_id }}">
+
+  {% endif %}
+
+  <img class="image-img" src='{{ include.file | relative_url }}' alt='{{ include.alt | default: file_name }}' />
+
+
+  {% if collapsible %}
+  </div></p>
+  {% endif %}
+
+{% endif %}
