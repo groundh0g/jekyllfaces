@@ -2,7 +2,7 @@
 layout: page
 title: Recent Blog Posts
 showTitle: false
-permalink: /blog/
+permalink: /blog/latest/
 ---
 
 {% assign config = include.config %}
