@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "Feature Spotlight - Configuration"
+title:  "Feature - Configuration"
 categories: spotlight configuration
 author: groundh0g
+image: /assets/images/blog/feature-configuration-themes.png
 ---
 
 One of the aspects of [Jekyll](https://jekyllrb.com/){:target="_blank"} that has always bothered me is that when you update any of the site's settings in the `_config.yml`, those changes don't show up until you stop and start the Jekyll server again. For JekyllFaces, I wanted any edits that you make to be immediately reflected in the running server.

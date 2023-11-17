@@ -1,0 +1,71 @@
+
+.blog-theme-blue .blog-item,
+.blog-theme-blue .blog-item a:visited,
+.blog-theme-blue .blog-item a {
+  background-color: darkslateblue;
+  color: antiquewhite;
+}
+
+.blog-theme-green .blog-item,
+.blog-theme-green .blog-item a:visited,
+.blog-theme-green .blog-item a {
+  background-color: darkgreen;
+  color: antiquewhite;
+}
+
+.blog-theme-red .blog-item,
+.blog-theme-red .blog-item a:visited,
+.blog-theme-red .blog-item a {
+  background-color: maroon;
+  color: antiquewhite;
+}
+
+.blog-theme-yellow .blog-item,
+.blog-theme-yellow .blog-item a:visited,
+.blog-theme-yellow .blog-item a {
+  background-color: darkgoldenrod;
+  color: antiquewhite;
+}
+
+.blog-theme-brown .blog-item,
+.blog-theme-brown .blog-item a:visited,
+.blog-theme-brown .blog-item a {
+  background-color: darken(darkorange, 30%);
+  color: antiquewhite;
+}
+
+.blog-theme-orange .blog-item,
+.blog-theme-orange .blog-item a:visited,
+.blog-theme-orange .blog-item a {
+  background-color: darken(darkorange, 10%);
+  color: antiquewhite;
+}
+
+.blog-theme-gray .blog-item,
+.blog-theme-gray .blog-item a:visited,
+.blog-theme-gray .blog-item a {
+  background-color: darken(dimgray, 15%);
+  color: antiquewhite;
+}
+
+.blog-theme-slategray .blog-item,
+.blog-theme-slategray .blog-item a:visited,
+.blog-theme-slategray .blog-item a {
+  background-color: darkslategray;
+  color: antiquewhite;
+}
+
+.blog-theme-purple .blog-item,
+.blog-theme-purple .blog-item a:visited,
+.blog-theme-purple .blog-item a {
+  background-color: darken(darkmagenta, 10%);
+  color: antiquewhite;
+}
+
+.plainly.blog-item,
+.plainly.blog-item a:visited,
+.plainly.blog-theme-purple .blog-item a {
+  background-color: inherit;
+  color: inherit;
+}
+

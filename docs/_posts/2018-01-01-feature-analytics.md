@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "Feature Spotlight - Analytics"
+title:  "Feature - Analytics"
 categories: spotlight analytics
 author: groundh0g
+image: /assets/images/blog/feature-analytics-example.jpg
 ---
 
 Analytics help you understand who your audience is, what they're looking for, how they're finding your site, and what they do during their visit.

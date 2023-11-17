@@ -1,8 +1,10 @@
 ---
 layout: post
-title:  "Feature Spotlight - Comments"
+title:  "Feature - Comments"
+featured: true
 categories: spotlight comments
 author: groundh0g
+image: /assets/images/blog/feature-comments-example.png
 ---
 
 Just because your site is serving static content doesn't mean that it can't be interactive as well. Comments are a great way to engage your visitors.

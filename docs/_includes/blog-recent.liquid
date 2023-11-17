@@ -3,6 +3,21 @@
   {% include read-config.liquid %}
 {% endunless %}
 
-{% assign recent = site.posts %}
+{% assign maxPosts = include.maxPosts | default: 8 %}
 
-{% include providers-blog-nav/newsly.liquid config=config posts=recent %}
+<div class="blog-theme-{{ config.customize.blogtheme |  default: "" }}">
+
+{% case config.customize.blogstyle %}
+  {% when "newsly" %}
+    {% include providers-blog-nav/newsly.liquid config=config maxPosts=maxPosts posts=include.posts %}
+  {% when "shoply" %}
+    {% include providers-blog-nav/shoply.liquid config=config maxPosts=maxPosts posts=include.posts %}
+  {% when "plainly" %}
+    {% include providers-blog-nav/plainly.liquid config=config maxPosts=maxPosts posts=include.posts %}
+  {% when "custom" %}
+    {% include providers-blog-nav/custom.liquid config=config maxPosts=maxPosts posts=include.posts %}
+  {% else %}
+    {% include providers-blog-nav/default.liquid config=config maxPosts=maxPosts posts=include.posts %}
+{% endcase %}
+
+</div>

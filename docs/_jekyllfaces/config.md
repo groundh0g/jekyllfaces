@@ -129,7 +129,8 @@ customize:
   css: [ "main.css", "tiles.css" ] # array of stylesheets to load after other styles
   #js:  [ "main.js"  ]   # array of javascripts to load after other scripts
   homepage:   custom     # one of: books | contributors | custom | docs | landing | legal | soon | webapps
-  blogstyle:  newsly     # one of: newsly | shoply | plainly | default 
+  blogstyle:  shoply     # one of: newsly | shoply | plainly | default | custom
+  blogtheme:  gray       # one of: red | green | blue | yellow | brown | purple | gray | slategray  
 
 widgets:
   hr:

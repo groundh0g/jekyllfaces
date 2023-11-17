@@ -3,6 +3,7 @@ layout: post
 title:  "JekyllFaces is Coming Soon!"
 categories: news
 author: groundh0g
+image: /assets/images/logo-256x256.png
 ---
 
 [Jekyll](https://jekyllrb.com/){:target="_blank"} is a great blogging platform, but to make it really shine, you need to make some tweaks. We’ve made those tweaks, and we’ve done so in such a way as to avoid using custom plugins, so your site can easily be hosted on [GitHub Pages](https://help.github.com/articles/what-is-github-pages/){:target="_blank"}.

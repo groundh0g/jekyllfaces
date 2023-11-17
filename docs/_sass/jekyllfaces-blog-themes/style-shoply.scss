@@ -1,0 +1,75 @@
+.shoply.blog-item {
+  width: 23%;
+  padding: 10px;
+  margin: 2.5px;
+  float: left;
+  display: inline-block;
+  //background-color: #335;
+}
+
+.shoply.blog-item img {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 2.5px;
+}
+
+.shoply.blog-item h2 {
+  font-size: 2vmin;
+  line-height: 3vmin;
+  font-weight: bolder;
+  width: 100%;
+  overflow: clip;
+  white-space: nowrap;
+}
+
+.shoply.blog-item .excerpt {
+  height: 10vmin;
+  overflow: clip;
+  margin-bottom: 2.5px;
+  font-size: 1.5vmin;
+  line-height: 2vmin;
+  font-weight: normal;
+}
+
+.shoply.blog-item .read-more {
+  font-size: 1vmin;
+  line-height: 3vmin;
+  float: right;
+}
+
+.shoply.blog-item .by-line {
+  font-size: 1vmin;
+  line-height: 3vmin;
+}
+
+.shoply.blog-item .clear-right{
+  clear: right;
+}
+
+@media (max-width: 768px) {
+  .shoply.blog-item {
+    width: 45%;
+  }
+
+  .shoply.blog-item h2 {
+    font-size: 3vmin;
+    line-height: 3vmin;
+  }
+
+  .shoply.blog-item .excerpt {
+    height: 11.2vmin;
+    font-size: 2vmin;
+    line-height: 2.2vmin;
+  }
+
+  .shoply.blog-item .read-more {
+    font-size: 1.5vmin;
+    line-height: 3.5vmin;
+    float: right;
+  }
+
+  .shoply.blog-item .by-line {
+    font-size: 1.5vmin;
+    line-height: 3.5vmin;
+  }
+}

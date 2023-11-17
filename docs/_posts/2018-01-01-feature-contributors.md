@@ -1,8 +1,10 @@
 ---
 layout: post
-title:  "Feature Spotlight - Contributors Page"
+title:  "Feature - Contributors"
+featured: true
 categories: spotlight contributors
 author: groundh0g
+image: /assets/images/blog/feature-contributors.png
 ---
 
 Whether you're going solo, working with a buddy, or are a member of a larger team, you can promote everyone on the contributors' page.

@@ -1,4 +1,49 @@
 {% assign config = include.config %}
-{% assign recent = include.posts %}
+{% unless config %}
+    {% include read-config.liquid %}
+{% endunless %}
 
-Hello, world!
+{% assign maxPosts = include.maxPosts %}
+{% assign posts = include.posts | default: site.posts %}
+
+{% assign numPosts = posts | size %}
+{% if maxPosts < numPosts %}
+    {% assign numPosts = maxPosts %}
+{% endif %}
+
+{% if numPosts == 1 %}
+    {% for post in posts limit: numPosts %}
+<div class="row">
+    <div class="col-12">
+        {% include providers-blog-nav/newsly-post.liquid post=post large=true %}
+    </div>
+</div>
+    {% endfor %}
+{% elsif numPosts >= 2 %}
+
+    {% for post in posts limit: numPosts %}
+        {% assign mod = forloop.index |  minus: 1 | modulo: 2 %}
+
+        {% if mod == 0 %}
+            {% if forloop.index > 1 %}
+            </div>
+            {% endif %}
+            <div class="row">
+        {% endif %}
+
+        <div class="col-12 col-md-6">
+            {% if forloop.index > 2 %}
+                {% include providers-blog-nav/newsly-post.liquid post=post large=false %}
+            {% else %}
+                {% include providers-blog-nav/newsly-post.liquid post=post large=true %}
+            {% endif %}
+        </div>
+        {% comment %}</div>{% endcomment %}
+        {% assign mod = forloop.index |  minus: 1 | modulo: 2 %}
+    {% endfor %}
+
+    {% if mod == 1 %}
+        </div>
+    {% endif %}
+
+{% endif %}

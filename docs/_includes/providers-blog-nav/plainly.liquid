@@ -1,0 +1,22 @@
+{% assign config = include.config %}
+{% unless config %}
+    {% include read-config.liquid %}
+{% endunless %}
+
+{% assign maxPosts = include.maxPosts %}
+{% assign posts = include.posts | default: site.posts %}
+
+{% assign numPosts = posts | size %}
+{% if maxPosts < numPosts %}
+    {% assign numPosts = maxPosts %}
+{% endif %}
+
+{% for post in posts limit: numPosts %}
+{% include providers-blog-nav/plainly-post.liquid post=post last=false %}
+{% assign mod = forloop.index |  modulo: 4 %}
+{% if mod == 0 %}<div style="clear: both;"> </div>{% endif %}
+{% endfor %}
+
+<div style="clear: both;"> </div>
+
+{% include providers-blog-nav/plainly-post.liquid post=post last=true %}

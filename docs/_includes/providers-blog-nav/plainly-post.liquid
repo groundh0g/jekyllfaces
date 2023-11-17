@@ -1,0 +1,14 @@
+
+<div class="plainly blog-item row">
+    <div class="col-1"></div>
+    <div class="col-11">
+{% if include.last %}
+    <h2>&nbsp;</h2>
+{% else %}
+    <h2>{{ include.post.title }}</h2>
+    <div class="excerpt">{{ include.post.excerpt | default: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque sagittis purus sit amet volutpat consequat mauris nunc. Velit laoreet id donec ultrices tincidunt. Nunc id cursus metus aliquam eleifend. Arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc." }}</div>
+    <div class="by-line">{{ include.post.date | date: "%d %b %Y" | upcase }} by {{ include.post.author | default: "admin" }}</div>
+    <div class="read-more"><a href="{{ include.post.url }}">READ MORE &raquo;</a></div>
+{% endif %}
+    </div>
+</div>

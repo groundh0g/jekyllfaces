@@ -1,13 +1,12 @@
 ---
 layout: post
-title:  "Feature Spotlight - Font Icons"
+title:  "Feature - Font Icons"
 categories: spotlight font icons
 author: groundh0g
+image: /assets/images/blog/feature-font-glyphsearch.png
 ---
 
-As of [Bootstrap v4.0](https://getbootstrap.com/docs/4.0/migration/#components){:target="_blank"}, support for [Glyphicons](https://glyphicons.com/){:target="_blank"} has been dropped.
-
-JekyllFaces adds support for the following font icons:
+As of [Bootstrap v4.0](https://getbootstrap.com/docs/4.0/migration/#components){:target="_blank"}, support for [Glyphicons](https://glyphicons.com/){:target="_blank"} has been dropped, so JekyllFaces adds support for the following font icon providers:
 
 * [FontAwesome](https://fontawesome.com/icons?d=gallery){:target="_blank"}
 * [Foundation](https://zurb.com/playground/foundation-icon-fonts-3){:target="_blank"}
