@@ -123,14 +123,17 @@ footer:
 
 customize:
   theme:      darkly     # one of: cerulean | cosmo | cyborg | darkly | default | flatly | journal | litera | lumen | lux | materia | minty | morph | pulse | sandstone | simplex | sketchy | slate | solar | spacelab | superhero | united | vapor | yeti | zephyr
-  http404:    sticky     # one of: badge | default | dog | droids | glass | link | milk | monster | potty | shrug | sticky | tweet | zork
+  http404:    link       # one of: badge | default | dog | droids | glass | link | milk | monster | potty | shrug | sticky | tweet | zork
   #width:     container  # one of: container | fluid
   background: dark       # one of: dark | light | none
   css: [ "main.css", "tiles.css" ] # array of stylesheets to load after other styles
   #js:  [ "main.js"  ]   # array of javascripts to load after other scripts
   homepage:   custom     # one of: books | contributors | custom | docs | landing | legal | soon | webapps
-  blogstyle:  shoply     # one of: newsly | shoply | plainly | default | custom
-  blogtheme:  gray       # one of: red | green | blue | yellow | brown | purple | gray | slategray  
+  blog:
+    recentstyle:  shoply   # one of: newsly | shoply | plainly | default | custom
+    recenttheme:  red      # one of: red | green | blue | yellow | brown | purple | gray | slategray
+    archivestyle: plainly  # one of: newsly | shoply | plainly | default | custom
+    archivetheme: red      # one of: red | green | blue | yellow | brown | purple | gray | slategray
 
 widgets:
   hr:

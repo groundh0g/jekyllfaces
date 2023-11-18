@@ -53,8 +53,20 @@ footer .row {
   margin-bottom: 2vmin;
 }
 
+.blog-item a:link,
+.blog-item a:hover,
+.blog-item a:active,
+.blog-item a:visited {
+  font-weight: bolder;
+  border: 0;
+  border-bottom: 2px dotted navajowhite;
+  text-decoration: none;
+  background-color: inherit !important;
+}
 
-
+.post-content img  {
+  width: 80%;
+}
 
 .blog-entity img.center-cropped {
   background-repeat: no-repeat;

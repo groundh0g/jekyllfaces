@@ -4,4 +4,6 @@ title: Blog Archive
 permalink: /blog/archive/
 ---
 
-{% include blog-recent.liquid %}
+{% include blog-recent.liquid maxPosts=999999 %}
+
+

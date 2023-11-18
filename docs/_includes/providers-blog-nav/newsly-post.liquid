@@ -10,7 +10,7 @@
 
 <div class="newsly blog-item blog-item-{{ imageSize }} row">
     <div class="col col-{{ imgCols }}">
-        <div class="blog-image"><img class="center-cropped" style='background-image: url("{{ include.post.image }}"); width: 100%;' /></div>
+        <div class="blog-image"><a href="{{ include.post.url }}"><img class="center-cropped" style='background-image: url("{{ include.post.image }}"); width: 100%;' /></a></div>
     </div>
     <div class="col col-{{ txtCols }}">
         <div class="blog-title">{{ include.post.title | default: "Unknown Title" }}</div>

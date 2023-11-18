@@ -5,19 +5,26 @@
 
 {% assign maxPosts = include.maxPosts | default: 8 %}
 
-<div class="blog-theme-{{ config.customize.blogtheme |  default: "" }}">
+<div class="blog-posts">
 
-{% case config.customize.blogstyle %}
-  {% when "newsly" %}
-    {% include providers-blog-nav/newsly.liquid config=config maxPosts=maxPosts posts=include.posts %}
-  {% when "shoply" %}
-    {% include providers-blog-nav/shoply.liquid config=config maxPosts=maxPosts posts=include.posts %}
-  {% when "plainly" %}
-    {% include providers-blog-nav/plainly.liquid config=config maxPosts=maxPosts posts=include.posts %}
-  {% when "custom" %}
-    {% include providers-blog-nav/custom.liquid config=config maxPosts=maxPosts posts=include.posts %}
-  {% else %}
-    {% include providers-blog-nav/default.liquid config=config maxPosts=maxPosts posts=include.posts %}
-{% endcase %}
+  <div class="blog-theme-{{ config.customize.blog.recenttheme |  default: "" }}">
+
+  {% case config.customize.blog.recentstyle %}
+    {% when "newsly" %}
+      {% include providers-blog-nav/newsly.liquid config=config maxPosts=maxPosts posts=include.posts %}
+    {% when "shoply" %}
+      {% include providers-blog-nav/shoply.liquid config=config maxPosts=maxPosts posts=include.posts %}
+    {% when "plainly" %}
+      {% include providers-blog-nav/plainly.liquid config=config maxPosts=maxPosts posts=include.posts %}
+    {% when "custom" %}
+      {% include providers-blog-nav/custom.liquid config=config maxPosts=maxPosts posts=include.posts %}
+    {% else %}
+      {% include providers-blog-nav/default.liquid config=config maxPosts=maxPosts posts=include.posts %}
+  {% endcase %}
+
+  </div>
 
 </div>
+
+
+<div class="clear-both"> </div>

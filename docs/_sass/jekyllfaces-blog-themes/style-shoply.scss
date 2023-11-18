@@ -42,8 +42,16 @@
   line-height: 3vmin;
 }
 
-.shoply.blog-item .clear-right{
+.shoply.blog-item .clear-right {
   clear: right;
+}
+
+.shoply.blog-item .clear-left {
+  clear: left;
+}
+
+.shoply.blog-item .clear-both {
+  clear: both;
 }
 
 @media (max-width: 768px) {

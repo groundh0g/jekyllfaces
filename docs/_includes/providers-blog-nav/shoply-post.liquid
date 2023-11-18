@@ -1,6 +1,6 @@
 
 <div class="shoply blog-item">
-    <img class="center-cropped" style='background-image: url("{{ include.post.image }}");' />
+    <a href="{{ include.post.url }}"><img class="center-cropped" style='background-image: url("{{ include.post.image }}");' /></a>
     <h2>{{ include.post.title }}</h2>
     <div class="excerpt">{{ include.post.excerpt | default: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque sagittis purus sit amet volutpat consequat mauris nunc. Velit laoreet id donec ultrices tincidunt. Nunc id cursus metus aliquam eleifend. Arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc." }}</div>
     <div class="read-more"><a href="{{ include.post.url }}">READ MORE &raquo;</a></div>
