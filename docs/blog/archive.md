@@ -14,5 +14,5 @@ permalink: /blog/archive/
 
 Listed below, you'll find all the posts in our archive.
 
-{% include blog-recent.liquid maxPosts=999999 %}
+{% include blog-recent.liquid isArchive=true %}
 

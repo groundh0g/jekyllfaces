@@ -1,0 +1,8 @@
+{% assign config = include.config %}
+{% unless config %}
+  {% include read-config.liquid %}
+{% endunless %}
+
+{% assign maxPosts = include.maxPosts | default: 999999 %}
+{% assign theme = include.theme | default: config.customize.blog.archivetheme | default: "slategray" %}
+{% include blog-recent.liquid theme=theme maxPosts=maxPosts isArchive=true %}

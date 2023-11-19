@@ -3,8 +3,10 @@
     {% include read-config.liquid %}
 {% endunless %}
 
-{% assign maxPosts = include.maxPosts %}
+{% assign maxPosts = include.maxPosts | default: 8 %}
 {% assign posts = include.posts | default: site.posts %}
+{% assign group = include.group |  default: false %}
+{% assign groupDate = "January 1, 1900" |  date: "%Y%m" %}
 
 {% assign numPosts = posts | size %}
 {% if maxPosts < numPosts %}
@@ -12,9 +14,17 @@
 {% endif %}
 
 {% for post in posts limit: numPosts %}
-{% include providers-blog-nav/plainly-post.liquid post=post last=false %}
-{% assign mod = forloop.index |  modulo: 4 %}
-{% if mod == 0 %}<div style="clear: both;"> </div>{% endif %}
+    {% assign newGroupDate = post.date | date: "%Y%m" %}
+    {% if group and groupDate != newGroupDate %}
+        <div class="row">
+            <div class="col-12"><h3>{{ post.date |  date: "%B %Y" }}</h3></div>
+        </div>
+        {% assign groupDate = newGroupDate %}
+    {% endif %}
+
+    {% include providers-blog-nav/plainly-post.liquid post=post last=false %}
+    {% assign mod = forloop.index |  modulo: 4 %}
+    {% if mod == 0 %}<div style="clear: both;"> </div>{% endif %}
 {% endfor %}
 
 <div style="clear: both;"> </div>

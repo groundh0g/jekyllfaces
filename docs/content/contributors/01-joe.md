@@ -3,10 +3,11 @@ fullname: Joseph Hall
 alias:    groundh0g
 image:    images/contributors/joe.png
 role:     Programmer / Writer
-email:    hello@moreoncode.com
-website:  http://moreoncode.com/
+email:    joe@faux.cab
+website:  https://joehall.net/
 social:
   showAlias:     false
+  stimulus:      groundh0g
   twitter:       groundh0g
   facebook:      groundh0g
   youtube:       groundh0g

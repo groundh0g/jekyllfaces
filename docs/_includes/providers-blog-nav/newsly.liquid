@@ -3,7 +3,7 @@
     {% include read-config.liquid %}
 {% endunless %}
 
-{% assign maxPosts = include.maxPosts %}
+{% assign maxPosts = include.maxPosts |  defailt: 8 %}
 {% assign posts = include.posts | default: site.posts %}
 
 {% assign numPosts = posts | size %}
@@ -38,7 +38,6 @@
                 {% include providers-blog-nav/newsly-post.liquid post=post large=true %}
             {% endif %}
         </div>
-        {% comment %}</div>{% endcomment %}
         {% assign mod = forloop.index |  minus: 1 | modulo: 2 %}
     {% endfor %}
 

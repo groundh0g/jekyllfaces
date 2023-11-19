@@ -1,0 +1,65 @@
+{% assign config = include.config %}
+{% unless config %}
+  {% include read-config.liquid %}
+{% endunless %}
+
+{% assign pages = site.pages | where: "dir", "/content/contributors/" %}
+
+{% for file in pages %}
+  {% if file.name == page.name %}{% continue %}{% endif %}
+
+  {% capture bioLeft %}
+  <img alt="{{ file.fullname }} Avatar" src='{{ "/assets/" | append: file.image | relative_url }}' width="300" title="{{ file.fullname }} Avatar">
+
+  **{{ file.fullname }}**<br/>
+  {% if file.role %}{{ file.role }}<br/>{% endif %}
+  {% if file.alias %}[@{{ file.alias }}](https://github.com/{{ file.alias }}/){:target="_blank"}<br/>{% endif %}
+  {% endcapture %}
+
+  {% assign font_brand_prefix = "" %}
+  {% if config.fonticons.fontawesome.include != false %}{% assign font_brand_prefix = "fa-brands fa-" %}{% endif %}
+  {% if config.fonticons.lineawesome.include != false %}{% assign font_brand_prefix = "lab la-" %}{% endif %}
+
+  {% assign font_solid_prefix = "" %}
+  {% if config.fonticons.fontawesome.include != false %}{% assign font_solid_prefix = "fa-solid fa-" %}{% endif %}
+  {% if config.fonticons.lineawesome.include != false %}{% assign font_solid_prefix = "las la-" %}{% endif %}
+
+  {% assign social_count = 0 %}
+  {% capture social_output %}
+    {%- if file.social.stimulus %}{% if social_count > 0 %} \| {% endif %}<a target="_blank" href="https://stimulus.com/{{ file.social.stimulus }}" title="{{ file.social.stimulus }}"><i class="{{ font_solid_prefix }}money-bill-wave"></i>{% if file.social.showAlias %}&nbsp;{{ file.social.stimulus }}{% endif %}</a>{% assign social_count = social_count | plus: 1 %}{% endif -%}
+    {%- if file.social.twitter %}{% if social_count > 0 %} \| {% endif %}<a target="_blank" href="https://twitter.com/{{ file.social.twitter }}" title="{{ file.social.twitter }}"><i class="{{ font_brand_prefix }}twitter"></i>{% if file.social.showAlias %}&nbsp;{{ file.social.twitter }}{% endif %}</a>{% assign social_count = social_count | plus: 1 %}{% endif -%}
+    {%- if file.social.facebook %}{% if social_count > 0 %} \| {% endif %}<a target="_blank" href="https://facebook.com/{{ file.social.facebook }}" title="{{ file.social.facebook }}"><i class="{{ font_brand_prefix }}facebook"></i>{% if file.social.showAlias %}&nbsp;{{ file.social.facebook }}{% endif %}</a>{% assign social_count = social_count | plus: 1 %}{% endif -%}
+    {%- if file.social.instagram %}{% if social_count > 0 %} \| {% endif %}<a target="_blank" href="https://www.instagram.com/{{ file.social.instagram }}" title="{{ file.social.instagram }}"><i class="{{ font_brand_prefix }}instagram"></i>{% if file.social.showAlias %}&nbsp;{{ file.social.instagram }}{% endif %}</a>{% assign social_count = social_count | plus: 1 %}{% endif -%}
+    {%- if file.social.linkedin %}{% if social_count > 0 %} \| {% endif %}<a target="_blank" href="https://www.linkedin.com/in/{{ file.social.linkedin }}" title="{{ file.social.linkedin }}"><i class="{{ font_brand_prefix }}linkedin"></i>{% if file.social.showAlias %}&nbsp;{{ file.social.linkedin }}{% endif %}</a>{% assign social_count = social_count | plus: 1 %}{% endif -%}
+    {%- if file.social.googleplus %}{% if social_count > 0 %} \| {% endif %}<a target="_blank" href="https://google.com/+{{ file.social.googleplus }}" title="{{ file.social.googleplus }}"><i class="{{ font_brand_prefix }}google-plus"></i>{% if file.social.showAlias %}&nbsp;{{ file.social.googleplus }}{% endif %}</a>{% assign social_count = social_count | plus: 1 %}{% endif -%}
+    {%- if file.social.github %}{% if social_count > 0 %} \| {% endif %}<a target="_blank" href="https://github.com/{{ file.social.github }}" title="{{ file.social.github }}"><i class="{{ font_brand_prefix }}github"></i>{% if file.social.showAlias %}&nbsp;{{ file.social.github }}{% endif %}</a>{% assign social_count = social_count | plus: 1 %}{% endif -%}
+    {%- if file.social.bitbucket %}{% if social_count > 0 %} \| {% endif %}<a target="_blank" href="https://bitbucket.org/{{ file.social.bitbucket }}/" title="{{ file.social.bitbucket }}"><i class="{{ font_brand_prefix }}bitbucket"></i>{% if file.social.showAlias %}&nbsp;{{ file.social.bitbucket }}{% endif %}</a>{% assign social_count = social_count | plus: 1 %}{% endif -%}
+    {%- if file.social.stackoverflow %}{% if social_count > 0 %} \| {% endif %}<a target="_blank" href="https://stackoverflow.com/users/{{ file.social.stackoverflow }}" title="{{ file.social.stackoverflow }}"><i class="{{ font_brand_prefix }}stack-overflow"></i>{% if file.social.showAlias %}&nbsp;{{ file.social.stackoverflow }}{% endif %}</a>{% assign social_count = social_count | plus: 1 %}{% endif -%}
+    {%- if file.social.deviant %}{% if social_count > 0 %} \| {% endif %}<a target="_blank" href="https://{{ file.social.deviant }}.deviantart.com/" title="{{ file.social.deviant }}"><i class="{{ font_brand_prefix }}deviantart"></i>{% if file.social.showAlias %}&nbsp;{{ file.social.deviant }}{% endif %}</a>{% assign social_count = social_count | plus: 1 %}{% endif -%}
+    {%- if file.social.dribbble %}{% if social_count > 0 %} \| {% endif %}<a target="_blank" href="https://dribbble.com/{{ file.social.dribbble }}" title="{{ file.social.dribbble }}"><i class="{{ font_brand_prefix }}dribbble"></i>{% if file.social.showAlias %}&nbsp;{{ file.social.dribbble }}{% endif %}</a>{% assign social_count = social_count | plus: 1 %}{% endif -%}
+    {%- if file.social.flickr %}{% if social_count > 0 %} \| {% endif %}<a target="_blank" href="https://www.flickr.com/photos/{{ file.social.flickr }}" title="{{ file.social.flickr }}"><i class="{{ font_brand_prefix }}flickr"></i>{% if file.social.showAlias %}&nbsp;{{ file.social.flickr }}{% endif %}</a>{% assign social_count = social_count | plus: 1 %}{% endif -%}
+    {%- if file.social.tumblr %}{% if social_count > 0 %} \| {% endif %}<a target="_blank" href="https://www.tumblr.com/blog/{{ file.social.tumblr }}" title="{{ file.social.tumblr }}"><i class="{{ font_brand_prefix }}tumblr"></i>{% if file.social.showAlias %}&nbsp;{{ file.social.tumblr }}{% endif %}</a>{% assign social_count = social_count | plus: 1 %}{% endif -%}
+    {%- if file.social.pinterest %}{% if social_count > 0 %} \| {% endif %}<a target="_blank" href="https://www.pinterest.com/+{{ file.social.pinterest }}" title="{{ file.social.pinterest }}"><i class="{{ font_brand_prefix }}pinterest-square"></i>{% if file.social.showAlias %}&nbsp;{{ file.social.pinterest }}{% endif %}</a>{% assign social_count = social_count | plus: 1 %}{% endif -%}
+    {%- if file.social.youtube %}{% if social_count > 0 %} \| {% endif %}<a target="_blank" href="https://www.youtube.com/user/{{ file.social.youtube }}" title="{{ file.social.youtube }}"><i class="{{ font_brand_prefix }}youtube"></i>{% if file.social.showAlias %}&nbsp;{{ file.social.youtube }}{% endif %}</a>{% assign social_count = social_count | plus: 1 %}{% endif -%}
+    {%- if file.social.twitch %}{% if social_count > 0 %} \| {% endif %}<a target="_blank" href="https://www.twitch.tv.com/{{ file.social.twitch }}" title="{{ file.social.twitch }}"><i class="{{ font_brand_prefix }}twitch"></i>{% if file.social.showAlias %}&nbsp;{{ file.social.twitch }}{% endif %}</a>{% assign social_count = social_count | plus: 1 %}{% endif -%}
+    {%- if file.social.steam %}{% if social_count > 0 %} \| {% endif %}<a target="_blank" href="https://steamcommunity.com/id/{{ file.social.steam }}" title="{{ file.social.steam }}"><i class="{{ font_brand_prefix }}steam"></i>{% if file.social.showAlias %}&nbsp;{{ file.social.steam }}{% endif %}</a>{% assign social_count = social_count | plus: 1 %}{% endif -%}
+  {% endcapture %}{% assign social_output = social_output | strip_newlines | strip_whitespace %}
+
+  {% capture bioRight %}
+  {{ file.content }}
+
+  {{ social_output }}
+  {% endcapture %}
+
+<hr/>
+<br/>
+<div class="row">
+  <div class="col-md-4">
+    {{ bioLeft | markdownify }}
+  </div>
+  <div class="col-md-8">
+    {{ bioRight | markdownify }}
+  </div>
+</div>
+
+{% endfor %}

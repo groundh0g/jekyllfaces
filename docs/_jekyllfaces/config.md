@@ -75,10 +75,10 @@ navbar:
       - item: Help
         activeWhenContains: /help/ # highlight as active when the url includes the given text
         items:
-          - item: About the Site
-            link: /help/about/site/
-          - item: About Joe
-            link: /help/about/joe/
+          - item: About JekyllFaces
+            link: /help/about/project/
+          - item: About the Team
+            link: /help/about/contributors/
           - item: Contact Us
             link: /help/contact-us/
 
@@ -134,6 +134,7 @@ customize:
     recenttheme:  red      # one of: red | green | blue | yellow | brown | purple | gray | slategray
     archivestyle: plainly  # one of: newsly | shoply | plainly | default | custom
     archivetheme: red      # one of: red | green | blue | yellow | brown | purple | gray | slategray
+    archivegroup: true     # one of: true | false
 
 widgets:
   hr:
@@ -202,6 +203,13 @@ search:
   #webapps:      true # search webapps overview content? {build.webapps} when blank
   #legal:        true # search legal content? {build.legal} when blank
   #contributors: true # search contributors page? {build.contributors} when blank
+
+### --------------------------------------------------------------------------------------------------
+### NOTE: The social icons on the contributors page only recognize fontawesome and lineawesome glyphs.
+###       To see the icons, you need to enable one of those two. Multiple fonticons may be enabled
+###       at the same time. If both fontawesome and lineawesome are enabled, the contributors page
+###       will default to lineawesome glyphs.
+### --------------------------------------------------------------------------------------------------
 
 fonticons:
   boxicons:
