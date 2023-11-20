@@ -13,7 +13,7 @@
 {% assign alt_label = include.alt %}{% if alt_label == nil %}{% assign alt_label = file_name | slugify | replace: "-", " " %}{% endif %}
 
 {% assign collapsible = true %}
-{% if page.gists.collapsible != nil  %}{% assign collapsible = page.gists.collapsible %}{% endif %}
+{% if page.gists.collapsible != nil %}{% assign collapsible = page.gists.collapsible %}{% endif %}
 {% if include.collapsible != nil %}{% assign collapsible = include.collapsible %}{% endif %}
 
 {% assign errors = "" | split: "," %}

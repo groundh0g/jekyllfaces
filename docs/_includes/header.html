@@ -12,7 +12,7 @@
   {% assign navbar_fluid = "container" %}
   {% if config.navbar.width == "fluid" %}{% assign navbar_fluid = "container-fluid" %}{% endif %}
 
-  <nav class="navbar navbar-expand-lg navbar-nav {{ navbar_back_color }} {{ navbar_text_color }} {{ navbar_fixed }}">
+  <nav class="navbar navbar-expand-lg navbar-nav bg-{{ config.navbar.tintback }} navbar-{{ config.navbar.tinttext }} {{ navbar_fixed }}">
     <div class="{{ navbar_fluid }}">
       {% if config.navbar.menu.homepage %}
       {% assign active_underline_class = "" %}

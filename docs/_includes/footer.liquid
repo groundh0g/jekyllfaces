@@ -3,7 +3,7 @@
   {% include read-config.liquid %}
 {% endunless %}
 
-<footer class="site-footer bg-dark navbar-dark">
+<footer class="site-footer bg-{{ config.footer.tintback }} text-{{ config.footer.tinttext }}">
 
 <div class="container">
 {% assign rowCount = 0 %}

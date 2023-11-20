@@ -10,13 +10,13 @@
 
 <div class="blog-posts">
 
-  {% assign theme = include.theme | default: config.customize.blog.recenttheme | default: "slategray" %}
-  {% if isArchive %}{% assign theme = include.theme | default: config.customize.blog.archivetheme | default: "slategray" %}{% endif %}
+  {% assign theme = include.theme | default: config.blog.recenttheme | default: "slategray" %}
+  {% if isArchive %}{% assign theme = include.theme | default: config.blog.archivetheme | default: "slategray" %}{% endif %}
 
   <div class="blog-theme-{{ theme | default: "slategray" }}">
 
-  {% assign style = config.customize.blog.recentstyle | default: "plainly" %}
-  {% if isArchive %}{% assign style = config.customize.blog.archivestyle | default: "plainly" %}{% endif %}
+  {% assign style = config.blog.recentstyle | default: "plainly" %}
+  {% if isArchive %}{% assign style = config.blog.archivestyle | default: "plainly" %}{% endif %}
 
   {% assign group = false %}
   {% if isArchive %}{% assign group=true %}{% endif %}

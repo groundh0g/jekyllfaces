@@ -1,32 +1,29 @@
 ---
 
 metadata:
-  title: YourSite
-  tagline: Your site. Your words.
+  title: JekyllFaces
+  tagline: We Hyde the scary parts.
   description: > # Description for the site ... # TODO: update text to be generic ...
-    Inspired by JekyllBootstrap [plusjade/jekyll-bootstrap](https://github.com/plusjade/jekyll-bootstrap){:target="_blank"}, JekyllFaces [groundh0g/jekyllfaces](https://github.com/groundh0g/jekyllfaces){:target="_blank"}
-    is built from the ground up to support [Jekyll 3.7.x](https://github.com/jekyll/jekyll/releases/tag/v3.7.3){:target="_blank"} and [Bootstrap 4.1.x](https://getbootstrap.com/docs/4.1/getting-started/introduction/){:target="_blank"},
-    along with support for [Bootswatch's free themes](https://bootswatch.com/){:target="_blank"}, all while targeting the dependencies of [GitHub Pages](https://help.github.com/articles/what-is-github-pages/){:target="_blank"},
-    using the GitHub Pages [approved dependencies](https://pages.github.com/versions/){:target="_blank"}.
+    Inspired by JekyllBootstrap, JekyllFaces is built from the ground up to support Jekyll and Bootstrap,
+    along with support for Bootswatch's free themes, all while targeting the dependencies of GitHub Pages.
   legal: # used for privacy policy, terms of use, etc ...
-    company:      Your Company, LLC # company name, or your name here
-    founded:      2023              # first year of this project
-    website:      http://yoursite.com
+    company:      Joseph B. Hall # company name, or your name here
+    founded:      2017           # first year of this project
+    website:      https://jekyllfaces.com/
     jurisdiction: # e.g. "Georgia", "United States" when blank
   lang: en
 
-customize:
-  theme:   flatly         # one of: cerulean | cosmo | cyborg | darkly | default | flatly | journal | litera | lumen | lux | materia | minty | pulse | sandstone | simplex | sketchy | slate | solar | spacelab | superhero | united | yeti
-  http404: sticky         # one of: badge | default | dog | droids | glass | link | milk | monster | potty | shrug | sticky | tweet | zork
-  css:     [ "main.css" ] # array of stylesheets to load after other styles
-  #js:     [ "main.js"  ] # array of javascripts to load after other scripts
+#customize:
+#  theme:   flatly         # one of: cerulean | cosmo | cyborg | darkly | default | flatly | journal | litera | lumen | lux | materia | minty | pulse | sandstone | simplex | sketchy | slate | solar | spacelab | superhero | united | yeti
+#  http404: sticky         # one of: badge | default | dog | droids | glass | link | milk | monster | potty | shrug | sticky | tweet | zork
+#  css:     [ "main.css" ] # array of stylesheets to load after other styles
+#  #js:     [ "main.js"  ] # array of javascripts to load after other scripts
+#  background: bg-light
+#  #homepage: custom    # one of: books | contributors | custom | docs | landing | legal | soon | webapps
 
-  #homepage: custom    # one of: books | contributors | custom | docs | landing | legal | soon | webapps
-
-build:
-  use_cdn:      true # use CDN for 3rd-party scripts and styles?
-  search:       true # create search index?
-
+build: # TODO: is this redundant? conflicting?
+  use_cdn:       true # use CDN for 3rd-party scripts and styles?
+  search:        true # create search index?
   #books:        true # process book content?
   #docs:         true # process documentation content?
   #landing:      true # process landing page content?
@@ -36,20 +33,22 @@ build:
   #contributors: true # process contributors content?
 
 navbar:
-  show:   true
-  fixed:  true     # sticky navbar?
-  #fill:   false    # fills page width, ignoring content width settings that follow
-  width:  container  # one of: container | fluid
+  show:      true
+  fixed:     true       # sticky navbar?
+  #fill:     false      # fills page width, ignoring content width settings that follow
+  width:     container  # one of: container | fluid
+  tintback:  dark       # one of: false | dark | light | primary | secondary | success | info | warning | danger | link
+  tinttext:  dark       # one of: false | dark | light | primary | secondary | success | info | warning | danger | link
   #logo: /assets/images/logo-1024x1024.png
   underlineActive: true # underline active link?
   search: false # include search in navbar? (right-aligned)
-  color:
-  back: primary # one of: dark | light | primary | secondary | success | info | warning | danger | link
-  tint: dark    # one of: dark | light ... shade of background, dark for light text, light for dark text
+  #color:
+  #  back: dark # one of: dark | light | primary | secondary | success | info | warning | danger | link
+  #  tint: dark    # one of: dark | light ... shade of background, dark for light text, light for dark text
 
   menu:
     homepage: # comment out this block to hide title in menu
-      text: YourSite<span class="tiny">.com</span> # default is {metadata.title}
+      text: JekyllFaces<span class="tiny">.com</span> # default is {metadata.title}
       icon: /assets/images/logo-1024x1024.png # optional
       underlineActive: false # underline link when on homepage?
       search: true # true
@@ -86,6 +85,8 @@ footer:
   show:      true       # show the footer?
   fixed:     false      # sticky footer?
   width:     container  # one of: container | fluid
+  tintback:  dark       # one of: false | dark | light | primary | secondary | success | info | warning | danger | link
+  tinttext:  white      # one of: false | dark | light | primary | secondary | success | info | warning | danger | link
   rows:
     - row:
       align:     left   # one of: left | center | right | ignore
@@ -121,20 +122,24 @@ footer:
           width:     12     # one of: [1..12]; total for all columns is 12
           content:   copyright
 
+body:
+  tintback: secondary  # one of: false | dark | light | primary | secondary | success | info | warning | danger | link
+  tinttext: white      # one of: false | dark | light | primary | secondary | success | info | warning | danger | link
+  width:    container  # one of: container | fluid
+
 customize:
-  theme:      darkly     # one of: cerulean | cosmo | cyborg | darkly | default | flatly | journal | litera | lumen | lux | materia | minty | morph | pulse | sandstone | simplex | sketchy | slate | solar | spacelab | superhero | united | vapor | yeti | zephyr
-  http404:    link       # one of: badge | default | dog | droids | glass | link | milk | monster | potty | shrug | sticky | tweet | zork
-  #width:     container  # one of: container | fluid
-  background: dark       # one of: dark | light | none
+  theme:    darkly     # one of: cerulean | cosmo | cyborg | darkly | default | flatly | journal | litera | lumen | lux | materia | minty | morph | pulse | sandstone | simplex | sketchy | slate | solar | spacelab | superhero | united | vapor | yeti | zephyr
+  http404:  link       # one of: badge | default | dog | droids | glass | link | milk | monster | potty | shrug | sticky | tweet | zork
   css: [ "main.css", "tiles.css" ] # array of stylesheets to load after other styles
-  #js:  [ "main.js"  ]   # array of javascripts to load after other scripts
-  homepage:   custom     # one of: books | contributors | custom | docs | landing | legal | soon | webapps
-  blog:
-    recentstyle:  shoply   # one of: newsly | shoply | plainly | default | custom
-    recenttheme:  red      # one of: red | green | blue | yellow | brown | purple | gray | slategray
-    archivestyle: plainly  # one of: newsly | shoply | plainly | default | custom
-    archivetheme: red      # one of: red | green | blue | yellow | brown | purple | gray | slategray
-    archivegroup: true     # one of: true | false
+  #js:  [ "main.js"  ] # array of javascript files to load after other scripts
+  homepage: custom     # one of: books | contributors | custom | docs | landing | legal | soon | webapps
+
+blog:
+  recentstyle:  shoply   # one of: newsly | shoply | plainly | default | custom
+  recenttheme:  red      # one of: red | green | blue | yellow | brown | purple | gray | slategray
+  archivestyle: plainly  # one of: newsly | shoply | plainly | default | custom
+  archivetheme: red      # one of: red | green | blue | yellow | brown | purple | gray | slategray
+  archivegroup: true     # one of: true | false
 
 widgets:
   hr:
@@ -283,7 +288,7 @@ comments:
 
 version:   0.2.0
 github:    https://github.com/groundh0g/jekyllfaces
-website:   http://jekyllfaces.com/
+website:   https://jekyllfaces.com/
 components:
   bootstrap:
     version: 5.2.3

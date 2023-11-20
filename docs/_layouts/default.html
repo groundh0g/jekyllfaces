@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang='{{ page.lang | default: config.metadata.lang | default: site.lang | default: "en" }}'>
-
 {% assign config = include.config %}
 {% unless config %}
   {% include read-config.liquid %}
 {% endunless %}
+<html lang='{{ page.lang | default: config.metadata.lang | default: site.lang | default: "en" }}'>
 
   {% include head.html config=config %}
 
-  <body class='{{ page.class | default: "" }} {{ config.customize.background | default: "" }}'>
+  <body class='{{ page.class | default: "" }} bg-{{ config.body.tintback }} text-{{ config.body.tinttext }}'>
     <div class="whole-page-div">
 
     {% include header.html config=config %}
 
     <main class="page-content" aria-label="Content">
-      <div class="wrapper container">
+      <div class="wrapper {{ config.body.width }}">
         {{ content }}
       </div>
     </main>

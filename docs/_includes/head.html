@@ -1,5 +1,10 @@
 <head>
 
+  {% assign config = include.config %}
+  {% unless config %}
+    {% include read-config.liquid %}
+  {% endunless %}
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- TODO: replace with analytics provider -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3294285-12"></script>
@@ -10,11 +15,6 @@
 
     gtag('config', 'UA-3294285-12');
   </script>
-
-  {% assign config = include.config %}
-  {% unless config %}
-    {% include read-config.liquid %}
-  {% endunless %}
 
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -31,15 +31,15 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ config.metadata.title | default: site.title | escape }}" href='{{ "/feed.xml" | relative_url }}'>
 
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/favicons/apple-touch-icon.png" | relative_url }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicons/favicon-32x32.png" | relative_url }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/favicons/favicon-16x16.png" | relative_url }}">
-  <link rel="manifest" href="{{ "/assets/favicons/site.webmanifest" | relative_url }}">
-  <link rel="mask-icon" href="{{ "/assets/favicons/safari-pinned-tab.svg" | relative_url }}" color="#5bbad5">
-  <link rel="shortcut icon" href="{{ "/assets/favicons/favicon.ico" | relative_url }}">
-  <meta name="msapplication-TileColor" content="#ffc40d">
-  <meta name="msapplication-config" content="{{ "/assets/favicons/browserconfig.xml" | relative_url }}">
-  <meta name="theme-color" content="#ffffff">
+<!--  <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/favicons/apple-touch-icon.png" | relative_url }}">-->
+<!--  <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicons/favicon-32x32.png" | relative_url }}">-->
+<!--  <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/favicons/favicon-16x16.png" | relative_url }}">-->
+<!--  <link rel="manifest" href="{{ "/assets/favicons/site.webmanifest" | relative_url }}">-->
+<!--  <link rel="mask-icon" href="{{ "/assets/favicons/safari-pinned-tab.svg" | relative_url }}" color="#5bbad5">-->
+<!--  <link rel="shortcut icon" href="{{ "/assets/favicons/favicon.ico" | relative_url }}">-->
+<!--  <meta name="msapplication-TileColor" content="#ffc40d">-->
+<!--  <meta name="msapplication-config" content="{{ "/assets/favicons/browserconfig.xml" | relative_url }}">-->
+<!--  <meta name="theme-color" content="#ffffff">-->
 
   <!-- BOOTSTRAP THEME -->
 

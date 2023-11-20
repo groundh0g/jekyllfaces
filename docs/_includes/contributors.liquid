@@ -3,7 +3,7 @@
   {% include read-config.liquid %}
 {% endunless %}
 
-{% assign pages = site.pages | where: "dir", "/content/contributors/" %}
+{% assign pages = site.pages | where: "dir", "/content/help/about/contributors/" %}
 
 {% for file in pages %}
   {% if file.name == page.name %}{% continue %}{% endif %}
