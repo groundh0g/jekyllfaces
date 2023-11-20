@@ -31,7 +31,7 @@ Including the Bootstrap default theme, there are more than 20 themes to pick fro
 And for those of you who are tired of the standard 404 page provided by Jekyll, there are more than a dozen custom 404 pages included with JekyllFaces.
 
 <hr/>
-![Built-In 404 Pages]({{ "/assets/images/blog/feature-configuration-404-pages.png" | relative_url }} "Built-In 404 Pages")
+![Built-In 404 Pages]({{ "/assets/images/blog/feature-404-pages.png" | relative_url }} "Built-In 404 Pages")
 <hr/>
 
 And that's just two of the components you can customize in JekyllFaces.

@@ -6,15 +6,22 @@
 
 layout: page
 class:  homepage
-title: Fauxcabulary
-tagline: Fake definitions. Real funny.
+title: JekyllFaces
+tagline: We Hyde the scary parts.
 logo: "/assets/images/logo-1024x1024.png"
-#trademark: "Hiive and its logo are registered trademarks of Hiive, LLC."
-#copyright: "All content &copy; 2012-CURRENT_YEAR by Hiive, LLC."
 showTitle: false
+permalink: /
 gists:
   collapsible: true
-
 ---
+{% assign config = include.config %}
+{% unless config %}
+  {% include read-config.liquid %}
+{% endunless %}
 
-Hello, world!
+{% assign markdown = "" %}
+{% if config.customize.homepage %}
+  {% include_relative {{ config.customize.homepage }}.md config=config %}
+{% else %}
+  <div class="alert alert-primary">No config.customize.homepage specified in `_jekyllfaces/config.md`.</div>
+{% endif%}
