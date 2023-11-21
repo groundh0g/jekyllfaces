@@ -3,7 +3,6 @@
 ## Edit theme's home layout instead if you wanna make some changes
 ## See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 #layout: home
-
 layout: page
 class:  homepage
 title: JekyllFaces
@@ -21,7 +20,7 @@ gists:
 
 {% assign markdown = "" %}
 {% if config.customize.homepage %}
-  {% include_relative {{ config.customize.homepage }}.md config=config %}
+  {% include_relative content/homepage/{{ config.customize.homepage }}.md config=config %}
 {% else %}
   <div class="alert alert-primary">No config.customize.homepage specified in `_jekyllfaces/config.md`.</div>
 {% endif%}

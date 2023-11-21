@@ -88,30 +88,30 @@ footer:
   tintback:  dark       # one of: false | dark | light | primary | secondary | success | info | warning | danger | link
   tinttext:  white      # one of: false | dark | light | primary | secondary | success | info | warning | danger | link
   rows:
-    - row:
-      align:     left   # one of: left | center | right | ignore
-      seperator: false  # add a horizontal border line below row?
-      columns:
-        - col:
-          align:     ignore # one of: left | center | right | ignore
-          seperator: true   # add a horizontal border line above row?
-          width:     3     # one of: [1..12]; total for all columns is 12
-          content:   /content/footer/col-01.md
-        - col:
-          align:     ignore # one of: left | center | right | ignore
-          seperator: true   # add a horizontal border line above row?
-          width:     3     # one of: [1..12]; total for all columns is 12
-          content:   /content/footer/col-02.md
-        - col:
-          align:     ignore # one of: left | center | right | ignore
-          seperator: true   # add a horizontal border line above row?
-          width:     3     # one of: [1..12]; total for all columns is 12
-          content:   /content/footer/col-03.md
-        - col:
-          align:     ignore # one of: left | center | right | ignore
-          seperator: true   # add a horizontal border line above row?
-          width:     3     # one of: [1..12]; total for all columns is 12
-          content:   /content/footer/col-04.md
+    #- row:
+    #  align:     left   # one of: left | center | right | ignore
+    #  seperator: false  # add a horizontal border line below row?
+    #  columns:
+    #    - col:
+    #      align:     ignore # one of: left | center | right | ignore
+    #      seperator: true   # add a horizontal border line above row?
+    #      width:     3     # one of: [1..12]; total for all columns is 12
+    #      content:   /content/footer/col-01.md
+    #    - col:
+    #      align:     ignore # one of: left | center | right | ignore
+    #      seperator: true   # add a horizontal border line above row?
+    #      width:     3     # one of: [1..12]; total for all columns is 12
+    #      content:   /content/footer/col-02.md
+    #    - col:
+    #      align:     ignore # one of: left | center | right | ignore
+    #      seperator: true   # add a horizontal border line above row?
+    #      width:     3     # one of: [1..12]; total for all columns is 12
+    #      content:   /content/footer/col-03.md
+    #    - col:
+    #      align:     ignore # one of: left | center | right | ignore
+    #      seperator: true   # add a horizontal border line above row?
+    #      width:     3     # one of: [1..12]; total for all columns is 12
+    #      content:   /content/footer/col-04.md
     - row:
       align:     center # one of: left | center | right | ignore
       seperator: false  # add a horizontal border line below row?
@@ -132,7 +132,8 @@ customize:
   http404:  link       # one of: badge | default | dog | droids | glass | link | milk | monster | potty | shrug | sticky | tweet | zork
   css: [ "main.css", "tiles.css" ] # array of stylesheets to load after other styles
   #js:  [ "main.js"  ] # array of javascript files to load after other scripts
-  homepage: custom     # one of: books | contributors | custom | docs | landing | legal | soon | webapps
+  homepage: landing     # one of: books | contributors | custom | docs | landing | legal | soon | webapps
+  #launchDate: "2024-01-09T05:00:00.000Z"
 
 blog:
   recentstyle:  shoply   # one of: newsly | shoply | plainly | default | custom

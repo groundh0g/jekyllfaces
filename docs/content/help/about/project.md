@@ -24,20 +24,21 @@ This project ([JekyllFaces](https://jekyllfaces.com/)) adds a ton of functionali
 This project allows your to create all sorts of websites. Some of the features that you can integrate with little-to-no code include:
 
 * Blogging support. (Thanks, Jekyll!)
-* Hot reload of configuration changes.
+* [Hot reload of configuration changes.]({{ "/spotlight/configuration/2023/10/07/feature-configuration.html" | relative_url }})
 * Bootstrap-based layouts.
 * Bootswatch-based themes.
 * Simplified navigation bar creation.
-* Configurable search.
+* [Includes a selection of creative 404 pages.]({{ "/spotlight/404/2023/10/12/feature-404-pages.html" | relative_url }})
+* [Configurable search.]({{ "/spotlight/2023/10/02/feature-search.html" | relative_url }})
 * Configurable footers.
-* Support for multiple Analytics vendors.
-* Support for multiple Comments providers.
-* Support for many popular Font Icons.
-* Leanpub-friendly hosting of Markdown-based Books.
-* A clean, structured means of hosting serverless Web Applications.
-* A clean, structured means of hosting project Documentation.
-* A clean, structured means of managing project Contributors.
+* [Support for multiple Analytics vendors.]({{ "/spotlight/analytics/2023/10/11/feature-analytics.html" | relative_url }})
+* [Support for multiple Comments providers.]({{ "/spotlight/comments/2023/10/08/feature-comments.html" | relative_url }})
+* [Support for many popular Font Icons.]({{ "/spotlight/font/icons/2023/10/03/feature-font-icons.html" | relative_url }})
+* [Leanpub-friendly hosting of Markdown-based Books.]({{ "/spotlight/books/2023/10/09/feature-books.html" | relative_url }})
+* [A clean, structured means of hosting serverless Web Applications.]({{ "/spotlight/apps/2023/10/10/feature-apps.html" | relative_url }})
+* [A clean, structured means of hosting project Documentation.]({{ "/spotlight/docs/2023/10/05/feature-documentation.html" | relative_url }})
+* [A clean, structured means of managing project Contributors.]({{ "/spotlight/contributors/2023/10/06/feature-contributors.html" | relative_url }})
 * A configurable home page, where you pick what your visitors see first.
-* Liquid and JavaScript widgets that aggregate and present content.
+* [Liquid and JavaScript widgets that aggregate and present content.]({{ "/spotlight/widgets/2023/10/04/feature-widgets.html" | relative_url }})
 * Linters that validate the markdown, javascript, HTML, ...
 * And much, much more!

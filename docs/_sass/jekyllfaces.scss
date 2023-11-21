@@ -89,6 +89,14 @@ footer .row {
 
 
 
+.subtitle {
+  font-size: 5.5vmin;
+  font-weight: bolder;
+  text-align: center;
+  display: block;
+}
+
+@import "jekyllfaces-widgets/countdown";
 
 
 @import "jekyllfaces-blog-themes/style-newsly";

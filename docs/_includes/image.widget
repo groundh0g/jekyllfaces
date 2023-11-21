@@ -89,7 +89,9 @@ You may configure it in one of the following ways:
 
   {% endif %}
 
-  <img class="image-img" src='{{ include.file | relative_url }}' alt='{{ include.alt | default: file_name }}' />
+  <div style="display: block; height: {{ include.height }}; line-height: {{ include.height }}; text-align: {{ include.align }};">
+  <img class="image-img" style="width: {{ include.width }}; display: inline-block;" src="{{ include.file | relative_url }}" alt="{{ include.alt | default: file_name }}" />
+  </div>
 
 
   {% if collapsible %}
