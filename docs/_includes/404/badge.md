@@ -4,6 +4,7 @@
 
 <p>Congratulations! You have discovered a page that doesn't exist.</p>
 
-<p><img src='{{ "/assets/images/404/badge.png" | relative_url }}' alt="404 badge" /></p>
+{% include image.widget config=config id="404-image" alt="404 image" file="/assets/images/404/badge.png" width="65vmin" height="65vmin" align="center" collapsible=false %}
 
 </div>
+<p> </p>

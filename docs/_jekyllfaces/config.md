@@ -8,6 +8,7 @@ metadata:
     along with support for Bootswatch's free themes, all while targeting the dependencies of GitHub Pages.
   legal: # used for privacy policy, terms of use, etc ...
     company:      Joseph B. Hall # company name, or your name here
+    twitter:      jekyllfaces    # twitter  handle
     founded:      2017           # first year of this project
     website:      https://jekyllfaces.com/
     jurisdiction: # e.g. "Georgia", "United States" when blank

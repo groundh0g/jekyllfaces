@@ -6,6 +6,6 @@
 
 <p>It'll all work out in the end. Just click one of the links at the top of the page.</p>
 
-<p><img src='{{ "/assets/images/404/potty.png" | relative_url }}' alt="404 potty" /></p>
+{% include image.widget config=config id="404-image" alt="404 image" file="/assets/images/404/potty.png" width="65vmin" height="65vmin" align="center" collapsible=false %}
 
 </div>

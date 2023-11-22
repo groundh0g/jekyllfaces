@@ -6,6 +6,6 @@
 
 <p>While you wait, just enjoy the fresh dairy air and click one of the links at the top of the page.</p>
 
-<p><img src='{{ "/assets/images/404/milk.png" | relative_url }}' alt="404 milk carton" /></p>
+{% include image.widget config=config id="404-image" alt="404 image" file="/assets/images/404/milk.png" width="65vmin" height="65vmin" align="center" collapsible=false %}
 
 </div>
