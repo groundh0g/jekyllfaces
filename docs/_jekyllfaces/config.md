@@ -55,15 +55,27 @@ navbar:
       search: true # true
     pullRight: true
     items:
-      - item: Terms
-        link: /terms/
-      - item: Gallery
-        link: /gallery/
-      - item: Shop
-        link: /shop/
-      - item: Games
-        link: https://games.joehall.net/
-        targ: _blank
+      #- item: Terms
+      #  link: /terms/
+      #- item: Gallery
+      #  link: /gallery/
+      #- item: Shop
+      #  link: /shop/
+      - item: Examples
+        activeWhenContains: example.jekyllfaces.com/
+        items:
+          - item: Books
+            link: /content/books/
+            #link: https://book-example.jekyllfaces.com/
+            targ: _blank
+          - item: Documentation
+            link: /foo
+            #link: https://docs-example.jekyllfaces.com/
+            targ: _blank
+          - item: Web App(s)
+            link: /foo
+            #link: https://apps-example.jekyllfaces.com/
+            targ: _blank
       - item: Blog
         link: /blog/
         activeWhenContains: /blog/ # highlight as active when the url includes the given text
@@ -144,12 +156,18 @@ blog:
   archivegroup: true     # one of: true | false
 
 widgets:
+  strict:    true    # enforce required fields, etc...?
   hr:
     size:    2       # one of: 1 | 2 | 3 | 4 | 5
-    color:   primary # one of: light | dark | primary | secondary | success | info | warning | danger
+    color:   light   # one of: light | dark | primary | secondary | success | info | warning | danger
     opacity: 75      # one of: 0 | 25 | 50 | 75 | 100
   gist:
     collapsible: true
+  image:
+    collapsible: false   # include button to show/hide the image? 
+    align:       center  # one of: left | right | center
+    width:       65vmin  # width of the image
+    height:      70vmain # height and line-height of the image
 
 build:
   use_cdn:      true # use CDN for 3rd-party scripts and styles?

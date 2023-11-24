@@ -4,7 +4,7 @@
 
 <div style="clear:both;"><pre style="background-color:#000; color:#fff; border:0;">
  DORK I: The Great Underground Website
- {{ site.jaytch.title | default: site.title }} interactive fiction -
+ {{ config.metadata.title | default: "JekyllFaces" }} interactive fiction -
  a fallacy story
  Copyright (c) 1981, 1982, 1983, 1984,
  1985, 1986 {{ site.jaytch.title | default: site.title }}, Inc.

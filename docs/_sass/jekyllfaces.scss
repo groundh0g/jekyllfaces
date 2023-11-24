@@ -87,7 +87,15 @@ footer .row {
   background-position: center 33%;
 }
 
+.clear-float-left { clear: left; }
+.clear-float-right { clear: right; }
+.clear-float-both { clear: both; }
 
+.book-cover {
+  float: right;
+  width: 20vmin !important;
+  margin: 0 20px;
+}
 
 .subtitle {
   font-size: 5.5vmin;
@@ -97,7 +105,6 @@ footer .row {
 }
 
 @import "jekyllfaces-widgets/countdown";
-
 
 @import "jekyllfaces-blog-themes/style-newsly";
 @import "jekyllfaces-blog-themes/style-shoply";

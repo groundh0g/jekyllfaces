@@ -3,18 +3,13 @@
   {% include read-config.liquid %}
 {% endunless %}
 
-{% assign strict = true %}
-{% if config.widgets.strict != nil %}{% assign strict = config.widgets.strict %}{% endif %}
-{% if page.widgets.strict != nil %}{% assign strict = page.widgets.strict %}{% endif %}
+{% assign strict = config.widgets.strict | default: page.widgets.strict | default: include.strict | default: false %}
 
 {% assign MSG_MISSING_FILENAME = "missing filename" %}
 {% assign file_name = include.file | default: MSG_MISSING_FILENAME | split: "/" | last %}
 {% assign widget_id = include.id | default: file_name | slugify %}
-{% assign alt_label = include.alt %}{% if alt_label == nil %}{% assign alt_label = file_name | slugify | replace: "-", " " %}{% endif %}
-
-{% assign collapsible = true %}
-{% if page.gists.collapsible != nil %}{% assign collapsible = page.gists.collapsible %}{% endif %}
-{% if include.collapsible != nil %}{% assign collapsible = include.collapsible %}{% endif %}
+{% assign alt_label = include.alt | default: file_name |  slugify |  replace: "-", " " %}
+{% assign collapsible = incude.collapsible | default: page.widgets.image.collapsible | default: config.widgets.image.collapsible | default: false %}
 
 {% assign errors = "" | split: "," %}
 {% if strict == true and (include.id == nil or widget_id == (MSG_MISSING_FILENAME | slugify)) %}{% assign errors = errors | push: "Missing parameter, 'id'." %}{% endif %}

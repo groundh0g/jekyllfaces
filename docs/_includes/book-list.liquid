@@ -1,0 +1,32 @@
+{% assign config = include.config %}
+{% unless config %}
+    {% include read-config.liquid %}
+{% endunless %}
+
+{% assign pages = site.pages | where_exp: "page", 'page.path contains "content/books"' %}
+
+{% for file in pages %}
+    {% if file.path contains "summary.md" %}
+
+{% include hr.widget config=config -%}
+
+<img class='book-cover' src='{{ file.path | replace: "/summary.md", "/cover.png" | replace: "content/books/", "" }}' alt='book cover' />
+
+{% assign content = file.content | default: "" %}
+{% assign path = file.path | replace: "content/books/", "" %}
+
+{% capture content %}
+{% include_relative {{ path }} %}
+{% endcapture %}
+
+{{ content | markdownify }}
+
+[Show Me &raquo;]({{ site.baseurl }}/{{ file.path | replace: "/summary.md", "/" }})
+
+<div class="clear-float-both"></div>
+
+
+    {% endif %}
+{% endfor %}
+
+<p> </p>

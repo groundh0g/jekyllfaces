@@ -1,0 +1,5 @@
+### MonoGame: Code Camps
+
+In this series, I follow the same general principles that drove the first book. I write the books that help the beginner without boring the more-experienced readers to tears. I write the books that contain examples that go beyond rainbow triangles and 3D cubes with crate textures. In short, I write the books that I, as a hobbyist game developer, would want to read. If you enjoy the book as well (and I sincerely hope you do), I consider that an added bonus.
+
+There was so much content to cover in this new work that I decided to break it into five separate volumes (plus a sixth volume for my annual summer camp on game programming). Each book stands on its own. As much as possible, later volumes don’t assume that you own the previous volumes. If, for example, you want to dive into 3D and you have a few XNA or MonoGame game projects under your belt, then, by all means, jump straight to Volume 3: 3D Genre Studies.
