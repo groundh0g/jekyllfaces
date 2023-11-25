@@ -11,8 +11,10 @@ layout: default
 
   <p class="post-meta">
     {% assign date_format = site.minima.date_format | default: "%B %-d, %Y" %}
-    Posted on {{ page.date | date: date_format }}{% if page.author %}, by {{ page.author }}{% endif %}{% if page.tags %}, about {% include providers-blog-nav/common-tags.liquid config=config tags=page.tags %}{% endif %}.
+    Posted on {{ page.date | date: date_format }}{% if page.author %}, by {{ page.author }}{% endif %}{% if page.tags %}, about: {% include providers-blog-nav/common-tags.liquid config=config tags=page.tags %}{% endif %}
   </p>
+
+  {% include hr.widget config=config %}
 
   <div class="post-content" itemprop="articleBody">
     {{ content }}

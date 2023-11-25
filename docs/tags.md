@@ -1,6 +1,7 @@
 ---
 title: Blog Posts by Tag
 permalink: /blog/tags/
+showTitle: false
 ---
 
 {% assign config = include.config %}

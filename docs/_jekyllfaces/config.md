@@ -62,28 +62,24 @@ navbar:
       #- item: Shop
       #  link: /shop/
       - item: Examples
-        activeWhenContains: example.jekyllfaces.com/
+        activeWhenContains: /content/books/ # highlight as active when the url includes the given text
         items:
           - item: Books
             link: /content/books/
-            #link: https://book-example.jekyllfaces.com/
-            targ: _blank
           - item: Documentation
             link: /foo
-            #link: https://docs-example.jekyllfaces.com/
-            targ: _blank
-          - item: Web App(s)
+          - item: Web Apps
             link: /foo
-            #link: https://apps-example.jekyllfaces.com/
-            targ: _blank
       - item: Blog
-        link: /blog/
+        # link: /blog/
         activeWhenContains: /blog/ # highlight as active when the url includes the given text
         items:
           - item: Latest Posts
             link: /blog/latest/
           - item: Post Archive
             link: /blog/archive/
+          - item: Posts by Tags
+            link: /blog/tags/
       - item: Help
         activeWhenContains: /help/ # highlight as active when the url includes the given text
         items:
@@ -154,6 +150,8 @@ blog:
   archivestyle: plainly  # one of: newsly | shoply | plainly | default | custom
   archivetheme: red      # one of: red | green | blue | yellow | brown | purple | gray | slategray
   archivegroup: true     # one of: true | false
+  tagstintback: warning  # one of: dark | light | primary | secondary | success | info | warning | danger | link
+  tagstinttext: black    # one of: black | white | dark | light | primary | secondary | success | info | warning | danger | link
 
 widgets:
   strict:    true    # enforce required fields, etc...?
