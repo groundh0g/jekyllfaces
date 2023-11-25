@@ -2,7 +2,7 @@
 layout: post
 title:  "Feature - Search"
 featured: true
-categories: spotlight
+tags: spotlight search
 author: groundh0g
 image: /assets/images/blog/search-unsplash.jpg
 ---

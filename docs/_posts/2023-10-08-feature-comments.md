@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Feature - Comments"
-categories: spotlight comments
+tags: spotlight comments
 author: groundh0g
 image: /assets/images/blog/feature-comments-example.png
 ---

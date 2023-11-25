@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Feature - Documentation"
-categories: spotlight docs
+tags: spotlight docs
 author: groundh0g
 image: /assets/images/blog/documentation-pixabay.png
 ---

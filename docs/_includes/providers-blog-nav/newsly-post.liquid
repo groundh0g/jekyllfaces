@@ -17,6 +17,7 @@
         <div class="blog-excerpt">{{ include.post.excerpt | default: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque sagittis purus sit amet volutpat consequat mauris nunc. Velit laoreet id donec ultrices tincidunt. Nunc id cursus metus aliquam eleifend. Arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc." }}</div>
         <div class="read-more"><a href="{{ include.post.url }}">READ MORE &raquo;</a></div>
         <div class="by-line">{{ include.post.date | date: "%d %b %Y" | upcase }} by {{ include.post.author | default: "admin" }}</div>
-        <div class="clear-right"> </div>
+        <div class="clear-both"> </div>
+        {%- include providers-blog-nav/common-tags.liquid config=config tags=include.post.tags %}
     </div>
 </div>

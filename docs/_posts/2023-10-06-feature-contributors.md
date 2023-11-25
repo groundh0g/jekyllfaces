@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Feature - Contributors"
-categories: spotlight contributors
+tags: spotlight contributors
 author: groundh0g
 image: /assets/images/blog/feature-contributors.png
 ---

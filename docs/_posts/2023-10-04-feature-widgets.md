@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Feature - Widgets"
-categories: spotlight widgets
+tags: spotlight widgets
 author: groundh0g
 image: /assets/images/blog/widgets-pixabay.jpg
 ---

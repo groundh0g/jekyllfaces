@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2023-10-01 09:09:01 -0400
-categories: jekyll update welcome
+tags: jekyll update welcome
 image: /assets/images/blog/welcome-pixabay.jpg
 ---
 

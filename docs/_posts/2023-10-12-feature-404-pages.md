@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Feature - 404 Pages"
-categories: spotlight 404
+tags: spotlight 404
 author: groundh0g
 image: /assets/images/blog/feature-404-pages.png
 ---

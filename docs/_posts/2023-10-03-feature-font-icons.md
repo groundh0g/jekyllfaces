@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Feature - Font Icons"
-categories: spotlight font icons
+tags: spotlight font icons
 author: groundh0g
 image: /assets/images/blog/feature-font-glyphsearch.png
 ---

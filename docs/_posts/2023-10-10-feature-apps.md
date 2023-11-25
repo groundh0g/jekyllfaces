@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Feature - Web Applications"
-categories: spotlight apps
+tags: spotlight apps
 author: groundh0g
 image: /assets/images/blog/webapps-pixabay.png
 ---

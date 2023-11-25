@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Feature - Configuration"
-categories: spotlight configuration
+tags: spotlight configuration
 author: groundh0g
 image: /assets/images/blog/feature-configuration-themes.png
 ---

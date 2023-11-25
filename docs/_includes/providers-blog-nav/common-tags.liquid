@@ -1,0 +1,15 @@
+{% assign config = include.config %}
+{% unless config %}
+    {% include read-config.liquid %}
+{% endunless %}
+
+{% comment %}<div class="blog-tags">{% endcomment %}
+  {% for tag in include.tags -%}
+    {%- assign href = tag | slugify | prepend: "#" -%}
+    {%- if include.isTagPage != true -%}
+      {%- assign link = "/blog/tags/" | relative_url -%}
+        {%- assign href = link | append: href -%}
+    {%- endif -%}
+    <span class="badge bg-warning text-black"><a class="text-black" href="{{ href }}">{{ tag }}</a></span>
+  {% endfor %}
+{% comment %}</div>{% endcomment %}

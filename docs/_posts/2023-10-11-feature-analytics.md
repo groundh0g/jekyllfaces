@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Feature - Analytics"
-categories: spotlight analytics
+tags: spotlight analytics
 author: groundh0g
 image: /assets/images/blog/feature-analytics-example.jpg
 ---

@@ -7,8 +7,10 @@
 
   {% include head.html config=config %}
 
-  <body class='{{ page.class | default: "" }} bg-{{ config.body.tintback }} text-{{ config.body.tinttext }}'>
-    <div class="whole-page-div">
+<!--  <body class='{{ page.class | default: "" }} bg-{{ config.body.tintback }} text-{{ config.body.tinttext }}'>-->
+<!--    <div class="whole-page-div">-->
+  <body class='bg-{{ config.footer.tintback }} text-{{ config.footer.tinttext }}'>
+    <div class='whole-page-div {{ page.class | default: "" }} bg-{{ config.body.tintback }} text-{{ config.body.tinttext }}'>
 
     {% include header.html config=config %}
 

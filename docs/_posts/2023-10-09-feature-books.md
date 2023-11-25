@@ -2,7 +2,7 @@
 layout: post
 title:  "Feature - Books"
 featured: true
-categories: spotlight books
+tags: spotlight books
 author: groundh0g
 image: /assets/images/blog/books-pixabay.jpg
 ---

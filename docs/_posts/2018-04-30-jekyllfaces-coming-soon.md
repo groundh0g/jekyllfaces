@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "JekyllFaces is Coming Soon!"
-categories: news
+tags: news
 author: groundh0g
 image: /assets/images/logo-256x256.png
 ---
