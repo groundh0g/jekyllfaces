@@ -3,7 +3,10 @@
   {% include read-config.liquid %}
 {% endunless %}
 
-<footer class="site-footer bg-{{ config.footer.tintback }} text-{{ config.footer.tinttext }}">
+{% assign key = page.category | default: "default" %}
+{% assign footer = config.category[key].footer |  default: config.category.default.footer %}
+
+<footer class="site-footer bg-{{ footer.tintback }} text-{{ footer.tinttext }}">
 
 <div class="container">
 

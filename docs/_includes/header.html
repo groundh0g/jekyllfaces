@@ -3,20 +3,21 @@
   {% include read-config.liquid %}
 {% endunless %}
 
-{% if config.navbar and config.navbar.show == true %}
+{% assign key = page.category | default: "default" %}
+{% assign navbar = config.category[key].navbar | default: config.category.default.navbar %}
 
-  {% assign navbar_text_color = config.navbar.color.tint | default: "dark" | prepend: "navbar-" %}
-  {% assign navbar_back_color = config.navbar.color.back | default: "dark" | prepend: "bg-" %}
+{% if navbar and config.navbar.show == true %}
+
   {% if config.navbar.fixed == true %}{% assign navbar_fixed = "fixed-top" %}{% endif %}
   {% assign navbar_logo = config.navbar.menu.homepage.icon | relative_url %}
   {% assign navbar_fluid = "container" %}
   {% if config.navbar.width == "fluid" %}{% assign navbar_fluid = "container-fluid" %}{% endif %}
 
-  <nav class="navbar navbar-expand-lg navbar-nav bg-{{ config.navbar.tintback }} navbar-{{ config.navbar.tinttext }} {{ navbar_fixed }}">
+  <nav class="navbar navbar-expand-lg navbar-nav bg-{{ navbar.tintback }} text=-zzz-{{ navbar.tinttext }} navbar-{{ navbar.tinttext }} {{ navbar_fixed }}">
     <div class="{{ navbar_fluid }}">
       {% if config.navbar.menu.homepage %}
       {% assign active_underline_class = "" %}
-      {% if "/" == page.url and config.navbar.menu.homepage.underlineActive and config.navbar.underlineActive %}{% assign active_underline_class = "active underlineActive" %}{% endif %}
+      {% if "/" == page.url and config.navbar.menu.homepage.underlineActive and config.navbar.underlineActive %}{% assign active_underline_class = "active-{{ navbar.tinttext}} active underlineActive" %}{% endif %}
       <a class="navbar-brand {{ active_underline_class }}" href='{{ "/" | relative_url }}'>{% if navbar_logo %}<img src='{{ navbar_logo }}' alt="site logo" width="24" height="24" /> {% endif %}{{ config.navbar.menu.homepage.text | default: config.metadata.title }}</a>
       {% endif %}
 <!--      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">-->
@@ -35,12 +36,12 @@
             {% if page.url contains item.activeWhenContains %}{% assign active_class = "active" %}{% endif %}
             {% if item.items %}
               <li class="nav-item dropdown">
-                <a class='nav-link dropdown-toggle {{ active_class | append: active_underline_class }}' data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ item.item | default: "unlabeled" }}</a>
+                <a class='nav-link dropdown-toggle zzz-{{ active_class }} {{ active_underline_class }}' data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ item.item | default: "unlabeled" }}</a>
                 <div class="dropdown-menu">
                   {% for child in item.items %}
                     {% assign active_class = "" %}
                     {% if child.link == page.permalink %}{% assign active_class = "active" %}{% endif %}
-                    <a class='dropdown-item {{ active_class | append: active_underline_class }}' href="{{ child.link | relative_url }}" {% if item.targ %}target="{{ item.targ }}"{% endif %}>{{ child.item | default: "unlabeled" }}</a>
+                    <a class='dropdown-item {{ active_class }} {{ append: active_underline_class }}' href="{{ child.link | relative_url }}" {% if item.targ %}target="{{ item.targ }}"{% endif %}>{{ child.item | default: "unlabeled" }}</a>
                   {% endfor %}
                 </div>
               </li>
@@ -49,7 +50,7 @@
                 {% assign active_class = "" %}
                 {% if page.url contains item.activeWhenContains %}{% assign active_class = "active" %}{% endif %}
                 {% if item.link == page.permalink %}{% assign active_class = "active" %}{% endif %}
-                <a class='nav-link {{ active_class | append: active_underline_class }}' href='{{ item.link | relative_url }}' {% if item.targ %}target="{{ item.targ }}"{% endif %}>{{ item.item | default: "unlabeled" }}</a>
+                <a class='nav-link {{ active_class }} {{ active_underline_class }}' href='{{ item.link | relative_url }}' {% if item.targ %}target="{{ item.targ }}"{% endif %}>{{ item.item | default: "unlabeled" }}</a>
               </li>
             {% endif %}
           {% endfor %}

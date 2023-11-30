@@ -45,7 +45,12 @@
 
   {% if config.build.use_cdn %}
 
-  {% case config.customize.theme %}
+  <!-- ABC: '{{ page.category }}' -->
+  {% assign key = page.category | default: "default" %}
+  {% assign theme = config.category[key].theme %}
+
+<!--  { % case config.customize.theme % }-->
+  {% case theme %}
     {% when "cerulean" %}
       <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-KZYvDM6uZ38YbkIu7BXKA/PnGrwKacp5/NXQ8UoYr3ZBgXBbI2ybVID/YMoBUmoa" crossorigin="anonymous"> -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/cerulean/bootstrap.min.css" integrity="sha256-DVTNk9+Gfg5+ReJbDwm+4kBWmZZeHjaniFMj0km+q2Y=" crossorigin="anonymous">

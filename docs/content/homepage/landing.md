@@ -3,9 +3,9 @@
   {% include read-config.liquid %}
 {% endunless %}
 
-{% include image.widget config=config id="logo-image" alt="logo image" file="/assets/images/logo-1024x1024.svg" width="50vmin" height="50vmin" align="center" collapsible=false %}
+{% include image.widget config=config id="logo-image" alt="logo image" file=config.metadata.logo width="50vmin" height="50vmin" align="center" collapsible=false %}
 
-<div class="subtitle"><p>We Hyde the scary parts!</p></div>
+<div class="subtitle"><p>{{ config.metadata.tagline }}</p></div>
 
 {% include countdown.widget config=config launchDate="2024-01-09T05:00:00.000Z" %}
 

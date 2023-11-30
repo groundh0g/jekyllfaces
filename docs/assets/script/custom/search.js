@@ -1,6 +1,3 @@
----
----
-
 var searchMatcher = function(posts) {
 
     return function findMatches(q, cb) {

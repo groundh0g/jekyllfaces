@@ -3,8 +3,8 @@
     {% include read-config.liquid %}
 {% endunless %}
 
-{% assign company = include.company | default: config.metadata.legal.company | default: "" %}
-{% assign founded = include.founded | default: config.metadata.legal.founded %}
+{% assign company = include.company | default: config.legal.company | default: "" %}
+{% assign founded = include.founded | default: config.legal.founded %}
 
 {% if company %}
   {% assign company = company | prepend: "by " %}
@@ -14,7 +14,7 @@
   {% if foundedYear != currentYear %}
     {% assign copyrightMessage = copyrightMessage | append: " - " | append: currentYear %}
   {% endif %}
-  <div class="copyright">
-    {{ copyrightMessage }} {{ company }}
-  </div>
+
+{{ copyrightMessage }} {{ company }}
+
 {% endif %}

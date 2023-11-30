@@ -3,50 +3,53 @@
   {% include read-config.liquid %}
 {% endunless %}
 
-<footer class="site-footer bg-{{ config.footer.tintback }} text-{{ config.footer.tinttext }}">
+{% assign key = page.category | default: "default" %}
+{% assign footer = config.category[key].footer |  default: config.category.default.footer %}
+
+<footer class="site-footer bg-{{ footer.tintback }} text-{{ footer.tinttext }}">
 
 <div class="container">
-{% assign rowCount = 0 %}
-{% for row in config.footer.rows %}
-{% assign align = row.align | default: "left" %}
-{% assign colCount = 0 %}
-{% assign colWidth = 0 %}
-{% assign rowCount = rowCount | plus: 1 %}
-{% assign rowAlign = row.align | default: "left" | prepend: "text-align-" %}
-<div class="row {{ rowAlign }}">
-{% for col in row.columns %}
-{% assign colCount = colCount | plus: 1 %}
-{% assign colWidth = colWidth | plus: col.width %}
-{% assign colAlign = col.align | default: "left" | prepend: "text-align-" %}
-<div class="col-md-{{ col.width}} {{ colAlign }}">
-{% if col.content == "copyright" %}
-{% include copyright.widget config=config %}
-{% elsif col.content %}
-{% assign content = col.content | trim %}
-{% assign firstChar = content | slice: 0 %}
-{% if "/" == firstChar %}{% assign content = content | slice: 1, 9999 %}{% endif %}
-{% assign pg = site.pages | where_exp: "page", "content == page.path" | first %}
+  {% assign rowCount = 0 %}
+  {% for row in config.footer.rows %}
+    {% assign align = row.align | default: "left" %}
+    {% assign colCount = 0 %}
+    {% assign colWidth = 0 %}
+    {% assign rowCount = rowCount | plus: 1 %}
+    {% assign rowAlign = row.align | default: "left" | prepend: "text-align-" %}
+    {% if row.seperator == true %}<hr/>{% endif %}
 
+  <div class="row {{ rowAlign }}">
+    {% for col in row.columns %}
+      {% assign colCount = colCount | plus: 1 %}
+      {% assign colWidth = colWidth | plus: col.width %}
+      {% assign colAlign = col.align | default: "left" | prepend: "text-align-" %}
+    <div class="col-md-{{ col.width}} {{ colAlign }}">
+      {% if col.content == "copyright" %}
+        <div class="copyright">{% include copyright.widget config=config %}</div>
+      {% elsif col.content %}
+        {% assign content = col.content | trim %}
+        {% assign firstChar = content | slice: 0 %}
+        {% if "/" == firstChar %}{% assign content = content | slice: 1, 9999 %}{% endif %}
+        {% assign pg = site.pages | where_exp: "page", "content == page.path" | first %}
 
 {% capture foo %}
 {{ pg.content }}
 {% endcapture %}
 {{ foo | markdownify }}
 
-{% endif %}
-</div>
+      {% endif %}
+    </div>
+  {% endfor %}
+  </div>
+
+  {% if colWidth != 12 %}
+  <div class="alert alert-danger" role="alert">
+    {% capture message %}**ERROR:** Total column width in footer row {{ rowCount }} must be exactly 12, but is actually {{ colWidth }}. Check your settings in '/_jekyllfaces/config.md'.{% endcapture %}
+  {{ message | markdownify }}
+  </div>
+  {% endif %}
+
 {% endfor %}
-</div>
-
-{% if colWidth != 12 %}
-<div class="alert alert-danger" role="alert">
-{% capture message %}**ERROR:** Total column width in footer row {{ rowCount }} must be exactly 12, but is actually {{ colWidth }}. Check your settings in '/_jekyllfaces/config.md'.{% endcapture %}
-{{ message | markdownify }}
-</div>
-{% endif %}
-
-{% endfor %}
-
 </div>
 
 </footer>
