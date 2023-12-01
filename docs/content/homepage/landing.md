@@ -17,4 +17,4 @@ Check out our status and plans for this project.
 
 * [Read the latest blog posts.]({{ "/blog/latest/" | relative_url }})
 * [See what the project is all about.]({{ "/help/about/project/" | relative_url }})
-* [Meet the team that's building this framework.]({{ "/help/about/contributors/" | relative_url }})
+* [Meet the team.]({{ "/help/about/contributors/" | relative_url }})

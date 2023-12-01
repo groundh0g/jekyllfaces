@@ -14,6 +14,21 @@
   margin-left: 20px;
 }
 
+.signature-color-white { filter: invert(0); }
+.signature-color-black { filter: brightness(0); }
+.signature-color-grayish  { filter: hue-rotate(219deg) saturate(79.2%) brightness(66.1%); }
+
+img.signature {
+  width: 25vw;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  div.signature{
+    text-align: center;
+  }
+}
+
 .tiny {
   font-weight: normal;
   font-size: 0.7em;

@@ -18,6 +18,7 @@ layout: default
 
   <div class="post-content" itemprop="articleBody">
     {{ content }}
+    {% include signature.widget config=config %}
   </div>
 
 {% include comments.liquid config=config %}

@@ -45,8 +45,8 @@ legal: # used for privacy policy, terms of use, etc ...
   twitter:      jekyllfaces    # twitter  handle
   founded:      2017           # first year of this project
   license:
-    code: MIT # one of: MIT | CC
-    text: MIT # one of: MIT | CC
+    code:       MIT       # one of: MIT | CC-BY-4.0
+    text:       CC-BY-4.0 # one of: MIT | CC-BY-4.0
   website:      https://jekyllfaces.com/
   jurisdiction: # e.g. "Georgia", "United States" when blank
 
@@ -58,13 +58,16 @@ legal: # used for privacy policy, terms of use, etc ...
 ## --------------------------------------------------------------------
   
 blog:
-  recentstyle:  shoply   # one of: newsly | shoply | plainly | default | custom
-  recenttheme:  red      # one of: red | green | blue | yellow | brown | purple | gray | slategray
-  archivestyle: plainly  # one of: newsly | shoply | plainly | default | custom
-  archivetheme: red      # one of: red | green | blue | yellow | brown | purple | gray | slategray
-  archivegroup: true     # one of: true | false
-  tagstintback: warning  # one of: dark | light | primary | secondary | success | info | warning | danger | link | body-tertiary
-  tagstinttext: black    # one of: black | white | dark | light | primary | secondary | success | info | warning | danger | link
+  recentstyle:     shoply   # one of: newsly | shoply | plainly | default | custom
+  recenttheme:     red      # one of: red | green | blue | yellow | brown | purple | gray | slategray
+  archivestyle:    plainly  # one of: newsly | shoply | plainly | default | custom
+  archivetheme:    red      # one of: red | green | blue | yellow | brown | purple | gray | slategray
+  archivegroup:    true     # one of: true | false
+  tagstintback:    warning  # one of: dark | light | primary | secondary | success | info | warning | danger | link | body-tertiary
+  tagstinttext:    black    # one of: black | white | dark | light | primary | secondary | success | info | warning | danger | link
+  signature:
+    color:  grayish  # one of: black | white | grayish
+    name:   joehall  # the name of the author of the blog post, one word, lowercase
 
 
 ## -----------------------------------------------------------------------------------------
@@ -113,6 +116,7 @@ category:
 ## -----------------------------------------------
 ## -----------------------------------------------
 ## -- build toggles... TODO: is this redundant? --
+## -- NOTE: build.use_cdn IS used in head.html  --
 ## -----------------------------------------------
 ## -----------------------------------------------
 
@@ -165,19 +169,18 @@ search:
 ## -------------------------------------------------
 
 navbar:
-  show:      true
-  fixed:     true       # sticky navbar?
-  width:     container  # one of: container | fluid
+  show:  true
+  fixed: true       # sticky navbar?
+  width: container  # one of: container | fluid
   #logo: /assets/images/logo-1024x1024.png
   underlineActive: true # underline active link?
-  search: false # include search in navbar? (right-aligned)
+  search: true      # include search in navbar? (right-aligned)
 
   menu:
     homepage: # comment out this block to hide title in menu
       text: JekyllFaces<span class="tiny">.com</span> # default is {metadata.title}
       icon: /assets/images/logo-1024x1024.png # optional
       underlineActive: false # underline link when on homepage?
-      search: true # true
     pullRight: true
     items:
       #- item: Terms
@@ -293,6 +296,8 @@ widgets:
 
 
 ## --------------------------------------------------------------------------------------------------------
+## -- List of supported font icons. Can load fonts from CDN or local.                                    --
+## --------------------------------------------------------------------------------------------------------
 ## -- NOTE: The social icons on the contributors page only recognize fontawesome and lineawesome glyphs. --
 ## --       To see the icons, you need to enable one of those two. Multiple fonticons may be enabled     --
 ## --       at the same time. If both fontawesome and lineawesome are enabled, the contributors page     --
@@ -392,13 +397,6 @@ comments:
 version:   0.2.0
 github:    https://github.com/groundh0g/jekyllfaces
 website:   https://jekyllfaces.com/
-components:
-  bootstrap:
-    version: 5.2.3
-    website: https://getbootstrap.com/
-  bootswatch:
-    version: 5.2.3
-    website: https://bootswatch.com/
 
 ---
 
