@@ -2,7 +2,7 @@
 layout: page
 title: Books Hosted on This Site
 showTitle: false
-category: books
+category: book
 ---
 
 # My Books

@@ -7,4 +7,34 @@ author: groundh0g
 image: /assets/images/blog/books-pixabay.jpg
 ---
 
-No content yet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Are you writing the next big novel? Are you writing a technical how-to book? Do you want to collaborate with other writers?
+
+Whether your're working alone or with a group, there's a great markdown-based workflow that you can use that's based on [Leanpub's infrastructure and tools](https://leanpub.com/).
+
+<hr/>
+![Books Example]({{ "/assets/images/blog/feature-books.png" | relative_url }} "Books Example")
+<hr/>
+
+The overview text is stored in `/content/books/[book-title]/summary.md`, which is pure markdown that is automatically folded into the top-level books summary page. Each chapter is in its own markdown file which gets stitched into a single page, based on the list contained in `/content/books/[book-title]/Book.txt`. 
+
+~~~
+├─ content
+└── books
+  └── 01-my-gamedev-book
+    ├── Book.txt
+    ├── chapter01.md
+    ├── chapter02.md
+    ├── ...
+    ├── cover.png
+    ├── index.md
+    └── summary.md
+~~~
+
+Here's what a typical `Book.txt` file looks like.
+
+~~~
+  chapter01.md
+  chapter02.md
+  chapter03.md
+  chapter04.md
+~~~

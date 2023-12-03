@@ -108,8 +108,16 @@ footer .row {
 
 .book-cover {
   float: right;
-  width: 20vmin !important;
+  width: 33vmin !important;
   margin: 0 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .book-cover {
+    float: none;
+    width: 75vmin !important;
+    margin: auto 20px;
+  }
 }
 
 .subtitle {

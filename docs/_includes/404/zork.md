@@ -1,4 +1,4 @@
-<div style="width:400px; background-color:#000; color:#fff; font-family:monospace; border:1px solid black; margin:auto;">
+<div style="width:400px; background-color:#000; color:#fff; font-family:monospace; border:1px solid black; margin:auto; font-size: 0.8em;">
 
 <div style="background-color:#fff; color:#000;"><pre><span style="float:right">0/0 </span> West of House</pre></div>
 

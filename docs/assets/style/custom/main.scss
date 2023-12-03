@@ -29,6 +29,12 @@ img.signature {
   }
 }
 
+@media screen and (min-width: 768px) {
+  br.small-break {
+    display: none;
+  }
+}
+
 .tiny {
   font-weight: normal;
   font-size: 0.7em;

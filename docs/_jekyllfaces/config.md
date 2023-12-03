@@ -1,6 +1,5 @@
 ---
 
-# lang: en
 
 customize:
   http404:  link       # one of: badge | default | dog | droids | glass | link | milk | monster | potty | shrug | sticky | tweet | zork
@@ -8,15 +7,7 @@ customize:
   #js:  [ "main.js"  ] # array of javascript files to load after other scripts
   homepage: landing     # one of: books | contributors | custom | docs | landing | legal | soon | webapps
   #launchDate: "2024-01-09T05:00:00.000Z"
-
-#customize:
-#  theme:   flatly         # one of: cerulean | cosmo | cyborg | darkly | default | flatly | journal | litera | lumen | lux | materia | minty | pulse | sandstone | simplex | sketchy | slate | solar | spacelab | superhero | united | yeti
-#  http404: sticky         # one of: badge | default | dog | droids | glass | link | milk | monster | potty | shrug | sticky | tweet | zork
-#  css:     [ "main.css" ] # array of stylesheets to load after other styles
-#  #js:     [ "main.js"  ] # array of javascripts to load after other scripts
-#  background: bg-light
-#  #homepage: custom    # one of: books | contributors | custom | docs | landing | legal | soon | webapps
-
+  #lang: en
 
 
 ## ---------------------------
@@ -121,15 +112,16 @@ category:
 ## -----------------------------------------------
 
 build:
-  use_cdn:       true # use CDN for 3rd-party scripts and styles?
-  search:        true # create search index?
-  #books:        true # process book content?
-  #docs:         true # process documentation content?
-  #landing:      true # process landing page content?
-  #soon:         true # process coming soon content?
-  #webapps:      true # process webapps content? (the overviews, not the webapp(s) itself)
-  #legal:        true # process legal content?
-  #contributors: true # process contributors content?
+  use_cdn:         true # use CDN for 3rd-party scripts, styles, and themes?
+  skip:
+    search:        true # create search index?
+    #books:        true # process book content?
+    #docs:         true # process documentation content?
+    #landing:      true # process landing page content?
+    #soon:         true # process coming soon content?
+    #webapps:      true # process webapps content? (the overviews, not the webapp(s) itself)
+    #legal:        true # process legal content?
+    #contributors: true # process contributors content?
 
 
 ## ------------------------------------------------------------
