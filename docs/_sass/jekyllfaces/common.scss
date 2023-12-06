@@ -140,3 +140,12 @@ footer .row {
 .post-content p a:hover,
 .post-content p a
 { color: inherit !important; }
+
+.tag-button a:link,
+.tag-button a:active,
+.tag-button a:visited,
+.tag-button a:hover,
+.tag-button a {
+  border-bottom: none;
+  color: inherit !important;
+}

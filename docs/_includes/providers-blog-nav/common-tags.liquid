@@ -10,6 +10,6 @@
       {%- assign link = "/blog/tags/" | relative_url -%}
         {%- assign href = link | append: href -%}
     {%- endif -%}
-    <span class="badge bg-{{ config.blog.tagstintback }} text-{{ config.blog.tagstinttext }}"><a class="text-black" href="{{ href }}">{{ tag }}</a></span>
+    <span class="tag-button text-{{ config.blog.tagstinttext }}"><a class="btn btn-sm bg-{{ config.blog.tagstintback }}" href="{{ href }}">{{ tag }}</a></span>
   {% endfor %}
 {% comment %}</div>{% endcomment %}

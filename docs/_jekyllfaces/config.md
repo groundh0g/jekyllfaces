@@ -51,11 +51,13 @@ legal: # used for privacy policy, terms of use, etc ...
 blog:
   recentstyle:     shoply   # one of: newsly | shoply | plainly | default | custom
   recenttheme:     red      # one of: red | green | blue | yellow | brown | purple | gray | slategray
+  recentcount:     12       # number of recent posts to preview
+  featuredcount:   4        # number of featured posts to preview
   archivestyle:    plainly  # one of: newsly | shoply | plainly | default | custom
   archivetheme:    red      # one of: red | green | blue | yellow | brown | purple | gray | slategray
   archivegroup:    true     # one of: true | false
   tagstintback:    warning  # one of: dark | light | primary | secondary | success | info | warning | danger | link | body-tertiary
-  tagstinttext:    black    # one of: black | white | dark | light | primary | secondary | success | info | warning | danger | link
+  tagstinttext:    dark     # one of: black | white | dark | light | primary | secondary | success | info | warning | danger | link
   signature:
     color:  grayish  # one of: black | white | grayish
     name:   joehall  # the name of the author of the blog post, one word, lowercase

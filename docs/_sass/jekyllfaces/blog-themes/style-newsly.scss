@@ -5,25 +5,27 @@
 .newsly.blog-item-large img.center-cropped {
   width: 100%;
   height: 20vmin;
-  //background-size: cover;
-  //background-position: center;
+  background-size: cover;
+  background-position: center;
 }
 
 .newsly.blog-item-small img.center-cropped {
   width: 100%;
   height: 10vmin;
-  //background-size: auto;
-  //background-position: center;
+  background-size: cover;
+  background-position: top center;
 }
 
 .newsly.blog-item-large {
   padding: 1vmin;
   margin: 0.125vmin;
+  margin-bottom: 1vmin;
 }
 
 .newsly.blog-item-small {
   padding: 1vmin;
   margin: 0.125vmin;
+  margin-bottom: 1vmin;
 }
 
 .newsly.blog-item-large .blog-title {

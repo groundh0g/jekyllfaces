@@ -51,8 +51,6 @@
 
 @media (max-width: 768px) {
   .plainly.blog-item {
-    //width: 45%;
-    width: 80%;
     margin: 0 auto;
   }
 
@@ -64,9 +62,8 @@
   }
 
   .plainly.blog-item .excerpt {
-    //height: 11.2vmin;
-    font-size: 2vmin;
-    line-height: 2.2vmin;
+    font-size: 3vmin;
+    line-height: 3.2vmin;
   }
 
   .plainly.blog-item .read-more {
