@@ -1,0 +1,6 @@
+node_modules/**
+docs/_site/**/*.js
+Gruntfile.js
+.eslintrc.js
+**/*.min.js
+docs/assets/script/3rd-party/**/*.js

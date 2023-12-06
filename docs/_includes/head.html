@@ -1,0 +1,224 @@
+<head>
+
+  {% assign config = include.config %}
+  {% unless config %}
+    {% include read-config.liquid %}
+  {% endunless %}
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- TODO: replace with analytics provider -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3294285-12"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-3294285-12');
+  </script>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+
+  {% assign theTitle = page.title | default: config.metadata.title | default: site.title | strip_html | escape %}
+  <title>{{ theTitle }}</title>
+
+  {% assign theDescription = page.excerpt | default: config.metadata.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape %}
+  <meta name="description" content="{{ theDescription }}">
+
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ config.metadata.title | default: site.title | escape }}" href='{{ "/feed.xml" | relative_url }}'>
+
+<!--  <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/favicons/apple-touch-icon.png" | relative_url }}">-->
+<!--  <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicons/favicon-32x32.png" | relative_url }}">-->
+<!--  <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/favicons/favicon-16x16.png" | relative_url }}">-->
+<!--  <link rel="manifest" href="{{ "/assets/favicons/site.webmanifest" | relative_url }}">-->
+<!--  <link rel="mask-icon" href="{{ "/assets/favicons/safari-pinned-tab.svg" | relative_url }}" color="#5bbad5">-->
+<!--  <link rel="shortcut icon" href="{{ "/assets/favicons/favicon.ico" | relative_url }}">-->
+<!--  <meta name="msapplication-TileColor" content="#ffc40d">-->
+<!--  <meta name="msapplication-config" content="{{ "/assets/favicons/browserconfig.xml" | relative_url }}">-->
+<!--  <meta name="theme-color" content="#ffffff">-->
+
+  <!-- BOOTSTRAP THEME -->
+
+  {% if config.build.use_cdn %}
+
+  <!-- ABC: '{{ page.category }}' -->
+  {% assign key = page.category | default: "default" %}
+  {% assign theme = config.category[key].theme %}
+
+<!--  { % case config.customize.theme % }-->
+  {% case theme %}
+    {% when "cerulean" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-KZYvDM6uZ38YbkIu7BXKA/PnGrwKacp5/NXQ8UoYr3ZBgXBbI2ybVID/YMoBUmoa" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/cerulean/bootstrap.min.css" integrity="sha256-DVTNk9+Gfg5+ReJbDwm+4kBWmZZeHjaniFMj0km+q2Y=" crossorigin="anonymous">
+    {% when "cosmo" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-O87lDPxhG/Kda+dqPFpM5o84zNxqPnDK49gakxOjTS+q6zwSLxeOzfZy1mg9MasN" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/cosmo/bootstrap.min.css" integrity="sha256-axRDISYf7Hht1KhcMnfDV2nq7hD/8Q9Rxa0YlW/o3NU=" crossorigin="anonymous">
+    {% when "cyborg" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-5KpNAytmiDxBanrkBv7mxkrUV1uggYCd+nLTGVig8i0ubJLVBFWQKXnGK5nR4kJF" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/cyborg/bootstrap.min.css" integrity="sha256-5VtblVKKKwvwGyDA7qcGYiZUaS//r532pzmSTYjicQQ=" crossorigin="anonymous">
+    {% when "darkly" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-J01jr7rrJqxij+hUE1E+8N35mlD7L/TMrAO7tOarwMP7AWJM3P/lGXOjt0KLNhtE" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/darkly/bootstrap.min.css" integrity="sha256-syOAESiOYggEI5Sdz6qwx3LywwxUXiI9fAfWtw1RMec=" crossorigin="anonymous">
+    {% when "flatly" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-kCsv8pSAWtRge/+zcLDeqwoWhTQSUX2esQPYOsocgrg1eMj7T2wrTJP348T3mpBU" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/flatly/bootstrap.min.css" integrity="sha256-+omx7xYvI+/C0kfnQmjAIW8dDbTweWpbYHWzveX4ii4=" crossorigin="anonymous">
+    {% when "journal" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-5bYMJO1P7tdABaKtvXuoX0R6JAQx/1sraUN51G34E9XYSxfwsAVkdum8Sbgg931T" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/journal/bootstrap.min.css" integrity="sha256-GjCW7VqDbTASnACbHUSnAS3acTLQwFSbisHcuOZcmM0=" crossorigin="anonymous">
+    {% when "litera" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/litera/bootstrap.min.css" rel="stylesheet" integrity="sha384-E+ZoPrD9N70Q8SUyx+eufEe3KkDtuORRKqt8koXJ9Uxjm4d37YeaU517lm63QRjM" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/litera/bootstrap.min.css" integrity="sha256-v4ONl4ximA5gqT9BIXB6OA7PX2rmfCfHUZ4Z5bEEsYg=" crossorigin="anonymous">
+    {% when "lumen" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/lumen/bootstrap.min.css" rel="stylesheet" integrity="sha384-3peic20OBS+kS9351sQOOO1LJYgA7iQkz8mjQQIGqCWy+rkEEOGIIIgQrVqL88+X" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/lumen/bootstrap.min.css" integrity="sha256-iahfL1sp6QQhUVF6+e8NAckFl0ZuBv/ji3XZWSrRRik=" crossorigin="anonymous">
+    {% when "lux" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/lux/bootstrap.min.css" rel="stylesheet" integrity="sha384-mDdzqEimigFhaXpqHTnkj2JumLRbFB9qEVJK77zv7lBrdvhyPgl0WaWE7jloVkek" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/lux/bootstrap.min.css" integrity="sha256-934I7bTAy+Zln+kc1lSD/vfnrs3jBNRKz7irWJwVWcY=" crossorigin="anonymous">
+    {% when "materia" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/materia/bootstrap.min.css" rel="stylesheet" integrity="sha384-BJWCnw/x/9+kQsLGLQDoCX2oJg7j1LjkOfPZWtUPTJ0tn00hYIB5r9u7KnGJxFnY" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/materia/bootstrap.min.css" integrity="sha256-ofCNOzTBysQc3WFqXF9DZ0WStTttUra93JYtV8YJ5Xo=" crossorigin="anonymous">
+    {% when "minty" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/minty/bootstrap.min.css" rel="stylesheet" integrity="sha384-b8rPE9Kj0lNck6sxWxUIJRCE3IHrqNXF74vcnXKYS/NZPi7WInVsaIKeEjIDpyNt" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/minty/bootstrap.min.css" integrity="sha256-kPWG8ceLDt5hsiJshP6EY9XyhmDqoN3+5MT4t/dQXKY=" crossorigin="anonymous">
+    {% when "morph" %}
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/morph/bootstrap.min.css" integrity="sha256-n+S2kqbdK5poYklkan9lyTgyAd1hy6eOzbxCkUy6HU8=" crossorigin="anonymous">
+    {% when "pulse" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/pulse/bootstrap.min.css" rel="stylesheet" integrity="sha384-MF/Rtd9T3eOtgzSgXgBuiFnRWPX4/er58q9bm/UjsbR3ZmFpMAOy1Fbp9b1S+PVS" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/pulse/bootstrap.min.css" integrity="sha256-KBf9OtYoavKgz0wjyNVHEPdKWpAFlcFS++z+BGGTW+0=" crossorigin="anonymous">
+    {% when "sandstone" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-0SEzCkemOL0R1IOfjiayiYyt8BkqxwlmXBmFWMUNeG0BSo/XUh4xAF5ybf+Qr/4x" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/sandstone/bootstrap.min.css" integrity="sha256-CtVIIo2Qouwe1FrVhUUJzXMA+YhLoiApC0W+tnS982I=" crossorigin="anonymous">
+    {% when "simplex" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/simplex/bootstrap.min.css" rel="stylesheet" integrity="sha384-dGOMD5bzPwVfOGp4zGQiudlmCab9PN0dIsv1r1MCotfVsSXM3m5ZiqEVO56XzCCh" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/simplex/bootstrap.min.css" integrity="sha256-gVJZ2s1jD/B3d7Y+WMqE0SSiDMyeaiI173r/z9QhpKs=" crossorigin="anonymous">
+    {% when "sketchy" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/sketchy/bootstrap.min.css" rel="stylesheet" integrity="sha384-rfPl7UHwaHyXh/n5kFubgXzPE1QcgUOk9qyasE7bw4YTXgJ7A5Y/ljxbuNFETD7L" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/sketchy/bootstrap.min.css" integrity="sha256-S9eRkzoV4yJSM9TDp50jDeYtu26CRF837ePOLCUlcwo=" crossorigin="anonymous">
+    {% when "slate" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/slate/bootstrap.min.css" rel="stylesheet" integrity="sha384-A0hm/Pn0Gvk8w7szlEuTOZrIyQCCBNXQF9ccseoCI36nWRfMEAapo5UJ56zLPvPw" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/slate/bootstrap.min.css" integrity="sha256-VHeArc9kdO/1rwrV+DWV2nLoqS3ZLIb1KeUjmSK0HBE=" crossorigin="anonymous">
+    {% when "solar" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-Ac4ZYxfuTGU/klWhV1QAf06YAKz91+Q/13hUSYZ6jv9N371Jgh4K2rvTVgR0+fKW" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/solar/bootstrap.min.css" integrity="sha256-z5fuiAzc7SZtuOGmQIsfKM4ezVpQZDggT61qnxPPUuo=" crossorigin="anonymous">
+    {% when "spacelab" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/spacelab/bootstrap.min.css" rel="stylesheet" integrity="sha384-pKE6eNDByK+/3jaksY4hQa8dirMgKeMfVqBRh9NrQ0DIbhGG0957GjWSlvLrxnZ6" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/spacelab/bootstrap.min.css" integrity="sha256-OSaKKgxp4MKyV04Q0kjXJ/T84VSrmEY6tFtQeM7NRH8=" crossorigin="anonymous">
+    {% when "superhero" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/superhero/bootstrap.min.css" rel="stylesheet" integrity="sha384-ngZZrhEgN1Rw+Eiz3bD0nopbhvTAwzNg5ePjP2mhYmjHiTqG+ouPwi4ribjATEKe" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/superhero/bootstrap.min.css" integrity="sha256-g1apt3G+ydDNjFwZ0xPjFj+mWdXjzjJCidBJCV8SfV8=" crossorigin="anonymous">
+    {% when "united" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-h1Za54CnmmJzf7NmR8Ztwc+1fpFNNmt0Q9iprQpdKcF4JOjN2PeNFFzFuqBxrEL2" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/united/bootstrap.min.css" integrity="sha256-wS5CC0ESbgnYFnxyGBceOCqJQTwCd2XRWCWSgG+M7AM=" crossorigin="anonymous">
+    {% when "vapor" %}
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/vapor/bootstrap.min.css" integrity="sha256-pd3vpDelo2BWSW4yjR6MLaB/v+oHlRvMuio2J52T+TQ=" crossorigin="anonymous">
+    {% when "yeti" %}
+      <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/yeti/bootstrap.min.css" rel="stylesheet" integrity="sha384-g5/PGO4MT6Ct3LyyiNCIa2QxuvcNMI554Lu35FXydDQCWwm4v51q+yUQEynNdWpY" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/yeti/bootstrap.min.css" integrity="sha256-pavxzkjfgZ4N1cy0TPRVbv+9MzZhyq1M8447r+FTS9s=" crossorigin="anonymous">
+    {% when "zephyr" %}
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/zephyr/bootstrap.min.css" integrity="sha256-KgCUIwLAF1p5eSccNfP08fjgU2QPerKTTrJmZP3ZT4I=" crossorigin="anonymous">
+    {% else %}
+      <!-- Unknown BootSwatch theme, '{{ config.customize.theme }}'. Using the default Bootstrap theme. -->
+      <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  {% endcase %}
+
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+          crossorigin="anonymous"></script> -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+          integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+          crossorigin="anonymous"></script>
+
+
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js"
+          integrity="sha384-lZmvU/TzxoIQIOD9yQDEpvxp6wEU32Fy0ckUgOH4EIlMOCdR823rg4+3gWRwnX1M"
+          crossorigin="anonymous"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"
+          integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"></script>
+
+  {% else %}
+
+    {% assign cssTheme = config.customize.theme | default: "default" %}
+    {% assign cssPath = "/assets/themes/bootstrap." | append: cssTheme | append: ".min.css" %}
+    <link rel="stylesheet" href='{{ cssPath | relative_url }}'>
+
+    <script src='{{ "/assets/script/3rd-party/jquery.min.js" | relative_url }}'></script>
+    <script src='{{ "/assets/script/3rd-party/bootstrap.bundle.min.js" | relative_url }}'></script>
+
+  {% endif %}
+
+  <script src='{{ "/assets/script/3rd-party/typeahead.bundle.min.js" | relative_url }}'></script>
+
+  <!-- JekyllFaces SCRIPT and STYLES -->
+
+  {% assign styles = site.pages | where_exp: "item", "item.path contains 'assets/style/jekyllfaces/'" %}
+  {% for css in styles %}
+  <link rel="stylesheet" href='{{ css.url | relative_url }}'>
+  {% endfor %}
+
+  {% assign scripts = site.pages | where_exp: "item", "item.path contains 'assets/script/jekyllfaces/'" %}
+  {% for js in scripts %}
+  <script src='{{ js.url | relative_url }}'></script>
+  {% endfor %}
+
+  <!-- USER SCRIPT and STYLES -->
+
+  {% assign styles = site.pages | where_exp: "item", "item.path contains 'assets/style/custom/'" %}
+  {% for css in styles %}
+    <link rel="stylesheet" href='{{ css.url | relative_url }}'>
+  {% endfor %}
+
+  {% assign scripts = site.pages | where_exp: "item", "item.path contains 'assets/script/custom/'" %}
+  {% for js in scripts %}
+    <script src='{{ js.url | relative_url }}'></script>
+  {% endfor %}
+
+  <!-- FONT ICONS -->
+
+  {% include fonticons.liquid %}
+
+  <!-- ANALYTICS -->
+
+  {% include analytics.liquid %}
+
+  <style type="text/css">
+    {% if config.navbar.show and config.navbar.fixed %}
+    body { margin-top: 0; padding-top:80px; }
+    {% else %}
+    nav.navbar { margin-bottom: 20px; }
+    {% endif%}
+  </style>
+
+  <!-- TODO: include with dynamic/custom font loading?? -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+
+  <link rel="apple-touch-icon" sizes="180x180" href='{{ "/apple-touch-icon.png" | relative_url }}'>
+  <link rel="icon" type="image/png" sizes="32x32" href='{{ "/favicon-32x32.png" | relative_url }}'>
+  <link rel="icon" type="image/png" sizes="16x16" href='{{ "/favicon-16x16.png" | relative_url }}'>
+  <link rel="manifest" href='{{ "/site.webmanifest" | relative_url }}'>
+  <link rel="mask-icon" href='{{ "/safari-pinned-tab.svg" | relative_url }}' color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <!--
+  columns: 12 = [1,1,1,1,1,1,1,1,1,1,1,1]
+           11 = [1,1,1,1,1,2,1,1,1,1,1]
+           10 = [2,1,1,1,1,1,1,1,1,2]
+            9 = [1,1,1,2,2,2,1,1,1]
+            8 = [1,1,2,2,2,2,1,1]
+            7 = [1,2,2,2,2,2,1]
+            6 = [2,2,2,2,2,2]
+            5 = [3,2,2,2,3]
+            4 = [3,3,3,3]
+            3 = [4,4,4]
+            2 = [6,6]
+            1 = [12]
+  -->
+
+</head>

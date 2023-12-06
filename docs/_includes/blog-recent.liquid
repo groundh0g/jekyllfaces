@@ -1,0 +1,42 @@
+{% assign config = include.config %}
+{% unless config %}
+  {% include read-config.liquid %}
+{% endunless %}
+
+{% assign isArchive = include.isArchive | default: false %}
+
+{% assign maxPosts = include.maxPosts | default: 8 %}
+{% if isArchive %}{% assign maxPosts = include.maxPosts | default: 999999 %}{% endif %}
+
+<div class="blog-posts">
+
+  {% assign theme = include.theme | default: config.blog.recenttheme | default: "slategray" %}
+  {% if isArchive %}{% assign theme = include.theme | default: config.blog.archivetheme | default: "slategray" %}{% endif %}
+
+  <div class="blog-theme-{{ theme | default: "slategray" }}">
+
+  {% assign style = config.blog.recentstyle | default: "plainly" %}
+  {% if isArchive %}{% assign style = config.blog.archivestyle | default: "plainly" %}{% endif %}
+
+  {% assign group = false %}
+  {% if isArchive %}{% assign group=true %}{% endif %}
+
+  {% case style %}
+    {% when "newsly" %}
+      {% include providers-blog-nav/newsly.liquid config=config group=group maxPosts=maxPosts posts=include.posts %}
+    {% when "shoply" %}
+      {% include providers-blog-nav/shoply.liquid config=config group=group maxPosts=maxPosts posts=include.posts %}
+    {% when "plainly" %}
+      {% include providers-blog-nav/plainly.liquid config=config group=group maxPosts=maxPosts posts=include.posts %}
+    {% when "custom" %}
+      {% include providers-blog-nav/custom.liquid config=config group=group maxPosts=maxPosts posts=include.posts %}
+    {% else %}
+      {% include providers-blog-nav/default.liquid config=config group=group maxPosts=maxPosts posts=include.posts %}
+  {% endcase %}
+
+  </div>
+
+</div>
+
+
+<div class="clear-both"> </div>

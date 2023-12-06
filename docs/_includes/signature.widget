@@ -1,0 +1,8 @@
+{% assign config = include.config %}
+{% unless config %}
+    {% include read-config.liquid %}
+{% endunless %}
+
+{% assign signatureColor = include.color | default: page.signature.color | default: config.blog.signature.color | default: "gray" | prepend: "signature-color-" %}
+{% assign signatureName = include.name | default: page.signature.name | default: config.blog.signature.name | default: "joehall" %}
+<div class="signature {{ signatureColor }}"><img class="signature" src='{{ "/assets/images/signatures/" | append: signatureName | append: ".png" |  relative_url }}' alt="author's signature" /></div>

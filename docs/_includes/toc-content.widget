@@ -1,0 +1,20 @@
+{% assign lines = include.content | default: page.content | newline_to_br | split: "<br />" %}
+{% assign links = include.links | default: true %}
+
+{% capture markdown %}
+
+{% for line in lines %}
+  {% assign letter = line | strip | slice: 0 %}
+  {% if letter == "#" %}
+    {% assign left_space = line | split: " " | first | replace: "#", "  ." | strip | replace: ".", "" %}
+    {% assign line_text = line | replace: "#", " " | strip %}
+    {% if links %}
+      {% assign line_slug = line_text | slugify | prepend: "#" %}
+{{ left_space }}- [{{ line_text }}]({{ line_slug }})
+    {% else %}
+{{ left_space }}- {{ line_text }}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% endcapture %}<div class="page-toc">{{ markdown | strip | markdownify }}</div>

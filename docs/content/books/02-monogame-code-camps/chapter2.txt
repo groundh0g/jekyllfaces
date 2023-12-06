@@ -1,0 +1,56 @@
+# Chapter Two
+
+
+Why am I writing this book?
+Camps
+XNA Book in 2007, updated samples thru 4.x, but text needs refresh.
+How is the book structured?
+Samples are cleaned up versions of camp projects.
+What do I need to know?
+What tools do I need?
+Can I really make my own games and sell them?
+
+Asides?
+Give more history on the Mono project.
+Give more history on the MonoGame project.
+Give more history on the Xamarin products.
+
+Overview of the various development platforms / configurations.
+Windows / OS X
+Linux
+PSM / PS4?
+Chrome?
+
+To keep our focus on game development, the examples assume you're using Xamatin Studio, but the same principles apply for each of the other development platform.
+
+Installing MonoDevelop (Xamarin Studio w/o license)
+What are the limitations?
+Should I buy Xamarin Studio now?
+
+Windows and Mac OS X are first-class citizens … what about Linux?
+
+----------------------------------------------
+Here are some quick Markdown examples to get you started.
+
+To start a new paragraph, hit the return key twice. You want to create a blank line between paragraphs.
+
+To *italicize*, surround a word in asterisks.
+
+To **bold**, use two asterisks.
+
+Here is a [link to the leanpub home-page](https://leanpub.com).
+
+Chapter 3 tells you how to make a preview of your book.
+
+
+
+
+
+#MonoGame Game Camps
+ 
+"Our greatest glory is not in never failing, but in rising up every time we fail."
+-- Ralph Waldo Emerson
+ 
+I believe we learn best from failure. Success teaches us precious little. We learn what works by stumbling, fumbling, and floundering over that which does not work. If you never make a mistake, you are not learning. You are simply following someone else's recipe for success. I can confidently assure you that the author of the recipe did not create it on their first attempt, complete and without error.
+
+

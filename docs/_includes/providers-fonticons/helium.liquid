@@ -1,0 +1,9 @@
+<!--
+  helium:      false # one of: false | local # https://tympanus.net/codrops/2014/10/10/freebie-helium-icon-set/
+--!>
+
+{% case include.config.fonticons.helium.include %}
+{% when "local" %}
+    <link rel="stylesheet" href='{{ "/assets/fonticons/helium/style.css" | relative_url }}'>
+{% endcase %}
+

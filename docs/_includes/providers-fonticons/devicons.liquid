@@ -1,0 +1,11 @@
+<!--
+  devicons:    false # one of: false | local | cdn # https://vorillaz.github.io/devicons/#/main
+--!>
+
+{% case include.config.fonticons.devicons.include %}
+{% when "local" %}
+    <link rel="stylesheet" href='{{ "/assets/fonticons/devicons-1.8.0/css/devicons.min.css" | relative_url }}'>
+{% when "cdn" %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicons@1.8.0/css/devicons.min.css" integrity="sha256-8q59ya5uaZ4zEEKRqeFvQUIKZODah+FZ3Qey+wWSvso=" crossorigin="anonymous">
+{% endcase %}
+

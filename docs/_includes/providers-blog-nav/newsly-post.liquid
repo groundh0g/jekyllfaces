@@ -1,0 +1,23 @@
+{% assign imageSize = "small" %}
+{% assign imgCols = "5 col-sm-4" %}
+{% assign txtCols = "7 col-sm-8" %}
+
+{% if include.large %}
+    {% assign imageSize = "large" %}
+    {% assign imgCols = "12" %}
+    {% assign txtCols = "12" %}
+{% endif %}
+
+<div class="newsly blog-item blog-item-{{ imageSize }} row">
+    <div class="col col-{{ imgCols }}">
+        <div class="blog-image"><a href="{{ include.post.url }}"><img class="center-cropped" style='background-image: url("{{ include.post.image }}"); width: 100%;' /></a></div>
+    </div>
+    <div class="col col-{{ txtCols }}">
+        <div class="blog-title">{{ include.post.title | default: "Unknown Title" }}</div>
+        <div class="blog-excerpt">{{ include.post.excerpt | default: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque sagittis purus sit amet volutpat consequat mauris nunc. Velit laoreet id donec ultrices tincidunt. Nunc id cursus metus aliquam eleifend. Arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc." }}</div>
+        <div class="read-more"><a href="{{ include.post.url }}">READ MORE &raquo;</a></div>
+        <div class="by-line">{{ include.post.date | date: "%d %b %Y" | upcase }} by {{ include.post.author | default: "admin" }}</div>
+        <div class="clear-both"> </div>
+        {%- include providers-blog-nav/common-tags.liquid config=config tags=include.post.tags %}
+    </div>
+</div>

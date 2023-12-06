@@ -1,0 +1,10 @@
+<!--
+  boxicons:    false # one of: false | local | cdn # https://boxicons.com/
+--!>
+
+{% case include.config.fonticons.boxicons.include %}
+{% when "local" %}
+    <link rel="stylesheet" href='{{ "/assets/fonticons/boxicons-2.1.4/css/boxicons.min.css" | relative_url }}'>
+{% when "cdn" %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css" integrity="sha512-cn16Qw8mzTBKpu08X0fwhTSv02kK/FojjNLz0bwp2xJ4H+yalwzXKFw/5cLzuBZCxGWIA+95X4skzvo8STNtSg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endcase %}

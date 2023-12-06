@@ -1,0 +1,9 @@
+<!--
+  codicons:    false # one of: false | local # https://microsoft.github.io/vscode-codicons/
+--!>
+
+{% case include.config.fonticons.codicons.include %}
+{% when "local" %}
+    <link rel="stylesheet" href='{{ "/assets/fonticons/codicons-0.0.35/codicons.css" | relative_url }}'>
+{% endcase %}
+

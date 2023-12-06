@@ -1,0 +1,17 @@
+{% assign config = include.config %}
+{% unless config %}
+  {% include read-config.liquid %}
+{% endunless %}
+
+{% assign key = page.category | default: "default" %}
+{% assign footer = config.category[key].footer |  default: config.category.default.footer %}
+
+<footer class="site-footer bg-{{ footer.tintback }} text-{{ footer.tinttext }}">
+
+<div class="container">
+
+{% include footer.liquid config=config %}
+
+</div>
+
+</footer>

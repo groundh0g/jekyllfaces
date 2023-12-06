@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+{% assign config = include.config %}
+{% unless config %}
+  {% include read-config.liquid %}
+{% endunless %}
+
+  <h1>{{ page.title | escape }}</h1>
+
+  <p class="post-meta">
+    {% assign date_format = site.minima.date_format | default: "%B %-d, %Y" %}
+    Posted on {{ page.date | date: date_format }}{% if page.author %}, by {{ page.author }}{% endif %}{% if page.tags %}, about: {% include providers-blog-nav/common-tags.liquid config=config tags=page.tags %}{% endif %}
+  </p>
+
+  {% include hr.widget config=config %}
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+    {% include signature.widget config=config %}
+  </div>
+
+{% include comments.liquid config=config %}

@@ -1,0 +1,42 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "jekyllfaces/all";
+
+.legal-text {
+  //white-space: pre-wrap;
+  font-family: monospace;
+  //font-size: 1.4vw;
+}
+
+.indent-1 {
+  margin-left: 20px;
+}
+
+.signature-color-white { filter: invert(0); }
+.signature-color-black { filter: brightness(0); }
+.signature-color-grayish  { filter: hue-rotate(219deg) saturate(79.2%) brightness(66.1%); }
+
+img.signature {
+  width: 25vw;
+  margin: 2vmin 0;
+}
+
+@media screen and (max-width: 768px) {
+  div.signature{
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  br.small-break {
+    display: none;
+  }
+}
+
+.tiny {
+  font-weight: normal;
+  font-size: 0.7em;
+}
+

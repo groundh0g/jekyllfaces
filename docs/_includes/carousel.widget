@@ -1,0 +1,111 @@
+{% assign config = include.config %}
+{% unless config %}
+  {% include read-config.liquid %}
+{% endunless %}
+
+{% assign carousel = nil %}
+{% if include.config %}
+  {% assign carousel = include.config %}
+{% elsif page.carousel %}
+  {% assign carousel = page.carousel %}
+{% endif %}
+
+{% if carousel %}
+
+{% assign widget_id = carousel.id %}
+{% assign index_indicator = 0 %}
+
+<div id="{{ widget_id }}Indicators" class="carousel slide carousel-dark" data-bs-ride="true" data-interval="5000">
+    <div class="carousel-indicators">
+      {% for slide in carousel.items %}
+        {% assign active_class = "" %}{% assign is_current = "" %}
+        {% if index_indicator == 0 %}{% assign active_class = "active" %}{% assign is_current = "true" %}{% endif %}
+        <button type="button" data-bs-target="#{{ widget_id }}Indicators" data-bs-slide-to="{{ index_indicator }}" class="{{ active_class }}" aria-current="{{ is_current }}" aria-label="Slide {{ index_indicator | plus: 1 }}"></button>
+        {% assign index_indicator = index_indicator | plus: 1 %}
+      {% endfor %}
+    </div>
+    <div class="carousel-inner">
+        {% assign index_indicator = 0 %}
+        {% for slide in carousel.items %}
+        {% assign active_class = "" %}{% assign is_current = "" %}
+        {% if index_indicator == 0 %}{% assign active_class = "active" %}{% assign is_current = "true" %}{% endif %}
+        <div class="carousel-item {{ active_class }}">
+            <img src="{{ slide.image | relative_url }}" class="d-block w-50" alt="{{ slide.item }}" style="margin: 0 auto;">
+            {% if slide.item or slide.brief %}
+            <div class="carousel-caption d-none d-md-block">
+                {% if slide.item %}<h5>{{ slide.item }}</h5>{% endif %}
+                {% if slide.brief %}{{ slide.brief | append: "" | markdownify }}{% endif %}
+                {% if carousel.linkHeaders or slide.linkHeader %}
+                    {% if slide.item %}<p><a href='#{{ slide.item | slugify }}'>Learn more &raquo;</a></p>{% endif %}
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+        {% assign index_indicator = index_indicator | plus: 1 %}
+        {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#{{ widget_id }}Indicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#{{ widget_id }}Indicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+{% else %}
+
+{% capture capture_markdown %}
+
+## Missing Configuration
+
+This `carousel` widget is not configured. You may configure it in one of the following ways:
+
+1. Add the configuration to your page header YAML, named "carousel".
+1. Add multiple carousels to your page header YAML and pass in one of them into this widget.
+
+```
+---
+carousel:
+  id: carouselExample
+  items:
+    - item: First Slide
+      image: /assets/images/foo1.png
+      brief: Placeholder content for the first slide.
+    - item: Second Slide
+      image: /assets/images/foo2.png
+      brief: Placeholder content for the second slide.
+    - item: Third Slide
+      image: /assets/images/foo3.png
+      brief: Placeholder content for the third slide.
+---
+```
+
+{% endcapture %}{{ capture_markdown | markdownify }}
+
+{% endif %}
+
+<script type="application/javascript">
+    const retries = [];
+    const maxRetries = 5;
+
+    const startCarousel = () => {
+        if($ && $('.carousel').length > 0 && $('.carousel-control-next').length) {
+            $(function () {
+                $('.carousel').carousel({
+                    interval: 5000
+                });
+                $('.carousel-control-next').trigger('click');
+            });
+
+            for(let i = 0; i < maxRetries; i++) {
+                retries.push(0);
+            }
+        } else if(retries.length <= maxRetries) {
+            retries.push(0);
+            setTimeout(startCarousel, 1000);
+        }
+    };
+
+    setTimeout(startCarousel, 5000);
+</script>

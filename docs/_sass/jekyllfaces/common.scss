@@ -1,0 +1,151 @@
+.text-align-left { text-align: left; }
+.text-align-right { text-align: right; }
+.text-align-center { text-align: center; }
+.text-align-ignore { text-align: inherit; }
+
+@media (max-width: 768px) {
+  .text-align-left { text-align: center; }
+  .text-align-right { text-align: center; }
+  .text-align-center { text-align: center; }
+
+  h1, h2, h3, h4, h5, h6 {
+    border-bottom: 2px solid;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  h2 {
+    border: none;
+    width: 90vw;
+    text-align: center;
+  }
+
+  p { text-align: center; }
+
+  .post-content ul li {
+    text-align: center;
+    list-style-type: none;
+  }
+
+  .post-content ul li a {
+    text-decoration: none;
+    border-bottom: 2px dotted;
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0 !important;
+
+}
+
+.whole-page-div {
+  margin: 0;
+  padding: 80px 0 0 0;
+}
+
+footer .row {
+  padding-top: 1vmin;
+  padding-bottom: 1vmin;
+}
+
+.newsletter-signup {
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: inherit;
+  width: 100%;
+}
+
+
+.blog-posts {
+  margin-bottom: 2vmin;
+}
+
+.blog-item a:link,
+.blog-item a:hover,
+.blog-item a:active,
+.blog-item a:visited {
+  font-weight: bolder;
+  border: 0;
+  border-bottom: 2px dotted navajowhite;
+  text-decoration: none;
+  background-color: inherit !important;
+}
+
+.post-content {
+  font-size: 1.3em;
+}
+
+.post-content img  {
+  width: 80%;
+}
+
+.blog-entity img.center-cropped {
+  background-repeat: no-repeat;
+}
+
+.blog-item img.center-cropped {
+  background-size: cover;
+  background-position: center left;
+}
+
+.blog-item-large img.center-cropped {
+  background-size: cover;
+  background-position: center left;
+}
+
+.blog-item-small img.center-cropped {
+  background-size: auto;
+  background-position: center 33%;
+}
+
+.clear-float-left { clear: left; }
+.clear-float-right { clear: right; }
+.clear-float-both { clear: both; }
+
+.book-cover {
+  float: right;
+  width: 33vmin !important;
+  margin: 0 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .book-cover {
+    float: none;
+    width: 75vmin !important;
+    margin: auto 20px;
+  }
+}
+
+.subtitle {
+  font-size: 5.5vmin;
+  font-weight: bolder;
+  text-align: center;
+  display: block;
+}
+
+.tag-group {
+  padding-top: 80px;
+  margin-top: -80px;
+}
+
+// a.nav-link { color: inherit; }
+
+.post-content p a:link,
+.post-content p a:active,
+.post-content p a:visited,
+.post-content p a:hover,
+.post-content p a
+{ color: inherit !important; }
+
+.tag-button a:link,
+.tag-button a:active,
+.tag-button a:visited,
+.tag-button a:hover,
+.tag-button a {
+  border-bottom: none;
+  color: inherit !important;
+}

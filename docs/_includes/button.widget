@@ -1,0 +1,63 @@
+{% assign config = include.config %}
+{% unless config %}
+  {% include read-config.liquid %}
+{% endunless %}
+
+{% assign btn_config = page.button | default: config.widgets.defaults.button %}
+
+{% assign btn_size = include.size | default: page.widgets.button.size | default: config.widgets.button.size | default: "" %}
+{% assign btn_color = include.color | default: page.widgets.button.color | default: config.widgets.button.color %}
+{% assign btn_outline = include.outline | default: page.widgets.button.outline | default: config.widgets.button.outline %}
+{% assign btn_disabled = include.disabled | default: page.widgets.button.disabled | default: config.widgets.button.disabled %}
+
+{% if btn_size or btn_color or btn_opacity %}
+{% assign btn_class = "btn" %}
+{% if btn_size %}{% assign btn_class = btn_class | append: " btn-" | append: btn_size %}{% endif %}
+{% if btn_color %}{% assign btn_class = btn_class | append: " btn-" | append: btn_color %}{% endif %}
+{% if btn_disabled == "true" %}{% assign btn_class = btn_class | append: " disabled" %}{% endif %}
+
+<a class="{{ btn_class}}" type="button" href='{{ include.link | default: "#null" }}'>{{ include.label | default: "Unlabeled" }}</a>
+
+{% else %}
+
+{% capture capture_markdown %}
+
+## Missing Configuration
+
+This `button` widget is not configured. You may configure it in one of the following ways:
+
+1. Add the configuration to your `/docs/_jekyllfaces/config.md` YAML, named "button", under "widgets". These properties are applied to all in-page buttons on the site. To override this default behavior, add new settings to the page YAML header or pass the overridden values on a specific include tag.
+
+```
+---
+widgets:
+  button:
+    color:    primary # one of: light | dark | primary | secondary | success | info | warning | danger | default
+    size:     lg      # one of: sm | lg | default
+    outline:  false   # one of: true | false
+    disabled: false   # one of: true | false
+---
+```
+
+1. Add the configuration to your page header YAML, named "button", under "widgets". These properties are applied to all buttons on the page. You can override these valus by passing new values on the include tag.
+
+```
+---
+widgets:
+  button:
+    color:    secondary # one of: light | dark | primary | secondary | success | info | warning | danger | default
+    size:     sm        # one of: sm | lg | default
+    outline:  true      # one of: true | false
+    disabled: false     # one of: true | false
+---
+```
+
+1. Pass in the size, color, outline mode, and/or disabled status to the control.
+
+```
+{% raw %}{% include button.widget size="lg" color="success" disabled="true" %}{% endraw %}
+```
+
+{% endcapture %}{{ capture_markdown | markdownify }}
+
+{% endif %}

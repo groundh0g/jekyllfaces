@@ -1,0 +1,31 @@
+{% assign config = include.config %}
+{% unless config %}
+    {% include read-config.liquid %}
+{% endunless %}
+
+{% assign path = include.path | default: "" | strip %}
+{% if path != "" %}{% assign path = path |  append: "/" %}{% endif %}
+{% assign toc_file = path | append: "Book.txt" %}
+
+{% capture newline %}
+{% endcapture %}
+
+{% capture chapters %}
+    {% include_relative {{ toc_file }} %}
+{% endcapture %}
+
+{% assign chapters = chapters | split: newline %}
+
+{% for chapter in chapters %}
+    {% assign file = chapter | strip %}
+    {% if file != "" %}
+
+{% assign chapter_file = path | append: file %}
+{% include_relative {{ chapter_file }} %}
+{% include hr.widget config=config %}
+
+    {% endif %}
+
+{% endfor %}
+
+<div class="text-align-center"><p>THE END</p><p>&nbsp;</p></div>

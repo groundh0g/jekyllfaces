@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% assign config = include.config %}
+{% unless config %}
+  {% include read-config.liquid %}
+{% endunless %}
+<html lang='{{ page.lang | default: config.metadata.lang | default: site.lang | default: "en" }}'>
+
+  {% include head.html config=config %}
+
+<!--  <body class='{{ page.class | default: "" }} bg-{{ config.body.tintback }} text-{{ config.body.tinttext }}'>-->
+<!--    <div class="whole-page-div">-->
+  {% assign key = page.category | default: "default" %}
+  {% assign footer = config.category[key].footer | default: config.category.default.footer %}
+  {% assign body = config.category[key].body | default: config.category.default.body %}
+
+  <body class='bg-{{ footer.tintback }} text-{{ footer.tinttext }}'>
+    <div class='whole-page-div {{ page.class | default: "" }} bg-{{ body.tintback }} text-{{ body.tinttext }}'>
+
+    {% include header.html config=config %}
+
+    <main class="page-content" aria-label="Content">
+      <div class='wrapper {{ body.width | default: "container" }}'>
+        {{ content }}
+      </div>
+    </main>
+
+    {% include footer.html config=config %}
+
+    </div>
+  </body>
+
+</html>

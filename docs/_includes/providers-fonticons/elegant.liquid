@@ -1,0 +1,9 @@
+<!--
+  elegant:     false # one of: false | local # https://www.elegantthemes.com/blog/resources/elegant-icon-font
+--!>
+
+{% case include.config.fonticons.elegant.include %}
+{% when "local" %}
+    <link rel="stylesheet" href='{{ "/assets/fonticons/elegant-1.3.3/css/elegant-icons.min.css" | relative_url }}'>
+{% endcase %}
+

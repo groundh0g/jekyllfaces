@@ -1,0 +1,10 @@
+<!--
+  lineawesome: false # one of: false | local | cdn # https://icons8.com/line-awesome/howto
+--!>
+
+{% case include.config.fonticons.lineawesome.include %}
+{% when "local" %}
+    <link rel="stylesheet" href='{{ "/assets/fonticons/lineawesome-1.3.0/css/line-awesome-font-awesome.min.css" | relative_url }}'>
+{% when "cdn" %}
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+{% endcase %}

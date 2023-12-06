@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+{% assign config = include.config %}
+{% unless config %}
+  {% include read-config.liquid %}
+{% endunless %}
+
+<article class="post">
+
+  <header class="post-header">
+    {% if page.title != "" and page.title != nil and page.showTitle != false %}
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+    {% endif %}
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {% include comments.liquid config=config %}
+</article>
